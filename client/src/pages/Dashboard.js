@@ -92,43 +92,36 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 const mdTheme = createTheme();
 
 
-const handlePageChange = () => {
-  const [pageIndex, setPageIndex] = useState('Dashboard');
-
-  if (pageIndex === 'Dashboard') {
-    return <InnerDashboard />
-  } 
-  if (pageIndex === 'View My Packages') {
-    return <ViewPackages />
-  }
-  if (pageIndex === 'View My Orders') {
-    return <ViewOrders />
-  }
-  if (pageIndex === 'Edit My Account') {
-    return <EditUser />
-  }
-
-const renderPage = () => {
-  if (pageIndex === 'Dashboard') {
-    return <InnerDashboard />
-  } 
-  if (pageIndex === 'View My Packages') {
-    return <ViewPackages />
-  }
-  if (pageIndex === 'View My Orders') {
-    return <ViewOrders />
-  }
-  if (pageIndex === 'Edit My Account') {
-    return <EditUser />
-  }
-}
-}
 
 function DashboardContent() {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
   };
+
+
+    const [pageIndex, setPageIndex] = useState('Dashboard');
+
+    const showDashboard = () => setPageIndex('Dashboard')
+    const showPackages = () => setPageIndex('View My Packages')
+    const showOrders = () => setPageIndex('View My Orders')
+    const showEdit = () => setPageIndex('Edit My Account')
+
+    const renderPage = () => {
+      if (pageIndex === 'Dashboard') {
+        return <InnerDashboard />
+      } 
+      if (pageIndex === 'View My Packages') {
+        return <ViewPackages />
+      }
+      if (pageIndex === 'View My Orders') {
+        return <ViewOrders />
+      }
+      if (pageIndex === 'Edit My Account') {
+        return <EditUser />
+      }
+    }
+
 
   return (
     <ThemeProvider theme={mdTheme}>
@@ -184,25 +177,25 @@ function DashboardContent() {
           <Divider />
           <List component="nav">
             <React.Fragment>
-              <ListItemButton onClick={() => handlePageChange('Dashboard')}>
+              <ListItemButton onClick={showDashboard}>
                 <ListItemIcon>
                   <DashboardIcon />
                 </ListItemIcon>
                 <ListItemText primary="Dashboard" />
               </ListItemButton>
-              <ListItemButton onClick={() => handlePageChange('View My Packages')}>
+              <ListItemButton onClick={showPackages}>
                 <ListItemIcon>
                   <Inventory2 />
                 </ListItemIcon>
                 <ListItemText primary="View My Packages" />
               </ListItemButton>
-              <ListItemButton onClick={() => handlePageChange('View My Orders')}>
+              <ListItemButton onClick={showOrders}>
                 <ListItemIcon>
                   <ShoppingCart />
                 </ListItemIcon>
                 <ListItemText primary="View My Orders" />
               </ListItemButton>
-              <ListItemButton onClick={() => handlePageChange('Edit My Account')}>
+              <ListItemButton onClick={showEdit}>
                 <ListItemIcon>
                   <AccountBoxIcon />
                 </ListItemIcon>
