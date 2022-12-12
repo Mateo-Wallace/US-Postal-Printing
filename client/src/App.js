@@ -20,6 +20,7 @@ import Dashboard from './pages/Dashboard';
 import ProtectRoute from './components/ProtectRoute';
 
 import './App.css';
+import Nav from './components/Header';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -45,6 +46,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
+      <Nav>
       <Router>
         <Routes>
           <Route path='/' element={<Landing />} />
@@ -56,6 +58,7 @@ function App() {
           />
         </Routes>
       </Router>
+      </Nav>
     </ApolloProvider>
   );
 }
