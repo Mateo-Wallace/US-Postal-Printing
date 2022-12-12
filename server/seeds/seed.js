@@ -15,30 +15,28 @@ db.once("open", async () => {
 
     // Creates packages and links to user
     for (let i = 0; i < packageSeeds.length; i++) {
-      const { _id, username } = await Package.create(packageSeeds[i]);
+      const { _id } = await Package.create(packageSeeds[i]);
       const user = await User.findOneAndUpdate(
-        { username: username },
+        { username: packageSeeds[i].username },
         {
           $addToSet: {
             packages: _id,
           },
         }
       );
-      user;
     }
 
     // Creates orders and links to user
     for (let i = 0; i < orderSeeds.length; i++) {
-      const { _id, username } = await Order.create(orderSeeds[i]);
+      const { _id } = await Order.create(orderSeeds[i]);
       const user = await User.findOneAndUpdate(
-        { username: username },
+        { username: orderSeeds[i].username },
         {
           $addToSet: {
             orders: _id,
           },
         }
       );
-      user;
     }
   } catch (err) {
     console.error(err);
