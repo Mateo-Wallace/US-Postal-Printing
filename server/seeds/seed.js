@@ -24,12 +24,12 @@ db.once("open", async () => {
           },
         }
       );
-      console.log(user);
+      user;
     }
 
     // Creates orders and links to user
     for (let i = 0; i < orderSeeds.length; i++) {
-      const { _id, username } = await Package.create(orderSeeds[i]);
+      const { _id, username } = await Order.create(orderSeeds[i]);
       const user = await User.findOneAndUpdate(
         { username: username },
         {
@@ -38,7 +38,7 @@ db.once("open", async () => {
           },
         }
       );
-      console.log(user);
+      user;
     }
   } catch (err) {
     console.error(err);
