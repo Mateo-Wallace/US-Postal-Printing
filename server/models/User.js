@@ -18,6 +18,18 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    packages: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Package',
+      },
+    ],
+    orders: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Order',
+      },
+    ],
   },
   {
     toJSON: {
