@@ -65,7 +65,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <ThemeProvider theme={theme}>
-      <Nav>
+      <Nav></Nav>
       <Router>
         <Routes>
           <Route path='/' element={<Landing />} />
@@ -77,7 +77,6 @@ function App() {
           />
         </Routes>
       </Router>
-      </Nav>
       </ThemeProvider>
     </ApolloProvider>
   );
