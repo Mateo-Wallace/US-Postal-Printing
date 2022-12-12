@@ -7,7 +7,7 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Auth from './utils/auth';
 
 /// IMPORT PAGES ///
@@ -43,9 +43,28 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+// Create a theme
+const theme = createTheme({
+  palette: {
+    primary: {
+      light: '#757ce8',
+      main: '#3f50b5',
+      dark: '#002884',
+      contrastText: '#fff',
+    },
+    secondary: {
+      light: '#ff7961',
+      main: '#f44336',
+      dark: '#ba000d',
+      contrastText: '#000',
+    },
+  },
+});
+
 function App() {
   return (
     <ApolloProvider client={client}>
+      <ThemeProvider theme={theme}>
       <Nav>
       <Router>
         <Routes>
@@ -59,6 +78,7 @@ function App() {
         </Routes>
       </Router>
       </Nav>
+      </ThemeProvider>
     </ApolloProvider>
   );
 }
