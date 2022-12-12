@@ -1,17 +1,17 @@
 [
-    {
-      "username": "Test Tester",
-      "email": "test@test.com",
-      "password": "testtest"
-    },
-    {
-      "username": "Brian Kernighan",
-      "email": "bkernighan@techfriends.dev",
-      "password": "password01"
-    },
-    {
-      "username": "Lernantino",
-      "email": "lernantino@techfriends.dev",
-      "password": "password10"
-    }
-  ]
+  {
+    "username": "Test Tester",
+    "email": "test@test.com",
+    "password": "testtest"
+  },
+  {
+    "username": "Brian Kernighan",
+    "email": "bkernighan@techfriends.dev",
+    "password": "password01"
+  },
+  {
+    "username": "Lernantino",
+    "email": "lernantino@techfriends.dev",
+    "password": "password10"
+  }
+]
