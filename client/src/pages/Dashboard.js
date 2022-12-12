@@ -11,27 +11,37 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import Badge from '@mui/material/Badge';
 import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { mainListItems } from '../components/DashboardListItems/menuList';
+import InnerDashboard from '../components/Dashboard/dashboard'
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import ShoppingCart from '@mui/icons-material/ShoppingCart';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import Inventory2 from '@mui/icons-material/Inventory2';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import EditUser from '../components/Dashboard/editUser'
+import ViewOrders from '../components/Dashboard/viewOrders'
+import ViewPackages from '../components/Dashboard/viewPackages'
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+
+// function Copyright(props) {
+//   return (
+//     <Typography variant="body2" color="text.secondary" align="center" {...props}>
+//       {'Copyright © '}
+//       <Link color="inherit" href="https://mui.com/">
+//         Your Website
+//       </Link>{' '}
+//       {new Date().getFullYear()}
+//       {'.'}
+//     </Typography>
+//   );
+// }
 
 const drawerWidth = 240;
 
@@ -80,6 +90,39 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 const mdTheme = createTheme();
+
+
+const handlePageChange = () => {
+  const [pageIndex, setPageIndex] = useState('Dashboard');
+
+  if (pageIndex === 'Dashboard') {
+    return <InnerDashboard />
+  } 
+  if (pageIndex === 'View My Packages') {
+    return <ViewPackages />
+  }
+  if (pageIndex === 'View My Orders') {
+    return <ViewOrders />
+  }
+  if (pageIndex === 'Edit My Account') {
+    return <EditUser />
+  }
+
+const renderPage = () => {
+  if (pageIndex === 'Dashboard') {
+    return <InnerDashboard />
+  } 
+  if (pageIndex === 'View My Packages') {
+    return <ViewPackages />
+  }
+  if (pageIndex === 'View My Orders') {
+    return <ViewOrders />
+  }
+  if (pageIndex === 'Edit My Account') {
+    return <EditUser />
+  }
+}
+}
 
 function DashboardContent() {
   const [open, setOpen] = React.useState(true);
@@ -140,7 +183,32 @@ function DashboardContent() {
           </Toolbar>
           <Divider />
           <List component="nav">
-              {mainListItems}
+            <React.Fragment>
+              <ListItemButton onClick={() => handlePageChange('Dashboard')}>
+                <ListItemIcon>
+                  <DashboardIcon />
+                </ListItemIcon>
+                <ListItemText primary="Dashboard" />
+              </ListItemButton>
+              <ListItemButton onClick={() => handlePageChange('View My Packages')}>
+                <ListItemIcon>
+                  <Inventory2 />
+                </ListItemIcon>
+                <ListItemText primary="View My Packages" />
+              </ListItemButton>
+              <ListItemButton onClick={() => handlePageChange('View My Orders')}>
+                <ListItemIcon>
+                  <ShoppingCart />
+                </ListItemIcon>
+                <ListItemText primary="View My Orders" />
+              </ListItemButton>
+              <ListItemButton onClick={() => handlePageChange('Edit My Account')}>
+                <ListItemIcon>
+                  <AccountBoxIcon />
+                </ListItemIcon>
+                <ListItemText primary="Edit My Account" />
+              </ListItemButton>
+            </React.Fragment>
           </List>
         </Drawer>
         <Box
@@ -156,37 +224,11 @@ function DashboardContent() {
           }}
         >
           <Toolbar />
-          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            <Grid container spacing={3}>
-              <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                </Paper>
-              </Grid>
-              <Grid item xs={12} md={4} lg={3}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                </Paper>
-              </Grid>
-              <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                </Paper>
-              </Grid>
-            </Grid>
-            <Copyright sx={{ pt: 4 }} />
+
+          <Container>
+            {renderPage()}
           </Container>
+
         </Box>
       </Box>
     </ThemeProvider>
