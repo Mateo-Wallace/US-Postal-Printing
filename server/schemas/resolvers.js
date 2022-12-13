@@ -12,16 +12,11 @@ const resolvers = {
         .select("-__v -password");
     },
     /// GETS ONE USER
-    user: async (parent, { userId }, context) => {
-      if (context.user) {
-        const userData = await await User.findOne({ _id: userId })
-          .populate("orders")
-          .populate("packages")
-          .select("-__v -password");
-
-        return userData;
-      }
-      throw new AuthenticationError("Not logged in");
+    user: async (parent, { userId }) => {
+      return User.findOne({ _id: userId })
+        .populate("orders")
+        .populate("packages")
+        .select("-__v -password");
     },
     // GETS CURRENT USER
     me: async (parent, args, context) => {
