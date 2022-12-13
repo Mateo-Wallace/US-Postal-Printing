@@ -27,6 +27,8 @@ import ViewOrders from '../components/Dashboard/viewOrders'
 import ViewPackages from '../components/Dashboard/viewPackages'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { CURRENT_USER } from '../utils/queries';
+import { useQuery } from '@apollo/client';
 
 
 
@@ -94,6 +96,7 @@ const mdTheme = createTheme();
 
 
 function DashboardContent() {
+
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);

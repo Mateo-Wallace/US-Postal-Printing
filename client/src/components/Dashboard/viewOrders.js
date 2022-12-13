@@ -15,6 +15,8 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import FolderIcon from '@mui/icons-material/Folder';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { CURRENT_USER } from "../../utils/queries";
+import { useQuery } from '@apollo/client';
 
 function generate(element) {
     return [0, 1, 2].map((value) =>
@@ -32,38 +34,50 @@ function ViewOrders() {
     const [dense, setDense] = React.useState(false);
     const [secondary, setSecondary] = React.useState(false);
 
+    const { loading, data } = useQuery(CURRENT_USER)
+
+    const userData = data?.me || {};
+
+    console.log(userData)
+
+    if (loading) {
+        return (
+            <h2>LOADING...</h2>
+        )
+    }
+
     return (
         <Box>
-            <Grid container spacing={2}>
-                <Grid item xs={12} md={6}>
-                    <Typography sx={{ mt: 4, mb: 2 }} variant="h3" component="div">
-                        My Orders
-                    </Typography>
-                    <Demo>
-                        <List dense={dense}>
-                            {generate(
-                                <ListItem
-                                    secondaryAction={
-                                        <IconButton edge="end" aria-label="delete">
-                                            <DeleteIcon />
-                                        </IconButton>
-                                    }
-                                >
-                                    <ListItemAvatar>
-                                        <Avatar>
-                                            <FolderIcon />
-                                        </Avatar>
-                                    </ListItemAvatar>
-                                    <ListItemText
-                                        primary="Single-line item"
-                                        secondary={secondary ? 'Secondary text' : null}
-                                    />
-                                </ListItem>,
-                            )}
-                        </List>
-                    </Demo>
+                <Grid container spacing={2}>
+                    <Grid item xs={12} md={6}>
+                        <Typography sx={{ mt: 4, mb: 2 }} variant="h3" component="div">
+                            My Orders
+                        </Typography>
+                        <Demo>
+                            <List dense={dense}>
+                            {userData.orders.map((order) =>
+                                    <ListItem
+                                        secondaryAction={
+                                            <IconButton edge="end" aria-label="delete">
+                                                <DeleteIcon />
+                                            </IconButton>
+                                        }
+                                    >
+                                        <ListItemAvatar>
+                                            <Avatar>
+                                                <FolderIcon />
+                                            </Avatar>
+                                        </ListItemAvatar>
+                                        <ListItemText
+                                            primary={order._id}
+                                            secondary={secondary ? 'Secondary text' : null}
+                                        />
+                                    </ListItem>,
+                                )}
+                            </List>
+                        </Demo>
+                    </Grid>
                 </Grid>
-            </Grid>
         </Box>
     );
 }
