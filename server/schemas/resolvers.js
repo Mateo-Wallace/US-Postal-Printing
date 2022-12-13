@@ -28,6 +28,7 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+
     // GETS ALL PACKAGES, IF PASS USERNAME THEN ALL PACKAGES FOR SPECIFIC USER
     packages: async (parent, { username }) => {
       const params = username ? { username } : {};
@@ -37,6 +38,7 @@ const resolvers = {
     package: async (parent, { packageId }) => {
       return Package.findOne({ _id: packageId });
     },
+
     // GETS ALL ORDERS, IF PASS USERNAME THEN ALL ORDERS FOR SPECIFIC USER
     orders: async (parent, { username }) => {
       const params = username ? { username } : {};
@@ -49,13 +51,6 @@ const resolvers = {
   },
 
   Mutation: {
-    /// ADD USER ///
-    addUser: async (parent, args) => {
-      const user = await User.create(args);
-      const token = signToken(user);
-
-      return { token, user };
-    },
     /// LOGIN ///
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
@@ -72,6 +67,23 @@ const resolvers = {
 
       const token = signToken(user);
       return { token, user };
+    },
+    /// ADD USER ///
+    addUser: async (parent, args) => {
+      const user = await User.create(args);
+      const token = signToken(user);
+
+      return { token, user };
+    },
+    deleteUser: async (parent, args, context) => {
+      if (context.user) {
+        const user = await User.findOneAndDelete(
+          { _id: context.user._id }
+        );
+
+        return user;
+      }
+      throw new AuthenticationError('You need to be logged in!');
     },
   },
 };
