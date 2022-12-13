@@ -13,7 +13,7 @@ const typeDefs = gql`
     _id: ID!
     trackingNum: String!
     createdAt: String
-    username: String!
+    userId: ID!
   }
 
   type Order {
@@ -21,7 +21,7 @@ const typeDefs = gql`
     type: String!
     message: String
     createdAt: String
-    username: String!
+    userId: ID!
   }
 
   type Auth {
@@ -34,10 +34,10 @@ const typeDefs = gql`
     user(userId: ID!): User
     me: User
 
-    packages(username: String): [Package]
+    packages(userId: ID!): [Package]
     package(packageId: ID!): Package
 
-    orders(username: String): [Order]
+    orders(userId: ID!): [Order]
     order(orderId: ID!): Order
   }
 

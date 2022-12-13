@@ -30,8 +30,8 @@ const resolvers = {
     },
 
     // GETS ALL PACKAGES, IF PASS USERNAME THEN ALL PACKAGES FOR SPECIFIC USER
-    packages: async (parent, { username }) => {
-      const params = username ? { username } : {};
+    packages: async (parent, { userId }) => {
+      const params = userId ? { userId } : {};
       return Package.find(params).sort({ createdAt: -1 });
     },
     // GETS SINGLE PACKAGE BY ID
@@ -40,8 +40,8 @@ const resolvers = {
     },
 
     // GETS ALL ORDERS, IF PASS USERNAME THEN ALL ORDERS FOR SPECIFIC USER
-    orders: async (parent, { username }) => {
-      const params = username ? { username } : {};
+    orders: async (parent, { userId }) => {
+      const params = userId ? { userId } : {};
       return Order.find(params).sort({ createdAt: -1 });
     },
     // GETS SINGLE ORDER BY ID
@@ -99,7 +99,7 @@ const resolvers = {
       if (context.user) {
         const package = await Package.create({
           trackingNum,
-          username: context.user.username,
+          userId: context.user._id,
         });
         await User.findOneAndUpdate(
           { _id: context.user._id },
