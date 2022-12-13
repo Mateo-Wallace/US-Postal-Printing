@@ -68,7 +68,7 @@ function App() {
       <Nav></Nav>
       <Router>
         <Routes>
-          <Route path='/' element={<Landing />} />
+          <Route path='/' element={<Dashboard />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />
           <Route
