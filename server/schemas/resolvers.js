@@ -93,6 +93,22 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+
+    // CREATE NEW PACKAGE
+    addPackage: async (parent, { trackingNum }, context) => {
+      if (context.user) {
+        const package = await Package.create({
+          trackingNum,
+          username: context.user.username,
+        });
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { packages: package._id } }
+        );
+        return package;
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
   },
 };
 

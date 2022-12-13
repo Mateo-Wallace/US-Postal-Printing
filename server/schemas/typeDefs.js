@@ -46,6 +46,12 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     editUser(username: String, email: String, password: String): User
     deleteUser: User
+
+    # addPackage, editPackage, deletePackage
+    addPackage(trackingNum: String!): Package
+
+
+    # addOrder, editOrder, deleteOrder
   }
 `;
 

@@ -21,7 +21,6 @@ const orderSchema = new Schema(
     username: {
       type: String,
       required: true,
-      unique: true,
     },
   },
   {
