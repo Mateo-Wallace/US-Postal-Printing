@@ -64,9 +64,9 @@ const theme = createTheme({
 function App() {
   return (
     <ApolloProvider client={client}>
+      <Router>
       <ThemeProvider theme={theme}>
       <Nav></Nav>
-      <Router>
         <Routes>
           <Route path='/' element={<Landing />} />
           <Route path='/signup' element={<Signup />} />
@@ -76,8 +76,8 @@ function App() {
             element={Auth.loggedIn() ? <Dashboard /> : <ProtectRoute />}
           />
         </Routes>
+        </ThemeProvider>
       </Router>
-      </ThemeProvider>
     </ApolloProvider>
   );
 }

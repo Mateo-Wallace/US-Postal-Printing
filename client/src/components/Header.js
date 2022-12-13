@@ -13,8 +13,9 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import Hamburger from 'hamburger-react';
+import { Link } from 'react-router-dom';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['Products', 'Pricing', 'Login/Signup'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Nav() {
@@ -23,8 +24,11 @@ function Nav() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-  const closeandSet = () => {
-    setAnchorElUser(null);
+  // const closeandSet = () => {
+  //   setAnchorElUser(null);
+  //   set;
+  // };
+
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -63,13 +67,14 @@ function Nav() {
               letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
+              float: 'left',
             }}
           >
-            LOGO
+            US Postal & Printing
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
+            {/* <IconButton
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
@@ -78,8 +83,8 @@ function Nav() {
               color="inherit"
             >
               <MenuIcon />
-            </IconButton>
-            <Menu
+            </IconButton> */}
+            {/* <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
@@ -102,7 +107,14 @@ function Nav() {
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
-            </Menu>
+              <MenuItem onClick={handleCloseNavMenu}>
+              
+            </MenuItem>
+            <MenuItem onClick={handleCloseNavMenu}>
+             *
+            </MenuItem>
+            </Menu> */}
+             
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
@@ -123,8 +135,8 @@ function Nav() {
           >
             LOGO
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
+          <Box sx={{ alignItems: 'center', flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            {/* {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
@@ -132,14 +144,27 @@ function Nav() {
               >
                 {page}
               </Button>
-            ))}
+            ))} */}
+            <Link to='/login' style={{ textDecoration: 'none' }}>
+            <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Login/Signup</Button>
+            </Link>
+            <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Products & <br></br> Services </Button>
+            <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Make an<br></br> Order </Button>
+            <Link to='/dashboard/:userId' style={{ textDecoration: 'none' }}>
+            <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Dashboard</Button>
+            </Link>
+            <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Contact Us</Button>
+            {/* <Link to='/signup' style={{ textDecoration: 'none' }}>
+            <Button variant="contained" sx={{ my: 2, color: 'white', display: 'block' }}>Signup</Button>
+            </Link> */}
+
+            
+            
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
+          {/* <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} >
-              <Hamburger toggled={isOpen} toggle={setOpen} rounded/>
-              </IconButton>
+             
             </Tooltip>
             <Menu
               sx={{ mt: '45px' }}
@@ -163,7 +188,7 @@ function Nav() {
                 </MenuItem>
               ))}
             </Menu>
-          </Box>
+          </Box> */}
         </Toolbar>
       </Container>
     </AppBar>
