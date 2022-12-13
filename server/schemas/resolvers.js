@@ -75,13 +75,23 @@ const resolvers = {
 
       return { token, user };
     },
+    // EDIT USER BASED ON INPUT AND TOKEN
+    editUser: async (parent, args, context) => {
+      if (context.user) {
+        return User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $set: args },
+          { new: true }
+        );
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+    // DELETE USER BASED ON TOKEN
     deleteUser: async (parent, args, context) => {
       if (context.user) {
-        const user = await User.findOneAndDelete(
+        return User.findOneAndDelete(
           { _id: context.user._id }
         );
-
-        return user;
       }
       throw new AuthenticationError('You need to be logged in!');
     },
