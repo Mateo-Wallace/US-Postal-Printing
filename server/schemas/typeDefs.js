@@ -6,12 +6,21 @@ const typeDefs = gql`
     username: String!
     email: String!
     password: String
-    packages: [Thought]!
+    packages: [Package]!
     orders: [Order]!
   }
 
   type Package {
     _id: ID!
+    trackingNum: String!
+    createdAt: String
+  }
+
+  type Order {
+    _id: ID!
+    type: String!
+    message: String
+    createdAt: String
   }
 
   type Auth {
