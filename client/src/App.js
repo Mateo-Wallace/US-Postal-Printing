@@ -65,10 +65,11 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-      <ThemeProvider theme={theme}>
-      <Nav></Nav>
+      <ThemeProvider theme={theme} >
+      <Nav />
         <Routes>
           <Route path='/' element={<Landing />} />
+          <Route path='/dashboard' element={<Dashboard />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />
           <Route
