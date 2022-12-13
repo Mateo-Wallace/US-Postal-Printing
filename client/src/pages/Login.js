@@ -31,11 +31,7 @@ function Copyright(props) {
       align="center"
       {...props}
     >
-      {"Copyright © "}
-      <Link2 color="inherit" href="https://mui.com/">
-        Your Website
-      </Link2>{" "}
-      {new Date().getFullYear()}
+      {"Copyright © US Postal & Printing"} {new Date().getFullYear()}
       {"."}
     </Typography>
   );
@@ -133,10 +129,6 @@ const Login = (props) => {
                   value={formState.password}
                   onChange={handleChange}
                 />
-                <FormControlLabel
-                  control={<Checkbox value="remember" color="primary" />}
-                  label="Remember me"
-                />
                 <Button
                   type="submit"
                   fullWidth
@@ -145,14 +137,9 @@ const Login = (props) => {
                 >
                   Sign In
                 </Button>
-                <Grid container>
-                  <Grid item xs>
-                    <Link2 href="#" variant="body2">
-                      Forgot password?
-                    </Link2>
-                  </Grid>
+                <Grid container justifyContent="flex-end">
                   <Grid item>
-                    <Link2 href="#" variant="body2">
+                    <Link2 href="/signup" variant="body2">
                       {"Don't have an account? Sign Up"}
                     </Link2>
                   </Grid>
@@ -169,25 +156,3 @@ const Login = (props) => {
 };
 
 export default Login;
-{
-  /* <div>
-          <h2>Login</h2>
-          <form onSubmit={handleFormSubmit}>
-            <input
-              placeholder='Your email'
-              name='email'
-              type='email'
-              value={formState.email}
-              onChange={handleChange}
-            />
-            <input
-              placeholde='Your password'
-              name='password'
-              type='password'
-              value={formState.password}
-              onChange={handleChange}
-            />
-            <button type='submit'>Login</button>
-          </form>
-        </div> */
-}
