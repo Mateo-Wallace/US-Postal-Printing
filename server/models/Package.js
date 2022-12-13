@@ -14,9 +14,9 @@ const packageSchema = new Schema(
         return formatDate(date);
       },
     },
-    username: {
-      type: String,
-      required: true,
+    userId: {
+      type: Schema.Types.ObjectId,
+      ref: "Package",
     },
   },
   {

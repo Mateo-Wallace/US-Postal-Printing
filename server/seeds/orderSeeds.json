@@ -1,17 +1,14 @@
 [
   {
     "type": "blueprint",
-    "message": "Print 5 in black and white",
-    "username": "Test Tester"
+    "message": "Print 5 in black and white"
   },
   {
     "type": "business cards",
-    "message": "Print 500 on 3 x 1.5",
-    "username": "Brian Kernighan"
+    "message": "Print 500 on 3 x 1.5"
   },
   {
     "type": "flyers",
-    "message": "Print 100 in color",
-    "username": "Lernantino"
+    "message": "Print 100 in color"
   }
 ]
