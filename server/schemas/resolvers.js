@@ -109,6 +109,29 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+    // EDIT PACKAGE
+    editPackage: async (parent, args, context) => {
+      if (context.user) {
+        return Package.findOneAndUpdate(
+          { _id: args.packageId },
+          { $set: args },
+          { new: true }
+        );
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
+    // DELETE PACKAGE
+    deletePackage: async (parent, args, context) => {
+      if (context.user) {
+        const package = await Package.findOneAndDelete({ _id: args.packageId });
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { packages: package._id } }
+        );
+        return package;
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
   },
 };
 

@@ -34,10 +34,10 @@ const typeDefs = gql`
     user(userId: ID!): User
     me: User
 
-    packages(userId: ID!): [Package]
+    packages(userId: ID): [Package]
     package(packageId: ID!): Package
 
-    orders(userId: ID!): [Order]
+    orders(userId: ID): [Order]
     order(orderId: ID!): Order
   }
 
@@ -49,6 +49,8 @@ const typeDefs = gql`
 
     # addPackage, editPackage, deletePackage
     addPackage(trackingNum: String!): Package
+    editPackage(packageId: ID!, trackingNum: String): Package
+    deletePackage(packageId: ID!): Package
 
 
     # addOrder, editOrder, deleteOrder
