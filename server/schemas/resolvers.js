@@ -95,10 +95,10 @@ const resolvers = {
     },
 
     // CREATE NEW PACKAGE
-    addPackage: async (parent, { trackingNum }, context) => {
+    addPackage: async (parent, args, context) => {
       if (context.user) {
         const package = await Package.create({
-          trackingNum,
+          ...args,
           userId: context.user._id,
         });
         await User.findOneAndUpdate(
@@ -129,6 +129,45 @@ const resolvers = {
           { $pull: { packages: package._id } }
         );
         return package;
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
+
+    // CREATE NEW PACKAGE
+    addOrder: async (parent, args, context) => {
+      if (context.user) {
+        const order = await Order.create({
+          ...args,
+          userId: context.user._id,
+        });
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { orders: order._id } }
+        );
+        return order;
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
+    // EDIT PACKAGE
+    editOrder: async (parent, args, context) => {
+      if (context.user) {
+        return Order.findOneAndUpdate(
+          { _id: args.orderId },
+          { $set: args },
+          { new: true }
+        );
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
+    // DELETE PACKAGE
+    deleteOrder: async (parent, args, context) => {
+      if (context.user) {
+        const order = await Order.findOneAndDelete({ _id: args.orderId });
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { orders: order._id } }
+        );
+        return order;
       }
       throw new AuthenticationError("You need to be logged in!");
     },
