@@ -27,6 +27,8 @@ import ViewOrders from '../components/Dashboard/viewOrders'
 import ViewPackages from '../components/Dashboard/viewPackages'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { CURRENT_USER } from '../utils/queries';
+import { useQuery } from '@apollo/client';
 
 
 
@@ -94,6 +96,7 @@ const mdTheme = createTheme();
 
 
 function DashboardContent() {
+
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
@@ -127,7 +130,7 @@ function DashboardContent() {
     <ThemeProvider theme={mdTheme}>
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
-        <AppBar position="absolute" open={open}>
+        {/* <AppBar position="absolute" open={open}>
           <Toolbar
             sx={{
               pr: '24px', // keep right padding when drawer closed
@@ -160,7 +163,7 @@ function DashboardContent() {
               </Badge>
             </IconButton>
           </Toolbar>
-        </AppBar>
+        </AppBar> */}
         <Drawer variant="permanent" open={open}>
           <Toolbar
             sx={{
