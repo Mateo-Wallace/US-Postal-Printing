@@ -16,9 +16,18 @@ db.once("open", async () => {
 
     // Creates packages and links to user
     for (let i = 0; i < packageSeeds.length; i++) {
+      let j = i;
+      if (i > 5) {
+        j = 0;
+      } else if (i > 2) {
+        j = 1;
+      } else {
+        j = 2;
+      }
+
       const { _id, userId } = await Package.create({
         ...packageSeeds[i],
-        userId: userData[i]._id,
+        userId: userData[j]._id,
       });
       const user = await User.findOneAndUpdate(
         { _id: userId },
@@ -32,9 +41,18 @@ db.once("open", async () => {
 
     // Creates orders and links to user
     for (let i = 0; i < orderSeeds.length; i++) {
+      let j = i;
+      if (i > 5) {
+        j = 0;
+      } else if (i > 2) {
+        j = 1;
+      } else {
+        j = 2;
+      }
+
       const { _id, userId } = await Order.create({
         ...orderSeeds[i],
-        userId: userData[i]._id,
+        userId: userData[j]._id,
       });
       const user = await User.findOneAndUpdate(
         { _id: userId },
