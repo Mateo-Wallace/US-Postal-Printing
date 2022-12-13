@@ -38,8 +38,6 @@ function ViewOrders() {
 
     const userData = data?.me || {};
 
-    console.log(userData)
-
     if (loading) {
         return (
             <h2>LOADING...</h2>
@@ -56,7 +54,7 @@ function ViewOrders() {
                         <Demo>
                             <List dense={dense}>
                             {userData.orders.map((order) =>
-                                    <ListItem
+                                    <ListItem key={order._id}
                                         secondaryAction={
                                             <IconButton edge="end" aria-label="delete">
                                                 <DeleteIcon />
