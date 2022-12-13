@@ -18,6 +18,10 @@ const orderSchema = new Schema(
         return formatDate(date);
       },
     },
+    userId: {
+      type: Schema.Types.ObjectId,
+      ref: "Package",
+    },
   },
   {
     toJSON: {

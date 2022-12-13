@@ -1,14 +1,14 @@
 [
   {
     "trackingNum": "1234",
-    "username": "Test Tester"
+    "carrier": "USPS"
   },
   {
     "trackingNum": "5678",
-    "username": "Brian Kernighan"
+    "carrier": "Fedex"
   },
   {
     "trackingNum": "1abcd",
-    "username": "Lernantino"
+    "carrier": "UPS"
   }
 ]
