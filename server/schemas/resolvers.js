@@ -84,16 +84,14 @@ const resolvers = {
           { new: true }
         );
       }
-      throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError("You need to be logged in!");
     },
     // DELETE USER BASED ON TOKEN
     deleteUser: async (parent, args, context) => {
       if (context.user) {
-        return User.findOneAndDelete(
-          { _id: context.user._id }
-        );
+        return User.findOneAndDelete({ _id: context.user._id });
       }
-      throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError("You need to be logged in!");
     },
   },
 };
