@@ -42,6 +42,15 @@ const resolvers = {
     package: async (parent, { packageId }) => {
       return Package.findOne({ _id: packageId });
     },
+    // GETS ALL ORDERS, IF PASS USERNAME THEN ALL ORDERS FOR SPECIFIC USER
+    orders: async (parent, { username }) => {
+      const params = username ? { username } : {};
+      return Order.find(params).sort({ createdAt: -1 });
+    },
+    // GETS SINGLE ORDER BY ID
+    order: async (parent, { orderId }) => {
+      return Order.findOne({ _id: orderId });
+    },
   },
 
   Mutation: {
