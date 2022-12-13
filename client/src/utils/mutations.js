@@ -27,10 +27,11 @@ export const LOGIN_USER = gql`
 `;
 
 export const EDIT_USER = gql`
-mutation editUser($username: String!, $email: String!) {
-  editUser (username: $username, email: $email){
+mutation editUser($username: String!, $email: String!, $password: String) {
+  editUser (username: $username, email: $email, password: $password){
     email
     username
+    password
   }
 }
 `;
