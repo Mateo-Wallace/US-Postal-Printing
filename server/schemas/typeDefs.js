@@ -5,6 +5,13 @@ const typeDefs = gql`
     _id: ID!
     username: String!
     email: String!
+    password: String
+    packages: [Thought]!
+    orders: [Order]!
+  }
+
+  type Package {
+    _id: ID!
   }
 
   type Auth {
