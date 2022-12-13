@@ -14,6 +14,11 @@ const packageSchema = new Schema(
         return formatDate(date);
       },
     },
+    username: {
+      type: String,
+      required: true,
+      unique: true,
+    },
   },
   {
     toJSON: {

@@ -14,6 +14,7 @@ const typeDefs = gql`
     _id: ID!
     trackingNum: String!
     createdAt: String
+    username: String!
   }
 
   type Order {
@@ -21,6 +22,7 @@ const typeDefs = gql`
     type: String!
     message: String
     createdAt: String
+    username: String!
   }
 
   type Auth {
@@ -29,7 +31,12 @@ const typeDefs = gql`
   }
 
   type Query {
+    users: [User]
     user(userId: ID!): User
+    packages(username: String): [Package]
+    package(packageId: ID!): Package
+    orders(username: String): [Order]
+    order(orderId: ID!): Order
   }
 
   type Mutation {
