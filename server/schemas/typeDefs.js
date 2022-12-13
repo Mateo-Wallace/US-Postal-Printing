@@ -12,6 +12,7 @@ const typeDefs = gql`
   type Package {
     _id: ID!
     trackingNum: String!
+    carrier: String
     createdAt: String
     userId: ID!
   }

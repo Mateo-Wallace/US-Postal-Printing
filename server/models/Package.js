@@ -7,6 +7,9 @@ const packageSchema = new Schema(
       type: String,
       required: true,
     },
+    carrier: {
+      type: String,
+    },
     createdAt: {
       type: Date,
       default: Date.now,
