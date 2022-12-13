@@ -16,10 +16,10 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Home from './pages/Home';
+import ProductsServices from './pages/Products&Services';
 
 /// IMPORT COMPONENTS ///
 import ProtectRoute from './components/ProtectRoute';
-
 import './App.css';
 import Nav from './components/Header';
 
@@ -73,7 +73,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/products&services' element={<Login />} />
+          <Route path='/products&services' element={<ProductsServices />} />
           <Route
             path='dashboard/:userId'
             element={Auth.loggedIn() ? <Dashboard /> : <ProtectRoute />}

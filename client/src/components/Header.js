@@ -148,7 +148,9 @@ function Nav() {
             <Link to='/login' style={{ textDecoration: 'none' }}>
             <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Login/Signup</Button>
             </Link>
+            <Link to='/products&services' style={{ textDecoration: 'none' }}>
             <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Products & <br></br> Services </Button>
+            </Link>
             <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Make an<br></br> Order </Button>
             <Link to='/dashboard/:userId' style={{ textDecoration: 'none' }}>
             <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Dashboard</Button>
