@@ -1,20 +1,25 @@
 import { gql } from "@apollo/client";
 
-export const QUERY_USER = gql`
-query user($userId: ID!) {
-  user(userId: $userId) {
+export const CURRENT_USER = gql`
+query User {
+  me {
     _id
-    username
     email
-    courseCount
-    courses {
+    orders {
       _id
-      courseName
-      startDate
-      endDate
-      description
-      instructor
+      createdAt
+      message
+      type
+      userId
     }
+    packages {
+      _id
+      carrier
+      createdAt
+      trackingNum
+      userId
+    }
+    username
   }
 }
 `;
