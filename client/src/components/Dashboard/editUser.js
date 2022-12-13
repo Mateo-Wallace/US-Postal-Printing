@@ -6,7 +6,10 @@ import Typography from '@mui/material/Typography';
 import EditIcon from '@mui/icons-material/Edit';
 import TextField from '@mui/material/TextField';
 import { CURRENT_USER } from "../../utils/queries";
-import { useQuery } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
+import { EDIT_USER } from '../../utils/mutations';
+import { Input } from '@mui/material';
+
 
 function EditUser() {
     const [expanded, setExpanded] = React.useState(false);
@@ -19,10 +22,40 @@ function EditUser() {
 
     const userData = data?.me || {};
 
+
+    const [editMe, {error}] = useMutation(EDIT_USER);
+
+    const [userState, setUserState] = React.useState({
+        _id: userData._id,
+        username: userData.username,
+        email: userData.email,
+        password: userData.password,
+        __typename: userData.__typename
+    })
+
+    console.log(userState)
+
+
     if (loading) {
         return (
             <h2>LOADING...</h2>
         )
+    }
+
+    const handleEditSubmit = async (event) => {
+        event.preventDefault();
+
+        
+
+        try {
+            const { data } = await editMe({
+                variables: {...userState}
+            })
+        }
+        catch(err) {
+            console.error(err)
+        }
+
     }
 
     return (
@@ -39,14 +72,19 @@ function EditUser() {
                             <Typography sx={{ width: '33%', flexShrink: 0, color: 'text.secondary' }}>
                                 Email
                             </Typography>
-                            <Typography>{userData.email}</Typography>
+                            <Typography>{userState.email}</Typography>
                         </AccordionSummary>
                         <AccordionDetails>
+                        <form onSubmit={handleEditSubmit}>
                             <TextField
                                 id="outlined-email-input"
                                 label="New Email"
                                 type="email"
-                                autoComplete="current-email" />
+                                autoComplete="current-email"
+                                value={userState.email}
+                                    onChange={event => {setUserState({...userState, email: event.target.value })}}
+                                 />
+                                 </form>
                         </AccordionDetails>
                     </Accordion>
                         <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
@@ -57,15 +95,20 @@ function EditUser() {
                             >
                                 <Typography sx={{ width: '33%', flexShrink: 0, color: 'text.secondary' }}>Username</Typography>
                                 <Typography>
-                                    {userData.username}
+                                    {userState.username}
                                 </Typography>
                             </AccordionSummary>
                             <AccordionDetails>
+                                <form onSubmit={handleEditSubmit}>
                                 <TextField
                                     id="outlined-username-input"
                                     label="New Username"
                                     type="text"
-                                    autoComplete="current-username" />
+                                    autoComplete="current-username"
+                                    value={userState.username}
+                                    onChange={event => {setUserState({...userState, username: event.target.value })}}
+                                    />
+                                    </form>
                             </AccordionDetails>
                         </Accordion>
                         <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
@@ -78,15 +121,20 @@ function EditUser() {
                                     Password
                                 </Typography>
                                 <Typography>
-                                    #########
+                                    {userState.password || '###'}
                                 </Typography>
                             </AccordionSummary>
                             <AccordionDetails>
+                            <form onSubmit={handleEditSubmit}>
                                 <TextField
                                     id="outlined-password-input"
                                     label="New Password"
                                     type="password"
-                                    autoComplete="current-password" />
+                                    autoComplete="current-password"
+                                    defaultValue={userState.password}
+                                    onChange={event => {setUserState({...userState, password: event.target.value })}}
+                                    />
+                                    </form>
                             </AccordionDetails>
                         </Accordion>
                         <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>

@@ -73,12 +73,14 @@ function ViewPackages() {
                         id="panel1bh-header"
                     >
                         <Typography sx={{ width: '33%', flexShrink: 0, color: 'text.secondary' }}>
-                            Package
+                            Package Tracking ID:
                         </Typography>
-                        <Typography>{userPackage.trackingNum}</Typography>
+                        <Typography sx={{ width: '33%', flexShrink: 0 }}>{userPackage.trackingNum}</Typography>
+                        <Typography sx={{ width: '33%', flexShrink: 0, color: 'text.secondary' }}>Track this package
                         <IconButton edge="end" aria-label="delete" onClick={handleTrack}>
                             <MapIcon />
                         </IconButton>
+                        </Typography>
                     </AccordionSummary>
                     <AccordionDetails>
                         <TextField
