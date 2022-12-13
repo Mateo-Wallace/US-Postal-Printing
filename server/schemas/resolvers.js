@@ -11,17 +11,19 @@ const resolvers = {
         .populate("packages")
         .select("-__v -password");
     },
-    /// GETS ONE USER ///
+    /// GETS ONE USER
     user: async (parent, { userId }, context) => {
       if (context.user) {
-        const userData = await await User.findOne({ _id: userId }).select(
-          "-__v -password"
-        );
+        const userData = await await User.findOne({ _id: userId })
+          .populate("orders")
+          .populate("packages")
+          .select("-__v -password");
 
         return userData;
       }
       throw new AuthenticationError("Not logged in");
     },
+    // GETS CURRENT USER
     me: async (parent, args, context) => {
       if (context.user) {
         return User.findOne({ _id: context.user._id })
@@ -30,6 +32,15 @@ const resolvers = {
           .select("-__v -password");
       }
       throw new AuthenticationError("You need to be logged in!");
+    },
+    // GETS ALL PACKAGES, IF PASS USERNAME THEN ALL PACKAGES FOR SPECIFIC USER
+    packages: async (parent, { username }) => {
+      const params = username ? { username } : {};
+      return Package.find(params).sort({ createdAt: -1 });
+    },
+    // GETS SINGLE PACKAGE BY ID
+    package: async (parent, { packageId }) => {
+      return Package.findOne({ _id: packageId });
     },
   },
 
