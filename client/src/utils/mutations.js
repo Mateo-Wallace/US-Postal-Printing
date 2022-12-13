@@ -25,3 +25,12 @@ export const LOGIN_USER = gql`
     }
   }
 `;
+
+export const EDIT_USER = gql`
+mutation editUser($username: String!, $email: String!) {
+  editUser (username: $username, email: $email){
+    email
+    username
+  }
+}
+`;

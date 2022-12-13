@@ -6,7 +6,9 @@ import Typography from '@mui/material/Typography';
 import EditIcon from '@mui/icons-material/Edit';
 import TextField from '@mui/material/TextField';
 import { CURRENT_USER } from "../../utils/queries";
-import { useQuery } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
+import { EDIT_USER } from '../../utils/mutations';
+import { Input } from '@mui/material';
 
 function EditUser() {
     const [expanded, setExpanded] = React.useState(false);
@@ -19,10 +21,34 @@ function EditUser() {
 
     const userData = data?.me || {};
 
+    console.log(userData)
+
+    const [editMe, {error}] = useMutation(EDIT_USER);
+
+    const [username, setNewUsername] = React.useState('')
+    const [email, setNewEmail] = React.useState('')
+
+
     if (loading) {
         return (
             <h2>LOADING...</h2>
         )
+    }
+
+    const handleEditSubmit = async (event) => {
+        event.preventDefault();
+        setNewEmail(event.target.value)
+        setNewUsername(event.target.value)
+
+        try {
+            const { data } = await editMe({
+                variables: {username, email}
+            })
+        }
+        catch(err) {
+            console.error(err)
+        }
+
     }
 
     return (
@@ -46,7 +72,8 @@ function EditUser() {
                                 id="outlined-email-input"
                                 label="New Email"
                                 type="email"
-                                autoComplete="current-email" />
+                                autoComplete="current-email"
+                                onChange={setNewEmail} />
                         </AccordionDetails>
                     </Accordion>
                         <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
@@ -61,11 +88,15 @@ function EditUser() {
                                 </Typography>
                             </AccordionSummary>
                             <AccordionDetails>
+                                <form onSubmit={handleEditSubmit}>
                                 <TextField
+                                    value={username}
                                     id="outlined-username-input"
                                     label="New Username"
                                     type="text"
-                                    autoComplete="current-username" />
+                                    autoComplete="current-username"
+                                    onChange={e => setNewUsername(e.target.value)}/>
+                                    </form>
                             </AccordionDetails>
                         </Accordion>
                         <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
