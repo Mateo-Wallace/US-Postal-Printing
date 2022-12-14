@@ -5,7 +5,9 @@ import { useMutation } from "@apollo/client";
 import { ADD_PACKAGE } from "../utils/mutations";
 
 // material UI imports
-import Avatar from "@mui/material/Avatar";
+import InputLabel from "@mui/material/InputLabel";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
@@ -23,7 +25,10 @@ const theme = createTheme();
 // end material UI function
 
 const Tracking = () => {
-  const [formState, setFormState] = useState({ email: "", password: "" });
+  const [formState, setFormState] = useState({
+    trackingNum: "",
+    carrier: "",
+  });
   const [addPackage, { error, data }] = useMutation(ADD_PACKAGE);
 
   /// HANDLE CHANGE ///
@@ -88,41 +93,37 @@ const Tracking = () => {
                   margin="normal"
                   required
                   fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
+                  id="trackingNum"
+                  label="Tracking Number"
+                  name="trackingNum"
+                  autoComplete="trackingNum"
                   autoFocus
-                  value={formState.email}
+                  value={formState.trackingNum}
                   onChange={handleChange}
                 />
-                <TextField
-                  margin="normal"
+                <InputLabel id="carrier-label">Carrier</InputLabel>
+                <Select
                   required
                   fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  autoComplete="current-password"
-                  value={formState.password}
+                  name="carrier"
+                  labelId="carrier-label"
+                  id="carrier"
+                  value={formState.carrier}
                   onChange={handleChange}
-                />
+                >
+                  <MenuItem value={"usps"}>USPS</MenuItem>
+                  <MenuItem value={"fedex"}>Fedex</MenuItem>
+                  <MenuItem value={"ups"}>UPS</MenuItem>
+                  <MenuItem value={"dhl_express"}>DHL</MenuItem>
+                </Select>
                 <Button
                   type="submit"
                   fullWidth
                   variant="contained"
                   sx={{ mt: 3, mb: 2 }}
                 >
-                  Sign In
+                  Submit
                 </Button>
-                <Grid container justifyContent="flex-end">
-                  <Grid item>
-                    <Link2 href="/signup" variant="body2">
-                      {"Don't have an account? Sign Up"}
-                    </Link2>
-                  </Grid>
-                </Grid>
               </Box>
             </Box>
           </Container>
