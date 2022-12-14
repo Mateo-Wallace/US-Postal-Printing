@@ -17,7 +17,7 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Home from './pages/Home';
 import ProductsServices from './pages/Products&Services';
-import { MakeAnOrder } from './pages/MakeAnOrder';
+import  MakeAnOrder from './pages/MakeAnOrder';
 
 /// IMPORT COMPONENTS ///
 import ProtectRoute from './components/ProtectRoute';
