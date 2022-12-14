@@ -17,6 +17,7 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Home from './pages/Home';
 import ProductsServices from './pages/Products&Services';
+import { MakeAnOrder } from './pages/MakeAnOrder';
 
 /// IMPORT COMPONENTS ///
 import ProtectRoute from './components/ProtectRoute';
@@ -74,6 +75,7 @@ function App() {
           <Route path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />
           <Route path='/products&services' element={<ProductsServices />} />
+          <Route path='/make-an-order' element={<MakeAnOrder />} />
           <Route
             path='dashboard/:userId'
             element={Auth.loggedIn() ? <Dashboard /> : <ProtectRoute />}
