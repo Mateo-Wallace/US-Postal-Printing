@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
 
-const Home = () => {
+const ProductsServices = () => {
   return (
     <div style={{display: 'flex'}}>
       <Box
@@ -35,10 +35,7 @@ const Home = () => {
       }}
     > 
     <Typography sx={{margin: 1, textAlign: 'center', color: 'white'}} variant="h4" gutterBottom>
-    Products & Services
-  </Typography>
-  <Typography sx={{marginTop: '-10px', textAlign: 'center', color: 'white'}} variant="h6" gutterBottom>
-    (at a glance)
+    The Real Products & Services
   </Typography>
   </Box>
      <Box
@@ -82,4 +79,4 @@ const Home = () => {
   )
 };
 
-export default Home;
+export default ProductsServices;
