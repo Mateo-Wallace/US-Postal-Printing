@@ -24,6 +24,8 @@ const typeDefs = gql`
     _id: ID!
     type: String!
     message: String
+    totalPrice: Float
+    quantity: String
     createdAt: String
     userId: ID!
   }
@@ -66,8 +68,19 @@ const typeDefs = gql`
     deletePackage(packageId: ID!): Package
 
     # addOrder, editOrder, deleteOrder
-    addOrder(type: String!, message: String!): Order
-    editOrder(orderId: ID!, type: String, message: String): Order
+    addOrder(
+      type: String!
+      message: String!
+      totalPrice: Float
+      quantity: String
+    ): Order
+    editOrder(
+      orderId: ID!
+      type: String
+      message: String
+      totalPrice: Float
+      quantity: String
+    ): Order
     deleteOrder(orderId: ID!): Order
   }
 `;
