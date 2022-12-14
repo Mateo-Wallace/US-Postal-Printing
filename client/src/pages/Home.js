@@ -4,7 +4,9 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Card  from '@mui/material/Paper';
-
+import CardContent from '@mui/material/CardContent';
+import IconButton  from '@mui/material/IconButton';
+import NotaryImage from '../images/notaryServices.jpeg'
 
 
 const Home = () => {
@@ -43,6 +45,11 @@ const Home = () => {
   <Typography sx={{marginTop: '-10px', textAlign: 'center', color: 'white'}} variant="h6" gutterBottom>
     (at a glance)
   </Typography>
+  <Grid>
+  <IconButton aria-label="Notary-Services" size="large">
+  <img style={{height: '150px', width: '150px', borderRadius: '50px'}}src={NotaryImage}></img>
+</IconButton>
+</Grid>
   </Box>
      <Box 
       sx={{
