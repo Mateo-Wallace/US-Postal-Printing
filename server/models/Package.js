@@ -10,6 +10,9 @@ const packageSchema = new Schema(
     carrier: {
       type: String,
     },
+    notes: {
+      type: String,
+    },
     createdAt: {
       type: Date,
       default: Date.now,
