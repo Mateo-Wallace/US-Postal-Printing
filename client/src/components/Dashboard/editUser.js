@@ -218,10 +218,10 @@ function EditUser() {
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={modalStyle}>
-                    <Typography id="modal-modal-title" variant="h6" component="h2">
+                    <Typography id="modal-modal-title" variant="h6" component="h2" style={{textAlign: 'center'}}>
                         Are you sure?
                     </Typography>
-                    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                    <Typography id="modal-modal-description" sx={{ mt: 2, textAlign: 'center' }}>
                         By clicking 'Confirm Deletion', you are deleting your current account and all associated information, which cannot be restored. After confirming, you will be logged out and redirected to the homepage.
                     </Typography>
                     <Link to='/' style={{textDecoration: 'none', color: '#fff'}}>

@@ -23,6 +23,9 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import EditIcon from '@mui/icons-material/Edit';
 import TextField from '@mui/material/TextField';
+import { Button } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
+import Modal from '@mui/material/Modal';
 
 function generate(element) {
     return [0, 1, 2].map((value) =>
@@ -31,6 +34,19 @@ function generate(element) {
         }),
     );
 }
+
+const modalStyle = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 1000,
+    height: 500,
+    bgcolor: 'background.paper',
+    border: '2px solid #D30000',
+    boxShadow: 24,
+    p: 4,
+};
 
 const Demo = styled('div')(({ theme }) => ({
     backgroundColor: theme.palette.background.paper,
@@ -41,6 +57,10 @@ function ViewPackages() {
     const [secondary, setSecondary] = React.useState(false);
 
     const [expanded, setExpanded] = React.useState(false);
+
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
 
     const handleChange = (panel) => (event, isExpanded) => {
         setExpanded(isExpanded ? panel : false);
@@ -60,9 +80,13 @@ function ViewPackages() {
         alert('pressed')
     }
 
+    const handleAddPackage = () => {
+
+    }
+
     return (
         <div>
-            <Typography sx={{ mt: 4, mb: 2 }} variant="h3" component="div">
+            <Typography sx={{ mt: 4, mb: 5, textAlign: 'Center'}} variant="h3" component="div">
                 My Packages
             </Typography>
             {userData.packages.map((userPackage) =>
@@ -91,6 +115,49 @@ function ViewPackages() {
                     </AccordionDetails>
                 </Accordion>
             )}
+            <Button sx={{ width: '100%', mt: 10}} variant="contained" onClick={handleOpen}>
+            <AddIcon />
+                Add a package
+                </Button>
+                <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+            >
+                <Box sx={modalStyle}>
+                    <Typography id="modal-modal-title" variant="h6" component="h2" style={{textAlign: 'center'}}>
+                        Package Tracking Number:
+                    </Typography>
+                    <form>
+                        <TextField
+                            id="tracking-number-input"
+                            label="tracking-number"
+                            type="text"
+                            placeholder='Ex. 9415511206227509857316'
+                            defaultValue=''
+                            fullWidth
+                        />
+                    </form>
+                    <Typography id="modal-modal-title" variant="h6" component="h2" style={{textAlign: 'center', marginTop: '50px'}}>
+                        Add notes for this package:
+                    </Typography>
+                    <form>
+                        <TextField
+                            id="tracking-number-input"
+                            label="tracking-number"
+                            type="text"
+                            placeholder='Ex. 9415511206227509857316'
+                            defaultValue=''
+                            sx={{width: '100%'}}
+                        />
+                    </form>
+                    <Button sx={{ width: '100%', mt: 10}} variant="contained" onClick={handleOpen}>
+            <AddIcon />
+                Add Package
+                </Button>
+                    </Box>
+            </Modal>
         </div>
     );
 }
