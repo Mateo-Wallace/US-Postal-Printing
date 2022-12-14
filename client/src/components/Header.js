@@ -54,12 +54,14 @@ function Nav() {
     <AppBar position="fixed">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
+        <Link to='/' style={{ color: 'white', textDecoration: 'none' }}>
         <img height = '80px' width = '80px' src={logo} />
+        </Link>
+        <Link to='/' style={{ color: 'white', textDecoration: 'none' }}>
           <Typography
             variant="h6"
             noWrap
             component="a"
-            href="/"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -73,6 +75,7 @@ function Nav() {
           >
             US Postal & Printing
           </Typography>
+          </Link>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
