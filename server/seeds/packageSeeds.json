@@ -1,11 +1,13 @@
 [
   {
     "trackingNum": "1234",
-    "carrier": "USPS"
+    "carrier": "USPS",
+    "notes": "Package going to Maria"
   },
   {
     "trackingNum": "5678",
-    "carrier": "Fedex"
+    "carrier": "Fedex",
+    "notes": "Package going to Elizabeth"
   },
   {
     "trackingNum": "1abcd",
@@ -13,11 +15,13 @@
   },
   {
     "trackingNum": "1abcdhjhj",
-    "carrier": "UPS"
+    "carrier": "UPS",
+    "notes": "Package going to Maria"
   },
   {
     "trackingNum": "1abcdhjhjhjgghgfhg",
-    "carrier": "UPS"
+    "carrier": "UPS",
+    "notes": "Package going to Elizabeth"
   },
   {
     "trackingNum": "1abcdgdgfhdhd",
@@ -25,11 +29,13 @@
   },
   {
     "trackingNum": "1asdfgsfghshgfhbcd",
-    "carrier": "UPS"
+    "carrier": "UPS",
+    "notes": "Package going to Maria"
   },
   {
     "trackingNum": "1abghjgfjcd",
-    "carrier": "UPS"
+    "carrier": "UPS",
+    "notes": "Package going to Elizabeth"
   },
   {
     "trackingNum": "1afjfdfhfgfdddbcd",
