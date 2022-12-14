@@ -6,7 +6,7 @@ import Grid from "@mui/material/Grid";
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="text.secondary" align="center" color='white'>
+    <Typography variant="body2" color="text.secondary white" align="center">
       {"Copyright © US Postal & Printing "}
       {new Date().getFullYear()}
       {"."}
