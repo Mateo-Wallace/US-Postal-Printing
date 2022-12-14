@@ -29,6 +29,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { CURRENT_USER } from '../utils/queries';
 import { useQuery } from '@apollo/client';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 
 
@@ -190,8 +191,9 @@ function DashboardContent() {
               px: [1],
             }}
           >
+            {open ? <h6>Close Menu</h6> : ''}
             <IconButton onClick={toggleDrawer}>
-              <ChevronLeftIcon />
+              {open ? <ChevronLeftIcon /> : <ChevronRightIcon />}
             </IconButton>
           </Toolbar>
           <Divider />

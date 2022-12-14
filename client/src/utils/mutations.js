@@ -36,3 +36,13 @@ mutation editUser($username: String!, $email: String!, $password: String, $phone
   }
 }
 `;
+
+export const DELETE_USER = gql`
+mutation deleteUser{
+  deleteUser{
+    _id
+    username
+    email
+  }
+}
+`;
