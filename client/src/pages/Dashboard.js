@@ -11,7 +11,7 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import Badge from '@mui/material/Badge';
 import Container from '@mui/material/Container';
-import MenuIcon from '@mui/icons-material/Menu';
+
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import InnerDashboard from '../components/Dashboard/dashboard'
@@ -27,6 +27,8 @@ import ViewOrders from '../components/Dashboard/viewOrders'
 import ViewPackages from '../components/Dashboard/viewPackages'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { CURRENT_USER } from '../utils/queries';
+import { useQuery } from '@apollo/client';
 
 
 
@@ -91,9 +93,27 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 const mdTheme = createTheme();
 
+const theme = createTheme({
+  palette: {
+    primary: {
+      light: '#757ce8',
+      main: '#3f50b5',
+      dark: '#002884',
+      contrastText: '#fff',
+    },
+    secondary: {
+      light: '#ff7961',
+      main: '#f44336',
+      dark: '#ba000d',
+      contrastText: '#000',
+    },
+  },
+});
+
 
 
 function DashboardContent() {
+
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
@@ -124,10 +144,10 @@ function DashboardContent() {
 
 
   return (
-    <ThemeProvider theme={mdTheme}>
+    <ThemeProvider theme={theme}>
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
-        <AppBar position="absolute" open={open}>
+        {/* <AppBar position="absolute" open={open}>
           <Toolbar
             sx={{
               pr: '24px', // keep right padding when drawer closed
@@ -160,7 +180,7 @@ function DashboardContent() {
               </Badge>
             </IconButton>
           </Toolbar>
-        </AppBar>
+        </AppBar> */}
         <Drawer variant="permanent" open={open}>
           <Toolbar
             sx={{

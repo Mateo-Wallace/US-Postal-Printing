@@ -22,6 +22,8 @@
     "express": "^4.18.2",
     "graphql": "^16.6.0",
     "graphql-tag": "^2.12.6",
-    "hamburger-react": "^2.5.0"
+    "hamburger-react": "^2.5.0",
+    "survey-core": "^1.9.64",
+    "survey-creator-react": "^1.9.64"
   }
 }

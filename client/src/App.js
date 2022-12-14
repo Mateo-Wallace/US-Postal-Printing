@@ -15,13 +15,17 @@ import Landing from './pages/Landing';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
+import Home from './pages/Home';
+import ProductsServices from './pages/Products&Services';
+import MakeAnOrder from './pages/MakeAnOrder';
+import ContactUs from './pages/ContactUs';
 
 /// IMPORT COMPONENTS ///
 import ProtectRoute from './components/ProtectRoute';
-
 import './App.css';
 import Nav from './components/Header';
 import StickyFooter from './components/Footer';
+
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -68,18 +72,22 @@ function App() {
       <Router>
       <ThemeProvider theme={theme} >
       <Nav />
-        <Routes>
-          <Route path='/' element={<Landing />} />
-          <Route path='/dashboard' element={<Dashboard />} />
+      <div style={{marginTop: '100px'}}>
+        <Routes >
+          <Route path='/' element={<Home />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/products&services' element={<ProductsServices />} />
+          <Route path='/make-an-order' element={<MakeAnOrder />} />
+          <Route path='/contact-us' element={<ContactUs />} />
           <Route
             path='dashboard/:userId'
             element={Auth.loggedIn() ? <Dashboard /> : <ProtectRoute />}
           />
         </Routes>
       <StickyFooter />
-      </ThemeProvider>
+        </div>
+        </ThemeProvider>
       </Router>
       
     </ApolloProvider>

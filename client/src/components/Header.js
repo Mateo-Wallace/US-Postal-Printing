@@ -14,6 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import Hamburger from 'hamburger-react';
 import { Link } from 'react-router-dom';
+import logo from '../images/logo192.png';
 
 const pages = ['Products', 'Pricing', 'Login/Signup'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -50,10 +51,10 @@ function Nav() {
   
 
   return (
-    <AppBar position="static">
+    <AppBar position="fixed">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+        <img height = '80px' width = '80px' src={logo} />
           <Typography
             variant="h6"
             noWrap
@@ -72,50 +73,6 @@ function Nav() {
           >
             US Postal & Printing
           </Typography>
-
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            {/* <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton> */}
-            {/* <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-              <MenuItem onClick={handleCloseNavMenu}>
-              
-            </MenuItem>
-            <MenuItem onClick={handleCloseNavMenu}>
-             *
-            </MenuItem>
-            </Menu> */}
-             
-          </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
@@ -148,12 +105,18 @@ function Nav() {
             <Link to='/login' style={{ textDecoration: 'none' }}>
             <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Login/Signup</Button>
             </Link>
+            <Link to='/products&services' style={{ textDecoration: 'none' }}>
             <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Products & <br></br> Services </Button>
+            </Link>
+            <Link to='/make-an-order' style={{ textDecoration: 'none' }}>
             <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Make an<br></br> Order </Button>
+            </Link>
             <Link to='/dashboard/:userId' style={{ textDecoration: 'none' }}>
             <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Dashboard</Button>
             </Link>
+            <Link to='/contact-us' style={{ textDecoration: 'none' }}>
             <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Contact Us</Button>
+            </Link>
             {/* <Link to='/signup' style={{ textDecoration: 'none' }}>
             <Button variant="contained" sx={{ my: 2, color: 'white', display: 'block' }}>Signup</Button>
             </Link> */}

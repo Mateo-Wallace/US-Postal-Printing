@@ -18,6 +18,13 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    phoneNum: {
+      type: String,
+      match: [
+        /^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/,
+        "Format phone number as (123) 456-7890 or 123-456-7890",
+      ],
+    },
     packages: [
       {
         type: Schema.Types.ObjectId,

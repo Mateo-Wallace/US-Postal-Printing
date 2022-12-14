@@ -5,6 +5,8 @@ const typeDefs = gql`
     _id: ID!
     username: String!
     email: String!
+    password: String!
+    phoneNum: String
     packages: [Package]!
     orders: [Order]!
   }
@@ -13,6 +15,7 @@ const typeDefs = gql`
     _id: ID!
     trackingNum: String!
     carrier: String
+    notes: String
     createdAt: String
     userId: ID!
   }
@@ -21,6 +24,8 @@ const typeDefs = gql`
     _id: ID!
     type: String!
     message: String
+    totalPrice: Float
+    quantity: String
     createdAt: String
     userId: ID!
   }
@@ -45,16 +50,37 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    editUser(username: String, email: String, password: String): User
+    editUser(
+      username: String
+      email: String
+      password: String
+      phoneNum: String
+    ): User
     deleteUser: User
 
-    addPackage(trackingNum: String!): Package
-    editPackage(packageId: ID!, trackingNum: String): Package
+    addPackage(trackingNum: String!, carrier: String, notes: String): Package
+    editPackage(
+      packageId: ID!
+      trackingNum: String
+      carrier: String
+      notes: String
+    ): Package
     deletePackage(packageId: ID!): Package
 
     # addOrder, editOrder, deleteOrder
-    addOrder(type: String!, message: String!): Order
-    editOrder(orderId: ID!, type: String, message: String): Order
+    addOrder(
+      type: String!
+      message: String!
+      totalPrice: Float
+      quantity: String
+    ): Order
+    editOrder(
+      orderId: ID!
+      type: String
+      message: String
+      totalPrice: Float
+      quantity: String
+    ): Order
     deleteOrder(orderId: ID!): Order
   }
 `;
