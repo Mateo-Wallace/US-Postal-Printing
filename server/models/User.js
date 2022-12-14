@@ -20,7 +20,10 @@ const userSchema = new Schema(
     },
     phoneNum: {
       type: String,
-      match: [/^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/, "Format phone number as (123) 456-7890 or 123-456-7890"]
+      match: [
+        /^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/,
+        "Format phone number as (123) 456-7890 or 123-456-7890",
+      ],
     },
     packages: [
       {
