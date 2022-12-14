@@ -15,6 +15,7 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import { textAlign } from '@mui/system';
 import { Link } from 'react-router-dom';
+import AuthService from '../../utils/auth'
 
 
 
@@ -91,7 +92,7 @@ function EditUser() {
     const handleDelete = async () => {
         try {
             const { data } = await deleteMe();
-            localStorage.removeItem('id_token');
+            AuthService.logout();
         }
         catch (err) {
             console.error(err)
