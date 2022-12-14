@@ -24,6 +24,7 @@ import ContactUs from './pages/ContactUs';
 import ProtectRoute from './components/ProtectRoute';
 import './App.css';
 import Nav from './components/Header';
+import StickyFooter from './components/Footer';
 
 
 const httpLink = createHttpLink({
@@ -84,9 +85,11 @@ function App() {
             element={Auth.loggedIn() ? <Dashboard /> : <ProtectRoute />}
           />
         </Routes>
+      <StickyFooter />
         </div>
         </ThemeProvider>
       </Router>
+      
     </ApolloProvider>
   );
 }
