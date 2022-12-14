@@ -5,7 +5,7 @@ const typeDefs = gql`
     _id: ID!
     username: String!
     email: String!
-    password: String!
+    password: String
     phoneNum: String
     packages: [Package]!
     orders: [Order]!

@@ -68,7 +68,7 @@ function EditUser() {
 
     return (
         <div>
-            <h1 style={success ? {display: 'block'} : {display: 'none'}}>success</h1>
+            <h2 style={success ? {display: 'block'} : {display: 'none'}}>success</h2>
             <Typography sx={{ mt: 4, mb: 2 }} variant="h3" component="div">
                 Edit Account
             </Typography>
