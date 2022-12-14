@@ -17,7 +17,8 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Home from './pages/Home';
 import ProductsServices from './pages/Products&Services';
-import  MakeAnOrder from './pages/MakeAnOrder';
+import MakeAnOrder from './pages/MakeAnOrder';
+import ContactUs from './pages/ContactUs';
 
 /// IMPORT COMPONENTS ///
 import ProtectRoute from './components/ProtectRoute';
@@ -70,17 +71,20 @@ function App() {
       <Router>
       <ThemeProvider theme={theme} >
       <Nav />
-        <Routes>
+      <div style={{marginTop: '100px'}}>
+        <Routes >
           <Route path='/' element={<Home />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />
           <Route path='/products&services' element={<ProductsServices />} />
           <Route path='/make-an-order' element={<MakeAnOrder />} />
+          <Route path='/contact-us' element={<ContactUs />} />
           <Route
             path='dashboard/:userId'
             element={Auth.loggedIn() ? <Dashboard /> : <ProtectRoute />}
           />
         </Routes>
+        </div>
         </ThemeProvider>
       </Router>
     </ApolloProvider>

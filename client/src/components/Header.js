@@ -51,7 +51,7 @@ function Nav() {
   
 
   return (
-    <AppBar position="static">
+    <AppBar position="fixed">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
         <img height = '80px' width = '80px' src={logo} />
@@ -114,7 +114,9 @@ function Nav() {
             <Link to='/dashboard/:userId' style={{ textDecoration: 'none' }}>
             <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Dashboard</Button>
             </Link>
+            <Link to='/contact-us' style={{ textDecoration: 'none' }}>
             <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Contact Us</Button>
+            </Link>
             {/* <Link to='/signup' style={{ textDecoration: 'none' }}>
             <Button variant="contained" sx={{ my: 2, color: 'white', display: 'block' }}>Signup</Button>
             </Link> */}
