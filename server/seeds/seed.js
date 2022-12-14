@@ -18,11 +18,11 @@ db.once("open", async () => {
     for (let i = 0; i < packageSeeds.length; i++) {
       let j = i;
       if (i > 5) {
-        j = 0;
+        j = 2;
       } else if (i > 2) {
         j = 1;
       } else {
-        j = 2;
+        j = 0;
       }
 
       const { _id, userId } = await Package.create({
@@ -43,11 +43,11 @@ db.once("open", async () => {
     for (let i = 0; i < orderSeeds.length; i++) {
       let j = i;
       if (i > 5) {
-        j = 0;
+        j = 2;
       } else if (i > 2) {
         j = 1;
       } else {
-        j = 2;
+        j = 0;
       }
 
       const { _id, userId } = await Order.create({

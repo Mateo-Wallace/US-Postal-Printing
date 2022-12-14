@@ -1,8 +1,8 @@
 const { AuthenticationError } = require("apollo-server-express");
 const { User, Package, Order } = require("../models");
 const { signToken } = require("../utils/auth");
-const bcrypt = require('bcrypt');
-const  userSchema  = require('../models/User')
+const bcrypt = require("bcrypt");
+const userSchema = require("../models/User");
 
 const resolvers = {
   Query: {
@@ -80,13 +80,20 @@ const resolvers = {
     // EDIT USER BASED ON INPUT AND TOKEN
     editUser: async (parent, args, context) => {
       if (context.user) {
-        if(args.password) {
-        const saltRounds = 12;
-        newPassword = await bcrypt.hash(args.password, saltRounds);
+        if (args.password) {
+          const saltRounds = 12;
+          newPassword = await bcrypt.hash(args.password, saltRounds);
         }
         return User.findOneAndUpdate(
           { _id: context.user._id },
-          { $set: {username: args.username, password: newPassword, email: args.email} },
+          {
+            $set: {
+              username: args.username,
+              password: newPassword,
+              email: args.email,
+              phoneNum: args.phoneNum,
+            },
+          },
           { new: true }
         );
       }
