@@ -5,6 +5,7 @@ query User {
   me {
     _id
     email
+    phoneNum
     orders {
       _id
       createdAt

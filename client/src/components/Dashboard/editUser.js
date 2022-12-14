@@ -9,10 +9,13 @@ import { CURRENT_USER } from "../../utils/queries";
 import { useQuery, useMutation } from '@apollo/client';
 import { EDIT_USER } from '../../utils/mutations';
 import { Input } from '@mui/material';
+import {Button} from '@mui/material';
 
 
 function EditUser() {
     const [expanded, setExpanded] = React.useState(false);
+
+    const [success, setMessage] = React.useState(false)
 
     const handleChange = (panel) => (event, isExpanded) => {
         setExpanded(isExpanded ? panel : false);
@@ -23,6 +26,7 @@ function EditUser() {
     const userData = data?.me || {};
 
 
+
     const [editMe, {error}] = useMutation(EDIT_USER);
 
     const [userState, setUserState] = React.useState({
@@ -30,10 +34,10 @@ function EditUser() {
         username: userData.username,
         email: userData.email,
         password: userData.password,
-        __typename: userData.__typename
+        __typename: userData.__typename,
+        phoneNum: userData.phoneNum
     })
 
-    console.log(userState)
 
 
     if (loading) {
@@ -48,9 +52,13 @@ function EditUser() {
         
 
         try {
+            if (!/^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/.test(userState.phoneNum)){alert('please enter a valid phone number'); return}
             const { data } = await editMe({
                 variables: {...userState}
             })
+            if(data) {
+                setMessage(true)
+            }
         }
         catch(err) {
             console.error(err)
@@ -60,6 +68,7 @@ function EditUser() {
 
     return (
         <div>
+            <h1 style={success ? {display: 'block'} : {display: 'none'}}>success</h1>
             <Typography sx={{ mt: 4, mb: 2 }} variant="h3" component="div">
                 Edit Account
             </Typography>
@@ -82,8 +91,9 @@ function EditUser() {
                                 type="email"
                                 autoComplete="current-email"
                                 value={userState.email}
-                                    onChange={event => {setUserState({...userState, email: event.target.value })}}
+                                    onChange={event => {setUserState({...userState, email: event.target.value }); setMessage(false)}}
                                  />
+                                 <Button sx={{ ml: '15%'}} variant="contained" type='submit'>Save</Button>
                                  </form>
                         </AccordionDetails>
                     </Accordion>
@@ -106,8 +116,9 @@ function EditUser() {
                                     type="text"
                                     autoComplete="current-username"
                                     value={userState.username}
-                                    onChange={event => {setUserState({...userState, username: event.target.value })}}
+                                    onChange={event => {setUserState({...userState, username: event.target.value }); setMessage(false)}}
                                     />
+                                    <Button sx={{ ml: '15%'}} variant="contained" type='submit'>Save</Button>
                                     </form>
                             </AccordionDetails>
                         </Accordion>
@@ -132,8 +143,9 @@ function EditUser() {
                                     type="password"
                                     autoComplete="current-password"
                                     defaultValue={userState.password}
-                                    onChange={event => {setUserState({...userState, password: event.target.value })}}
+                                    onChange={event => {setUserState({...userState, password: event.target.value }); setMessage(false)}}
                                     />
+                                    <Button sx={{ ml: '15%'}} variant="contained" type='submit'>Save</Button>
                                     </form>
                             </AccordionDetails>
                         </Accordion>
@@ -145,15 +157,22 @@ function EditUser() {
                             >
                                 <Typography sx={{ width: '33%', flexShrink: 0, color: 'text.secondary' }}>Phone Number</Typography>
                                 <Typography>
-                                    555-555-5555
+                                {userState.phoneNum}
                                 </Typography>
                             </AccordionSummary>
                             <AccordionDetails>
+                            <form onSubmit={handleEditSubmit}>
                                 <TextField
                                     id="outlined-phonenumber-input"
                                     label="New Phone Number"
                                     type="text"
-                                    autoComplete="current-phonenumber" />
+                                    autoComplete="current-phonenumber" 
+                                    placeholder='Ex. 555-555-5555'
+                                    defaultValue={userState.phoneNum}
+                                    onChange={event => {setUserState({...userState, phoneNum: event.target.value }); setMessage(false)}}
+                                    />
+                                    <Button sx={{ ml: '15%'}} variant="contained" type='submit'>Save</Button>
+                                    </form>
                             </AccordionDetails>
                         </Accordion>
         </div>
