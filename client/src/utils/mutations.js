@@ -35,3 +35,15 @@ mutation editUser($username: String!, $email: String!, $password: String) {
   }
 }
 `;
+
+export const ADD_PACKAGE = gql`
+mutation addPackage($trackingNum: String!, $carrier: String) {
+  addPackage(trackingNum: $trackingNum, carrier: $carrier) {
+    _id
+    carrier
+    createdAt
+    trackingNum
+    userId
+  }
+}
+`

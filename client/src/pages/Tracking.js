@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { useMutation } from "@apollo/client";
-import { LOGIN_USER } from "../utils/mutations";
-
-import Auth from "../utils/auth";
+import { ADD_PACKAGE } from "../utils/mutations";
 
 // material UI imports
 import Avatar from "@mui/material/Avatar";
@@ -24,9 +22,9 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 const theme = createTheme();
 // end material UI function
 
-const Tracking = (props) => {
+const Tracking = () => {
   const [formState, setFormState] = useState({ email: "", password: "" });
-  const [login, { error, data }] = useMutation(LOGIN_USER);
+  const [addPackage, { error, data }] = useMutation(ADD_PACKAGE);
 
   /// HANDLE CHANGE ///
   const handleChange = (e) => {
@@ -43,11 +41,11 @@ const Tracking = (props) => {
     e.preventDefault();
 
     try {
-      const { data } = await login({
+      const { data } = await addPackage({
         variables: { ...formState },
       });
 
-      console.log(data)
+      console.log(data);
     } catch (error) {
       console.log(error);
     }
@@ -77,11 +75,8 @@ const Tracking = (props) => {
                 alignItems: "center",
               }}
             >
-              <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-                <LockOutlinedIcon />
-              </Avatar>
               <Typography component="h1" variant="h5">
-                Sign in
+                Track A Package
               </Typography>
               <Box
                 component="form"
