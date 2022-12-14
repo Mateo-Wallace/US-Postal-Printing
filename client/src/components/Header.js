@@ -110,6 +110,9 @@ function Nav() {
             <Link to='/make-an-order' style={{ textDecoration: 'none' }}>
             <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Make an<br></br> Order </Button>
             </Link>
+            <Link to='/tracking' style={{ textDecoration: 'none' }}>
+            <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Tracking </Button>
+            </Link>
             <Link to='/dashboard/:userId' style={{ textDecoration: 'none' }}>
             <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Dashboard</Button>
             </Link>

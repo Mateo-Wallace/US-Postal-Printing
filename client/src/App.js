@@ -17,6 +17,7 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Home from './pages/Home';
 import ProductsServices from './pages/Products&Services';
+import Tracking from './pages/Tracking';
 import { MakeAnOrder } from './pages/MakeAnOrder';
 
 /// IMPORT COMPONENTS ///
@@ -76,6 +77,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/products&services' element={<ProductsServices />} />
           <Route path='/make-an-order' element={<MakeAnOrder />} />
+          <Route path='/tracking' element={<Tracking />} />
           <Route
             path='dashboard/:userId'
             element={Auth.loggedIn() ? <Dashboard /> : <ProtectRoute />}
