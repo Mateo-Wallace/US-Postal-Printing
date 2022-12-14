@@ -14,6 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import Hamburger from 'hamburger-react';
 import { Link } from 'react-router-dom';
+import logo from '../images/logo192.png';
 
 const pages = ['Products', 'Pricing', 'Login/Signup'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -53,7 +54,7 @@ function Nav() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+        <img height = '80px' width = '80px' src={logo} />
           <Typography
             variant="h6"
             noWrap
