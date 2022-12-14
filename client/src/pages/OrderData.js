@@ -10,35 +10,107 @@ export const json = {
     pages: [{
       name: "page1",
       elements: [{
-        type: "rating",
-        name: "nps_score",
-        title: "On a scale of zero to ten, how likely are you to recommend our product to a friend or colleague?",
+        type: "dropdown",
+        name: "product",
+        title: "Dropdown",
         isRequired: true,
-        rateMin: 0,
-        rateMax: 10,
-        minRateDescription: "(Most unlikely)",
-        maxRateDescription: "(Most likely)"
-      }, {
-        type: "checkbox",
-        name: "promoter_features",
-        visibleIf: "{nps_score} >= 9",
-        title: "Which of the following features do you value the most?",
-        isRequired: true,
-        validators: [{
-          type: "answercount",
-          text: "Please select two features maximum.",
-          maxCount: 2
-        }],
-        hasOther: true,
+        showNoneItem: true,
+        colCount: 4,
         choices: [
-          "Performance",
-          "Stability",
-          "User Interface",
-          "Complete Functionality"
-        ],
-        otherText: "Other features:",
-        colCount: 2
+          "Business Cards",
+          "Printing Services",
+          "Copying Services",
+          "Passport Photos",
+          "Notary Services",
+          "Fax Services",
+          "Shipping Services",
+          "Other"
+        ]
       }, {
+        type: "panel",
+        title: "Expression Example Panel",
+        innerIndent: 1,
+        elements: [
+          {
+            type: "paneldynamic",
+            name: "items",
+            title: "Items",
+            keyName: "name",
+            showQuestionNumbers: "none",
+            templateTitle: "item #{panelIndex}",
+            templateElements: [
+              {
+                type: "text",
+                name: "name",
+                title: "Name:",
+                isRequired: true
+              },
+              {
+                type: "text",
+                name: "cost",
+                inputType: "number",
+                title: "Item Cost:",
+                isRequired: true,
+                startWithNewLine: false
+              },
+              {
+                type: "text",
+                name: "vendor",
+                title: "Vendor:",
+                isRequired: true
+              },
+              {
+                type: "text",
+                name: "quantity",
+                inputType: "number",
+                title: "Quantity:",
+                isRequired: true,
+                startWithNewLine: false
+              },
+              {
+                type: "text",
+                name: "link",
+                title: "Link:",
+                isRequired: true
+              },
+              {
+                type: "expression",
+                name: "total",
+                title: "Total Item Cost:",
+                expression: "{panel.cost} * {panel.quantity}",
+                displayStyle: "currency",
+                currency: "EUR",
+                startWithNewLine: false
+              }
+            ],
+            minPanelCount: 1,
+            panelAddText: "Add another  item",
+            panelRemoveText: "Remove item"
+          }, 
+          {
+            type: "panel",
+            title: "Totals",
+            elements: [
+              {
+                type: "expression",
+                name: "totalQuantity",
+                title: "Total  Quantity:",
+                expression: "sumInArray({items}, 'quantity'"
+              },
+              {
+                type: "expression",
+                name: "totalCost",
+                title: "Total Cost:",
+                expression: "sumInArray({items}, 'total'",
+                displayStyle: "currency",
+                currency: "EUR",
+                startWithNewLine: false
+              }
+            ]
+          }
+        ]
+      },
+      {
         type: "comment",
         name: "passive_experience",
         visibleIf: "{nps_score} > 6  and {nps_score} < 9",
