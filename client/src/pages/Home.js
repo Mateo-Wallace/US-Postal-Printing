@@ -49,24 +49,31 @@ const Home = () => {
         width: 550,
         height: 400,
         backgroundColor: 'primary.dark',
-        '&:hover': {
-          backgroundColor: 'primary.main',
-          opacity: [0.9, 0.8, 0.7],
-        },
+        // '&:hover': {
+        //   backgroundColor: 'primary.main',
+        //   opacity: [0.9, 0.8, 0.7],
+        // },
       }}
     >
     <Typography sx={{margin: 1, textAlign: 'center', color: 'white'}} variant="h4" gutterBottom>
     Location & Hours
   </Typography>
-  <a href="https://www.google.com/maps/place/Postal+%26+Printing/@26.7077343,-80.2237872,16z/data=!4m5!3m4!1s0x88d92f8cbb645c6b:0xe6fd7a8b86fec5e0!8m2!3d26.70705!4d-80.2191157" target="_blank" rel="noreferrer">
-  <img
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3564.081841247327!2d-80.1523419!3d26.7098323!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9290c5efab345%3A0x214ddf6757f47116!2sUS%20Postal%20%26%20Printing!5e0!3m2!1sen!2sus!4v1671043314933!5m2!1sen!2sus" 
+  width="400" 
+  height="300" 
+  style={{border:0}} 
+  allowFullScreen="" 
+  loading="lazy" 
+  referrerPolicy="no-referrer-when-downgrade">
+
+  </iframe>
+  {/* <img
   width="325px"
   height="210px"
   frameBorder="0" style={{border: 0, margin: '8px'}}
   src={Map}
   href= 'https://surveyjs.io/form-library/examples/nps-question/reactjs'>
-</img>
-</a>
+</img> */}
   </Box>
     <Box
       sx={{
