@@ -10,10 +10,18 @@ import Button from "@mui/material/Button";
 
 const ContactUs = () => {
   return (
-    <div>
-      <Card style={{ maxWidth: 450, margin: "0 auto", padding: "20px 5px" }}>
+    <div style={{ margin: "10, 0" }}>
+      <Card
+        style={{
+          maxWidth: 550,
+          margin: "150px auto",
+          padding: "20px 5px 0px 5px",
+        }}
+      >
         <CardContent>
-          <Typography gutterBottom variant="h5">Contact Us</Typography>
+          <Typography gutterBottom variant="h5">
+            Contact Us
+          </Typography>
           <form>
             <Grid container spacing={1}>
               <Grid xs={12} sm={6} item>
