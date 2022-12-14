@@ -1,11 +1,15 @@
 [
   {
     "type": "blueprint",
-    "message": "Print 5 in black and white"
+    "message": "Print 5 in black and white",
+    "totalPrice": 100.25,
+    "quantity": "5 sets"
   },
   {
     "type": "business cards",
-    "message": "Print 500 on 3 x 1.5"
+    "message": "Print 500 on 3 x 1.5",
+    "totalPrice": 101.25,
+    "quantity": "6 sets"
   },
   {
     "type": "flyers",
@@ -13,26 +17,34 @@
   },
   {
     "type": "notary",
-    "message": "Notarize school field trip"
+    "message": "Notarize school field trip",
+    "totalPrice": 102.25,
+    "quantity": "7 sets"
   },
   {
     "type": "fingerprints",
-    "message": "Appointment for background check"
+    "message": "Appointment for background check",
+    "totalPrice": 103.25,
+    "quantity": "8 sets"
   },
   {
-    "type": "asdf",
-    "message": "asdfadfsdfadsf"
+    "type": "flyers",
+    "message": "Color flyers 500 copies"
   },
   {
-    "type": "fdfdfdf",
-    "message": "dfdfdfdfdfdfdf"
+    "type": "poster",
+    "message": "Fat head with sons face",
+    "totalPrice": 104.25,
+    "quantity": "9 sets"
   },
   {
-    "type": "ghghgh",
-    "message": "ghghghghghhgh"
+    "type": "stamps",
+    "message": "7 rolls of american flag stamps",
+    "totalPrice": 105.25,
+    "quantity": "10 sets"
   },
   {
-    "type": "ioioiio",
-    "message": "ioioioioioioi"
+    "type": "custom",
+    "message": "your soul please and thank you"
   }
 ]

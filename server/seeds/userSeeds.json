@@ -5,15 +5,15 @@
     "password": "testtest"
   },
   {
-    "username": "Brian Kernighan",
-    "email": "bkernighan@techfriends.dev",
-    "password": "password01",
+    "username": "Seth Wooten",
+    "email": "seth@wooten.com",
+    "password": "sethwooten",
     "phoneNum": "123-456-7890"
   },
   {
-    "username": "Lernantino",
-    "email": "lernantino@techfriends.dev",
-    "password": "password10",
+    "username": "John Dinsmore",
+    "email": "john@dinsmore.com",
+    "password": "johndinsmore",
     "phoneNum": "(123) 456-7890"
   }
 ]
