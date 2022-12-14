@@ -7,11 +7,13 @@
   {
     "username": "Brian Kernighan",
     "email": "bkernighan@techfriends.dev",
-    "password": "password01"
+    "password": "password01",
+    "phoneNum": "123-456-7890"
   },
   {
     "username": "Lernantino",
     "email": "lernantino@techfriends.dev",
-    "password": "password10"
+    "password": "password10",
+    "phoneNum": "(123) 456-7890"
   }
 ]
