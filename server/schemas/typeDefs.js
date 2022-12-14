@@ -15,6 +15,7 @@ const typeDefs = gql`
     _id: ID!
     trackingNum: String!
     carrier: String
+    notes: String
     createdAt: String
     userId: ID!
   }
@@ -55,8 +56,13 @@ const typeDefs = gql`
     ): User
     deleteUser: User
 
-    addPackage(trackingNum: String!): Package
-    editPackage(packageId: ID!, trackingNum: String): Package
+    addPackage(trackingNum: String!, carrier: String, notes: String): Package
+    editPackage(
+      packageId: ID!
+      trackingNum: String
+      carrier: String
+      notes: String
+    ): Package
     deletePackage(packageId: ID!): Package
 
     # addOrder, editOrder, deleteOrder
