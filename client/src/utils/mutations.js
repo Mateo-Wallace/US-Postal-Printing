@@ -46,3 +46,26 @@ mutation deleteUser{
   }
 }
 `;
+
+export const ADD_PACKAGE = gql`
+mutation addPackage($trackingNum: String!, $carrier: String!, $notes: String) {
+  addPackage(trackingNum: $trackingNum, carrier: $carrier, notes: $notes) {
+    _id
+    carrier
+    createdAt
+    trackingNum
+    userId
+    notes
+  }
+}
+`;
+
+export const EDIT_PACKAGE = gql`
+mutation editPackage($packageId: ID!, $trackingNum: String, $carrier: String, $notes: String) {
+  editPackage(packageId: $packageId, trackingNum: $trackingNum, carrier: $carrier, notes: $notes) {
+    _id
+  }
+}`;
+
+
+
