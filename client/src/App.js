@@ -87,8 +87,8 @@ function App() {
             element={Auth.loggedIn() ? <Dashboard /> : <ProtectRoute />}
           />
         </Routes>
-      <StickyFooter />
         </div>
+        <StickyFooter />
         </ThemeProvider>
       </Router>
       
