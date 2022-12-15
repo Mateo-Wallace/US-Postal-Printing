@@ -15,17 +15,19 @@ const ContactUs = () => {
 
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        "service_o7v6bje",
+        "template_dlqmddm",
         form.current,
-        "YOUR_PUBLIC_KEY"
+        "wy8lERfJqzUl-RB7J"
       )
       .then(
         (result) => {
           console.log(result.text);
+          alert("Email succesfully sent!")
         },
         (error) => {
           console.log(error.text);
+          alert("Something went wrong!")
         }
       );
     e.target.reset();
@@ -46,20 +48,23 @@ const ContactUs = () => {
           </Typography>
           <form ref={form} onSubmit={sendEmail}>
             <Grid container spacing={1}>
-              <Grid xs={12} sm={6} item>
+              <Grid xs={12} item>
                 <TextField
-                  label="First Name"
+                  label="Name"
                   name="user_name"
-                  placeholder="Enter first name"
+                  type="text"
+                  placeholder="Enter full name"
                   variant="outlined"
                   fullWidth
                   required
                 />
               </Grid>
-              <Grid xs={12} sm={6} item>
+              <Grid xs={12} item>
                 <TextField
-                  label="Last Name"
-                  placeholder="Enter last name"
+                  label="Subject"
+                  name="subject"
+                  type="text"
+                  placeholder="Type your subject here"
                   variant="outlined"
                   fullWidth
                   required
