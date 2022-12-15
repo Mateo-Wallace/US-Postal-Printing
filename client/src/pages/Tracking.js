@@ -174,7 +174,11 @@ const Tracking = () => {
         <Container>
           <h2>
             {trackedPackage.length
-              ? `Viewing results for ${trackedPackage[0].carrier + ' ' + trackedPackage[0].trackingNumber}:`
+              ? `Viewing results for ${
+                  trackedPackage[0].carrier +
+                  " " +
+                  trackedPackage[0].trackingNumber
+                }:`
               : ""}
           </h2>
           <Box>
@@ -240,9 +244,7 @@ const Tracking = () => {
                           <TableCell component="th" scope="row">
                             {p.eta}
                           </TableCell>
-                          <TableCell align="right">
-                            {p.original_eta}
-                          </TableCell>
+                          <TableCell align="right">{p.original_eta}</TableCell>
                           <TableCell align="right">
                             {p.address_to.city}
                           </TableCell>
@@ -256,6 +258,18 @@ const Tracking = () => {
                       </TableBody>
                     </Table>
                   </TableContainer>
+                  {Auth.loggedIn() ? (
+                    <Button
+                      type="submit"
+                      fullWidth
+                      variant="contained"
+                      sx={{ mt: 3, mb: 2 }}
+                    >
+                      Save Package
+                    </Button>
+                  ) : (
+                    ""
+                  )}
                 </Container>
               );
             })}
