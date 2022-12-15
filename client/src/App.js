@@ -54,8 +54,8 @@ const theme = createTheme({
   palette: {
     primary: {
       light: '#757ce8',
-      main: '#3f50b5',
-      dark: '#002884',
+      main: '#149be6',
+      dark: '#0d579b',
       contrastText: '#fff',
     },
     secondary: {
@@ -73,7 +73,7 @@ function App() {
       <Router>
       <ThemeProvider theme={theme} >
       <Nav />
-      <div style={{marginTop: '100px'}}>
+      <div style={{marginTop: '140px'}}>
         <Routes >
           <Route path='/' element={<Home />} />
           <Route path='/signup' element={<Signup />} />
@@ -87,8 +87,8 @@ function App() {
             element={Auth.loggedIn() ? <Dashboard /> : <ProtectRoute />}
           />
         </Routes>
-      <StickyFooter />
         </div>
+        <StickyFooter />
         </ThemeProvider>
       </Router>
       

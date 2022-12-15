@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
+import { AppBar } from "@mui/material";
 
 function Copyright() {
   return (
@@ -16,16 +17,23 @@ function Copyright() {
 
 export default function StickyFooter() {
   return (
-    <footer>
-      <Box
+    <footer
+    style={{
+      position: 'sticky',
+      marginTop: '20px'
+    }}
+    >
+      <AppBar
+      position="sticky"
         sx={{
           display: "flex",
           flexDirection: "column",
-          minHeight: "100vh",
+          marginTop: "100vh",
           position: 'sticky',
           bottom: 0,
-          width: '100%',
+          minWidth: '100vh%',
           margin: 0,
+          left: 0
         }}
       >
         <Box
@@ -98,14 +106,14 @@ export default function StickyFooter() {
           sx={{
             py: 3,
             px: 2,
-            backgroundColor: "#3f50b5",
+            backgroundColor: 'primary.dark',
           }}
         >
           <Container maxWidth="sm">
             <Copyright />
           </Container>
         </Box>
-      </Box>
+      </AppBar>
     </footer>
   );
 }
