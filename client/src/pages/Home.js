@@ -31,7 +31,7 @@ const Home = () => {
         },
       }}
     />
-    <Container sx={{margin: 0,  display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center'}} fixed>
+    <Container sx={{margin: 0, display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center'}} fixed>
       <Box
       sx={{
         margin: 1,
@@ -50,23 +50,28 @@ const Home = () => {
   <Typography sx={{marginTop: '-10px', textAlign: 'center', color: 'white'}} variant="h6" gutterBottom>
     (at a glance)
   </Typography>
-  <Grid>
-  <IconButton aria-label="Notary-Services" size="large">
+  <Grid container sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly'}}>
+
+  <IconButton sx={{margin: '5px'}} aria-label="Notary-Services" size="large">
   <img style={{height: '120px', width: '120px', borderRadius: '50px'}}src={NotaryImage}></img>
 </IconButton>
 
-<IconButton aria-label="Printing-Services" size="large">
+<IconButton sx={{margin: '5px'}}  aria-label="Printing-Services" size="large">
   <img style={{height: '120px', width: '120px', borderRadius: '50px'}}src={PrintingImage}></img>
 </IconButton>
-<IconButton aria-label="Business-Cards" size="large">
+
+<IconButton sx={{margin: '5px'}}  aria-label="Business-Cards" size="large">
   <img style={{height: '120px', width: '120px', borderRadius: '50px'}}src={BusinessCardsImage}></img>
 </IconButton>
-<IconButton aria-label="Copying-Services" size="large">
+
+<IconButton sx={{margin: '5px'}}  aria-label="Copying-Services" size="large">
   <img style={{height: '120px', width: '120px', borderRadius: '50px'}}src={CopyingImage}></img>
 </IconButton>
-<IconButton aria-label="Mailbox-Rental" size="large">
+
+<IconButton sx={{margin: '5px'}}  aria-label="Mailbox-Rental" size="large">
   <img style={{height: '120px', width: '120px', borderRadius: '50px'}}src={MailboxImage}></img>
 </IconButton>
+
 </Grid>
   </Box>
      <Box 
