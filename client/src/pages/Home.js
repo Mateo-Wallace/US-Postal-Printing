@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Paper";
 import CardContent from "@mui/material/CardContent";
-import IconButton from "@mui/material/IconButton";
+import Tooltip from "@mui/material/Tooltip";
 import Button from "@mui/material/Button";
 import NotaryImage from "../images/notaryServices.jpeg";
 import PrintingImage from "../images/printingServices.jpg";
@@ -78,52 +78,61 @@ const Home = () => {
             }}
           >
             <Button
-              style={{ height: "120px", width: "120px",  padding: "10px", margin: "10px", borderRadius: "40px" }}
+              style={{
+                height: "120px",
+                width: "120px",
+                padding: "10px",
+                margin: "10px",
+                borderRadius: "40px",
+              }}
             >
-                <img
-                  style={{
-                    position: "aboslute",
-                    height: "120px",
-                    width: "120px",
-                    borderRadius: "40px"
-                  }}
-                  src={NotaryImage}
-                />
-                <ImageListItemBar
+              <img
+                style={{
+                  position: "aboslute",
+                  height: "120px",
+                  width: "120px",
+                  borderRadius: "40px",
+                }}
+                src={NotaryImage}
+              />
+
+              <ImageListItemBar
                 sx={{
                   background:
                     "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, " +
                     "rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)",
-                    height: "120px",
-                    width: "120px",
-                    "&:hover": {
-                      background: "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, " +
-                      "rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%)",
-                    }
+                  height: "120px",
+                  width: "120px",
+                  "&:hover": {
+                    background:
+                      "linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, " +
+                      "rgba(0,0,0,0.25) 65%, rgba(0,0,0,0) 100%)",
+                  },
                 }}
                 title={
-                  
-                  <Chip
-                    clickable={true}
-                    style={{ color: "white", }}
-                    label="Notary"
-                    variant="outlined"
-                  />
+                  <Tooltip title="Notary Services" arrow>
+                    <Chip
+                      clickable={true}
+                      style={{ color: "white" }}
+                      label="Notary"
+                      variant="outlined"
+                    />
+                  </Tooltip>
                 }
                 style={{
                   borderRadius: "40px",
-                  justifySelf: "center",
-                  alignSelf: "center",
-                  "&:hover": {
-                    background: "primary.main",
-                    opacity: [0.9, 0.8, 0.7],
-                  }
                 }}
               />
             </Button>
 
             <Button
-              style={{ height: "120px", width: "120px",  padding: "10px", margin: "10px", borderRadius: "40px" }}
+              style={{
+                height: "120px",
+                width: "120px",
+                padding: "10px",
+                margin: "10px",
+                borderRadius: "40px",
+              }}
             >
               <img
                 style={{
@@ -138,8 +147,8 @@ const Home = () => {
                   background:
                     "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, " +
                     "rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)",
-                    height: "120px",
-                    width: "120px",
+                  height: "120px",
+                  width: "120px",
                 }}
                 title={
                   <Chip
@@ -157,7 +166,13 @@ const Home = () => {
             </Button>
 
             <Button
-              style={{ height: "120px", width: "120px",  padding: "10px", margin: "10px", borderRadius: "40px" }}
+              style={{
+                height: "120px",
+                width: "120px",
+                padding: "10px",
+                margin: "10px",
+                borderRadius: "40px",
+              }}
             >
               <img
                 style={{
@@ -172,8 +187,8 @@ const Home = () => {
                   background:
                     "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, " +
                     "rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)",
-                    height: "120px",
-                    width: "120px",
+                  height: "120px",
+                  width: "120px",
                 }}
                 title={
                   <Chip
@@ -191,7 +206,13 @@ const Home = () => {
             </Button>
 
             <Button
-              style={{ height: "120px", width: "120px",  padding: "10px", margin: "10px", borderRadius: "40px" }}
+              style={{
+                height: "120px",
+                width: "120px",
+                padding: "10px",
+                margin: "10px",
+                borderRadius: "40px",
+              }}
             >
               <img
                 style={{
@@ -201,13 +222,13 @@ const Home = () => {
                 }}
                 src={CopyingImage}
               />
-               <ImageListItemBar
+              <ImageListItemBar
                 sx={{
                   background:
                     "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, " +
                     "rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)",
-                    height: "120px",
-                    width: "120px"
+                  height: "120px",
+                  width: "120px",
                 }}
                 title={
                   <Chip
@@ -222,11 +243,16 @@ const Home = () => {
                   alignSelf: "center",
                 }}
               />
-              
             </Button>
 
             <Button
-              style={{ height: "120px", width: "120px",  padding: "10px", margin: "10px", borderRadius: "40px" }}
+              style={{
+                height: "120px",
+                width: "120px",
+                padding: "10px",
+                margin: "10px",
+                borderRadius: "40px",
+              }}
             >
               <img
                 style={{
@@ -236,13 +262,13 @@ const Home = () => {
                 }}
                 src={MailboxImage}
               />
-               <ImageListItemBar
+              <ImageListItemBar
                 sx={{
                   background:
                     "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, " +
                     "rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)",
-                    height: "120px",
-                    width: "120px"
+                  height: "120px",
+                  width: "120px",
                 }}
                 title={
                   <Chip
@@ -291,7 +317,7 @@ const Home = () => {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
-          <Card sx={{ fontSize: "16px", margin: 1 }}>
+          <Card sx={{ fontSize: "16px", margin: 1, borderRadius: "25px" }}>
             <Grid sx={{ margin: 1 }} item>
               <Box borderBottom={1}>STORE HOURS</Box>
               <Grid container>
