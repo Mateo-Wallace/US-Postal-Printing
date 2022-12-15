@@ -88,76 +88,68 @@ const Tracking = () => {
 
   return (
     <main>
-      {data ? (
-        <p>
-          Successfully logged in! You may now head{" "}
-          <Link to="/">back to the hompage.</Link>
-        </p>
-      ) : (
-        <ThemeProvider theme={theme}>
-          <Container component="main" maxWidth="xs">
-            <CssBaseline />
+      <ThemeProvider theme={theme}>
+        <Container component="main" maxWidth="xs">
+          <CssBaseline />
+          <Box
+            sx={{
+              marginTop: 8,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <Typography component="h1" variant="h5">
+              Track A Package
+            </Typography>
             <Box
-              sx={{
-                marginTop: 8,
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-              }}
+              component="form"
+              onSubmit={handleSubmit}
+              noValidate
+              sx={{ mt: 1 }}
             >
-              <Typography component="h1" variant="h5">
-                Track A Package
-              </Typography>
-              <Box
-                component="form"
-                onSubmit={handleSubmit}
-                noValidate
-                sx={{ mt: 1 }}
-              >
-                <TextField
-                  margin="normal"
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="trackingNum"
+                label="Tracking Number"
+                name="trackingNum"
+                autoComplete="trackingNum"
+                autoFocus
+                value={formState.trackingNum}
+                onChange={handleChange}
+              />
+              <FormControl fullWidth>
+                <InputLabel id="carrier-label">Carrier</InputLabel>
+                <Select
                   required
                   fullWidth
-                  id="trackingNum"
-                  label="Tracking Number"
-                  name="trackingNum"
-                  autoComplete="trackingNum"
-                  autoFocus
-                  value={formState.trackingNum}
+                  name="carrier"
+                  label="Carrier"
+                  labelId="carrier-label"
+                  id="carrier"
+                  value={formState.carrier}
                   onChange={handleChange}
-                />
-                <FormControl fullWidth>
-                  <InputLabel id="carrier-label">Carrier</InputLabel>
-                  <Select
-                    required
-                    fullWidth
-                    name="carrier"
-                    label="Carrier"
-                    labelId="carrier-label"
-                    id="carrier"
-                    value={formState.carrier}
-                    onChange={handleChange}
-                  >
-                    <MenuItem value={"usps"}>USPS</MenuItem>
-                    <MenuItem value={"fedex"}>Fedex</MenuItem>
-                    <MenuItem value={"ups"}>UPS</MenuItem>
-                    <MenuItem value={"dhl_express"}>DHL</MenuItem>
-                  </Select>
-                </FormControl>
-                <Button
-                  type="submit"
-                  fullWidth
-                  variant="contained"
-                  sx={{ mt: 3, mb: 2 }}
                 >
-                  Submit
-                </Button>
-              </Box>
+                  <MenuItem value={"usps"}>USPS</MenuItem>
+                  <MenuItem value={"fedex"}>Fedex</MenuItem>
+                  <MenuItem value={"ups"}>UPS</MenuItem>
+                  <MenuItem value={"dhl_express"}>DHL</MenuItem>
+                </Select>
+              </FormControl>
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+              >
+                Submit
+              </Button>
             </Box>
-          </Container>
-        </ThemeProvider>
-      )}
-      {error && <div>{error.message}</div>}
+          </Box>
+        </Container>
+      </ThemeProvider>
     </main>
   );
 };
