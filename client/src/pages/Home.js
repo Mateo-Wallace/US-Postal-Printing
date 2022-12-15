@@ -14,6 +14,7 @@ import BusinessCardsImage from "../images/businessCards.jpg";
 import MailboxImage from "../images/mailboxes.jpg";
 import Chip from "@mui/material/Chip";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
+import { style } from "@mui/system";
 
 const Home = () => {
   return (
@@ -95,10 +96,16 @@ const Home = () => {
                     "rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)",
                     height: "120px",
                     width: "120px",
+                    "&:hover": {
+                      background: "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, " +
+                      "rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%)",
+                    }
                 }}
                 title={
+                  
                   <Chip
-                    style={{ color: "white" }}
+                    clickable={true}
+                    style={{ color: "white", }}
                     label="Notary"
                     variant="outlined"
                   />
@@ -107,6 +114,10 @@ const Home = () => {
                   borderRadius: "40px",
                   justifySelf: "center",
                   alignSelf: "center",
+                  "&:hover": {
+                    background: "primary.main",
+                    opacity: [0.9, 0.8, 0.7],
+                  }
                 }}
               />
             </Button>
@@ -236,7 +247,7 @@ const Home = () => {
                 title={
                   <Chip
                     style={{ color: "white" }}
-                    label="Mailboxes"
+                    label="Mailbox"
                     variant="outlined"
                   />
                 }
