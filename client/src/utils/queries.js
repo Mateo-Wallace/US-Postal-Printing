@@ -19,6 +19,7 @@ query User {
       createdAt
       trackingNum
       userId
+      notes
     }
     username
   }

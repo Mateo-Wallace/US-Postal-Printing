@@ -16,7 +16,7 @@ import Typography from '@mui/material/Typography';
 import FolderIcon from '@mui/icons-material/Folder';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { CURRENT_USER } from "../../utils/queries";
-import { useQuery } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 import MapIcon from '@mui/icons-material/Map';
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -30,6 +30,7 @@ import TextareaAutosize from '@mui/base/TextareaAutosize';
 import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
+import { ADD_PACKAGE } from '../../utils/mutations'
 
 
 function generate(element) {
@@ -72,21 +73,42 @@ function ViewPackages() {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
-    // const [addPackage, { error }] = useMutation(EDIT_PACKAGE);
+    const [addPackage, { error }] = useMutation(ADD_PACKAGE);
 
-    // const [formState, setFormState] = React.useState({
-    //     trackingNum: "",
-    //     carrier: "",
-    //   });
+    const [formState, setFormState] = React.useState({
+        trackingNum: "",
+        carrier: "",
+        notes: "",
+      });
 
-    //   const handleChangeCarrier = (e) => {
-    //     const { name, value } = e.target;
+      const handleChangeCarrier = (e) => {
+        const { name, value } = e.target;
     
-    //     setFormState({
-    //       ...formState,
-    //       [name]: value,
-    //     });
-    //   };
+        setFormState({
+          ...formState,
+          [name]: value,
+        });
+      };
+
+      const handleAddTrackingNum = (e) => {
+        const TrackingNumber = e.target.value
+
+        setFormState({
+            ...formState,
+            trackingNum: TrackingNumber
+        })
+      }
+
+      const handleAddNote = (e) => {
+        const note = e.target.value
+
+        setFormState({
+            ...formState,
+            notes: note
+        })
+      }
+
+
 
     const handleChange = (panel) => (event, isExpanded) => {
         setExpanded(isExpanded ? panel : false);
@@ -106,26 +128,26 @@ function ViewPackages() {
         alert('pressed')
     }
 
-    // const handleEditPackage = async () => {
-    //         e.preventDefault();
-        
-    //         try {
-    //           const { data } = await addPackage({
-    //             variables: { ...formState },
-    //           });
-        
-    //           console.log(data);
-    //         } catch (error) {
-    //           console.log(error);
-    //         }
-        
-    //         setFormState({
-    //           email: "",
-    //           password: "",
-    //         });
-    // }
+    const handleAddPackage = async () => {
 
+        console.log(formState)
+            try {
+              const { data } = await addPackage({
+                variables: { ...formState },
+              });
+        
+              console.log(data);
+            } catch (error) {
+              console.log(error);
+            }
+        
+            setFormState({
+              email: "",
+              password: "",
+            });
+    }
 
+console.log(userData)
 
     return (
         <div>
@@ -150,11 +172,7 @@ function ViewPackages() {
                         </Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <TextField
-                            id="outlined-note-input"
-                            label="Add Note"
-                            type="text"
-                        />
+                        <Typography>{userPackage.notes}</Typography>
                     </AccordionDetails>
                 </Accordion>
             )}
@@ -178,8 +196,9 @@ function ViewPackages() {
                             label="tracking-number"
                             type="text"
                             placeholder='Ex. 9415511206227509857316'
-                            defaultValue=''
                             fullWidth
+                            value={formState.trackingNum}
+                            onChange={handleAddTrackingNum}
                         />
                     </form>
                     <Typography id="modal-modal-title" variant="h6" component="h2" style={{ textAlign: 'center', marginTop: '50px' }}>
@@ -191,11 +210,12 @@ function ViewPackages() {
                             label="Packages Notes"
                             type="text"
                             placeholder='Ex. 9415511206227509857316'
-                            defaultValue=''
+                            value={formState.notes}
+                            onChange={handleAddNote}
                             style={{ width: '100%', height: 100, borderColor: '#999' }}
                         />
                     </form>
-                    {/* <InputLabel id="carrier-label">Carrier</InputLabel>
+                    <InputLabel id="carrier-label">Carrier</InputLabel>
                     <Select
                         required
                         fullWidth
@@ -209,8 +229,8 @@ function ViewPackages() {
                         <MenuItem value={"fedex"}>Fedex</MenuItem>
                         <MenuItem value={"ups"}>UPS</MenuItem>
                         <MenuItem value={"dhl_express"}>DHL</MenuItem>
-                    </Select> */}
-                    <Button sx={{ width: '100%', mt: 5 }} variant="contained">
+                    </Select>
+                    <Button sx={{ width: '100%', mt: 5 }} variant="contained" onClick={handleAddPackage}>
                         <AddIcon />
                         Add Package
                     </Button>
