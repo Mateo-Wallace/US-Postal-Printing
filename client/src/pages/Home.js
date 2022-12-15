@@ -7,6 +7,11 @@ import Card  from '@mui/material/Paper';
 import CardContent from '@mui/material/CardContent';
 import IconButton  from '@mui/material/IconButton';
 import NotaryImage from '../images/notaryServices.jpeg'
+import PrintingImage from '../images/printingServices.jpg'
+import CopyingImage from '../images/copyingServices.jpg'
+import BusinessCardsImage from '../images/businessCards.jpg'
+import MailboxImage from '../images/mailboxes.jpg'
+
 
 
 const Home = () => {
@@ -33,10 +38,10 @@ const Home = () => {
         width: 550,
         height: 400,
         backgroundColor: 'primary.dark',
-        '&:hover': {
-          backgroundColor: 'primary.main',
-          opacity: [0.9, 0.8, 0.7],
-        },
+        // '&:hover': {
+        //   backgroundColor: 'primary.main',
+        //   opacity: [0.9, 0.8, 0.7],
+        // },
       }}
     > 
     <Typography sx={{margin: 1, textAlign: 'center', color: 'white'}} variant="h4" gutterBottom>
@@ -47,7 +52,20 @@ const Home = () => {
   </Typography>
   <Grid>
   <IconButton aria-label="Notary-Services" size="large">
-  <img style={{height: '150px', width: '150px', borderRadius: '50px'}}src={NotaryImage}></img>
+  <img style={{height: '120px', width: '120px', borderRadius: '50px'}}src={NotaryImage}></img>
+</IconButton>
+
+<IconButton aria-label="Printing-Services" size="large">
+  <img style={{height: '120px', width: '120px', borderRadius: '50px'}}src={PrintingImage}></img>
+</IconButton>
+<IconButton aria-label="Business-Cards" size="large">
+  <img style={{height: '120px', width: '120px', borderRadius: '50px'}}src={BusinessCardsImage}></img>
+</IconButton>
+<IconButton aria-label="Copying-Services" size="large">
+  <img style={{height: '120px', width: '120px', borderRadius: '50px'}}src={CopyingImage}></img>
+</IconButton>
+<IconButton aria-label="Mailbox-Rental" size="large">
+  <img style={{height: '120px', width: '120px', borderRadius: '50px'}}src={MailboxImage}></img>
 </IconButton>
 </Grid>
   </Box>
@@ -60,10 +78,10 @@ const Home = () => {
         width: 550,
         height: 400,
         backgroundColor: 'primary.dark',
-        '&:hover': {
-          backgroundColor: 'primary.main',
-          opacity: [0.9, 0.8, 0.7],
-        },
+        // '&:hover': {
+        //   backgroundColor: 'primary.main',
+        //   opacity: [0.9, 0.8, 0.7],
+        // },
       }}
     >
     <Typography sx={{margin: 1, textAlign: 'center', color: 'white'}} variant="h4" gutterBottom>
