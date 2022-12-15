@@ -25,12 +25,8 @@ const Home = () => {
           marginLeft: "20px",
           alignSelf: "flex-start",
           width: 300,
-          height: 600,
+          height: 700,
           backgroundColor: "primary.dark",
-          "&:hover": {
-            backgroundColor: "primary.main",
-            opacity: [0.9, 0.8, 0.7],
-          },
         }}
       >
          <Typography
@@ -51,7 +47,11 @@ const Home = () => {
               justifyContent: "space-evenly",
             }}>
 
-          <Grid sx={{ margin: 1, marginLeft: '25px' }} item>
+          <Grid sx={{ margin: 1, marginLeft: '25px', borderRadius: '20px',         
+           "&:hover": {
+            backgroundColor: "darkgreen",
+            opacity: 0.8,
+          }, }} item>
           <Chip
             sx={{ fontSize: '18px', letterSpacing: '1.5px', color: "white" }}
             color="success" 
@@ -59,7 +59,11 @@ const Home = () => {
           />
           </Grid>
 
-          <Grid sx={{ margin: 1 }} item>
+          <Grid sx={{ margin: 1, borderRadius: '20px',  
+          "&:hover": {
+            backgroundColor: "darkgreen",
+            opacity: 0.8,
+          }, }} item>
           <Chip
             sx={{ fontSize: '18px', letterSpacing: '1.5px', color: "white" }}
             color="success" 
@@ -67,7 +71,11 @@ const Home = () => {
           />
           </Grid>
 
-          <Grid sx={{ margin: 1, marginLeft: '25px'}} item>
+          <Grid sx={{ margin: 1, marginLeft: '25px', borderRadius: '20px', 
+        "&:hover": {
+          backgroundColor: "darkgreen",
+          opacity: 0.8,
+        },}} item>
           <Chip
             sx={{ fontSize: '18px', letterSpacing: '1.5px', color: "white" }}
             color="success" 
@@ -75,15 +83,156 @@ const Home = () => {
           />
           </Grid>
 
-            <Grid sx={{ margin: 1, marginLeft: '-3px' }} item>
+            <Grid sx={{ margin: 1, marginLeft: '-2px', borderRadius: '20px', 
+            "&:hover": {
+            backgroundColor: "darkgreen",
+            opacity: 0.8,
+          }, }} item>
           <Chip
             sx={{ fontSize: '18px', letterSpacing: '1.5px', color: "white" }}
             color="success" 
             label="UPS"
           />
           </Grid>
+          </Grid>
+          <Typography
+            sx={{ margin: 2, color: "white" }}
+            variant="h6"
+          >
+            Dates and Times:
+          </Typography>
+          
+          <Typography
+            sx={{ margin: 2, textAlign: "center", color: "white", fontSize: '16px', marginLeft: '25px', marginTop: '20px' }}
+            variant="h6"
+          >
+            All Carriers
+          </Typography>
+
+          <Grid sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "space-evenly",
+            }}>
+
+          <Grid sx={{ margin: 1, marginLeft: '25px', borderRadius: '20px',         
+           "&:hover": {
+            backgroundColor: "primary.main",
+            opacity: [0.9, 0.8, 0.7],
+          }, }} item>
+
+            <Typography
+            sx={{ margin: 1, marginLeft: '3px', textAlign: 'center', color: "white", fontSize: '14px' }}
+            variant="h6"
+          >
+            Mondays
+          </Typography>
+
+          <Chip
+            sx={{ fontSize: '18px', textAlign: 'center', letterSpacing: '1.5px', color: "white" }}
+            color="success" 
+            label="5pm"
+          />
+          </Grid>
+
+          <Grid sx={{ margin: 1 }} item>
+
+          <Typography
+            sx={{ margin: 1, marginLeft: '1px', textAlign: 'center', color: "white", fontSize: '14px' }}
+            variant="h6"
+          >
+            Tuesdays
+          </Typography>
+
+          <Chip
+            sx={{ fontSize: '18px', textAlign: 'center', letterSpacing: '1.5px', color: "white" }}
+            color="success" 
+            label="5pm"
+          />
+          </Grid>
+
+          <Grid sx={{ margin: 1, marginLeft: '32px'}} item>
+
+          <Typography
+            sx={{ margin: 1, marginLeft: '-5px', textAlign: 'center', color: "white", fontSize: '14px' }}
+            variant="h6"
+          >
+            Wednesdays
+          </Typography>
+
+          <Chip
+            sx={{ fontSize: '18px', textAlign: 'center', letterSpacing: '1.5px', color: "white" }}
+            color="success" 
+            label="5pm"
+          />
+          </Grid>
+
+            <Grid sx={{ margin: 1, marginLeft: '2px' }} item>
+
+            <Typography
+            sx={{ margin: 1, textAlign: 'center', marginLeft: '0px', color: "white", fontSize: '14px' }}
+            variant="h6"
+          >
+            Thursdays
+          </Typography>
+
+          <Chip
+            sx={{ fontSize: '18px', textAlign: 'center', letterSpacing: '1.5px', color: "white" }}
+            color="success" 
+            label="5pm"
+          />
+          </Grid>
+
+          <Grid sx={{ margin: 1, marginLeft: '20px'}} item>
+
+          <Typography
+            sx={{ margin: 1, color: "white", textAlign: 'center', fontSize: '14px' }}
+            variant="h6"
+          >
+            Fridays
+          </Typography>
+
+          <Chip
+            sx={{ fontSize: '18px', textAlign: 'center', letterSpacing: '1.5px', color: "white" }}
+            color="success" 
+            label="5pm"
+          />
+          </Grid>
+
+            <Grid sx={{ margin: 1, marginRight: '-3px' }} item>
+
+            <Typography
+            sx={{ margin: 1, marginLeft: '0px', textAlign: 'center', color: "white", fontSize: '14px' }}
+            variant="h6"
+          >
+            Saturdays
+          </Typography>
+
+          <Chip
+            sx={{ fontSize: '18px', textAlign: 'center', letterSpacing: '1.5px', color: "white" }}
+            color="success" 
+            label="1pm"
+          />
+          </Grid>
+
+          <Grid sx={{ margin: 1, marginLeft: '25px'}} item>
+
+<Typography
+  sx={{ margin: 1, textAlign: 'center', color: "white", fontSize: '14px' }}
+  variant="h6"
+>
+  Sundays
+</Typography>
+
+<Chip
+  sx={{ fontSize: '18px', textAlign: 'center', letterSpacing: '1.5px', color: "white" }}
+  color="error" 
+  label="No Pickups"
+/>
+</Grid>
 
           </Grid>
+
       </Box>
       <Container
         sx={{

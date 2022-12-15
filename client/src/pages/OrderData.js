@@ -34,7 +34,7 @@ export const json = {
           {
             type: "paneldynamic",
             name: "items",
-            title: "Items",
+            title: "Business Cards",
             keyName: "name",
             showQuestionNumbers: "none",
             templateTitle: "item #{panelIndex}",
