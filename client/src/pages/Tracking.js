@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 import { useMutation } from "@apollo/client";
 import { ADD_PACKAGE } from "../utils/mutations";
+import Auth from "../utils/auth";
+import { shippoTracking } from "../utils/API";
 
 // material UI imports
 import InputLabel from "@mui/material/InputLabel";
@@ -11,6 +13,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
+import FormControl from "@mui/material/FormControl";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Link2 from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
@@ -45,20 +48,42 @@ const Tracking = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      const { data } = await addPackage({
-        variables: { ...formState },
-      });
-
-      console.log(data);
-    } catch (error) {
-      console.log(error);
+    if (!formState) {
+      return false;
     }
 
-    setFormState({
-      email: "",
-      password: "",
-    });
+    try {
+      const response = await shippoTracking(
+        formState.carrier,
+        formState.trackingNum
+      );
+
+      console.log(response);
+
+      if (!response.ok) {
+        throw new Error("something went wrong!");
+      }
+
+      const { items } = await response.json();
+      console.log(items);
+    } catch (err) {
+      console.error(err);
+    }
+
+    // try {
+    //   const { data } = await addPackage({
+    //     variables: { ...formState },
+    //   });
+
+    //   console.log(data);
+    // } catch (error) {
+    //   console.log(error);
+    // }
+
+    // setFormState({
+    //   email: "",
+    //   password: "",
+    // });
   };
 
   return (
@@ -101,21 +126,24 @@ const Tracking = () => {
                   value={formState.trackingNum}
                   onChange={handleChange}
                 />
-                <InputLabel id="carrier-label">Carrier</InputLabel>
-                <Select
-                  required
-                  fullWidth
-                  name="carrier"
-                  labelId="carrier-label"
-                  id="carrier"
-                  value={formState.carrier}
-                  onChange={handleChange}
-                >
-                  <MenuItem value={"usps"}>USPS</MenuItem>
-                  <MenuItem value={"fedex"}>Fedex</MenuItem>
-                  <MenuItem value={"ups"}>UPS</MenuItem>
-                  <MenuItem value={"dhl_express"}>DHL</MenuItem>
-                </Select>
+                <FormControl fullWidth>
+                  <InputLabel id="carrier-label">Carrier</InputLabel>
+                  <Select
+                    required
+                    fullWidth
+                    name="carrier"
+                    label="Carrier"
+                    labelId="carrier-label"
+                    id="carrier"
+                    value={formState.carrier}
+                    onChange={handleChange}
+                  >
+                    <MenuItem value={"usps"}>USPS</MenuItem>
+                    <MenuItem value={"fedex"}>Fedex</MenuItem>
+                    <MenuItem value={"ups"}>UPS</MenuItem>
+                    <MenuItem value={"dhl_express"}>DHL</MenuItem>
+                  </Select>
+                </FormControl>
                 <Button
                   type="submit"
                   fullWidth
