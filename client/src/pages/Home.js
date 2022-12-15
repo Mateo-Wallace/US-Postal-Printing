@@ -6,6 +6,7 @@ import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Paper";
 import CardContent from "@mui/material/CardContent";
 import IconButton from "@mui/material/IconButton";
+import Button from "@mui/material/Button";
 import NotaryImage from "../images/notaryServices.jpeg";
 import PrintingImage from "../images/printingServices.jpg";
 import CopyingImage from "../images/copyingServices.jpg";
@@ -75,18 +76,15 @@ const Home = () => {
               justifyContent: "space-evenly",
             }}
           >
-            <IconButton
-              style={{ position: "relative" }}
-              sx={{ margin: "5px" }}
-              aria-label="Notary-Services"
-              size="large"
+            <Button
+              style={{ height: "120px", width: "120px",  padding: "10px", margin: "10px", borderRadius: "40px" }}
             >
                 <img
                   style={{
                     position: "aboslute",
                     height: "120px",
                     width: "120px",
-                    borderRadius: "50px",
+                    borderRadius: "40px"
                   }}
                   src={NotaryImage}
                 />
@@ -95,6 +93,8 @@ const Home = () => {
                   background:
                     "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, " +
                     "rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)",
+                    height: "120px",
+                    width: "120px",
                 }}
                 title={
                   <Chip
@@ -104,12 +104,12 @@ const Home = () => {
                   />
                 }
                 style={{
-                  borderRadius: "100px",
+                  borderRadius: "40px",
                   justifySelf: "center",
                   alignSelf: "center",
                 }}
               />
-            </IconButton>
+            </Button>
 
             <IconButton
               sx={{ margin: "5px", display: "flex" }}
