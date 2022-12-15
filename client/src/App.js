@@ -73,7 +73,7 @@ function App() {
       <Router>
       <ThemeProvider theme={theme} >
       <Nav />
-      <div style={{position: 'sticky', marginTop: '120px'}}>
+      <div style={{position: 'sticky', marginTop: '95px'}}>
         <Routes >
           <Route path='/' element={<Home />} />
           <Route path='/signup' element={<Signup />} />
