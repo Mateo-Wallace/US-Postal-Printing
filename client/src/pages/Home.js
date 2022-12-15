@@ -11,6 +11,8 @@ import PrintingImage from '../images/printingServices.jpg'
 import CopyingImage from '../images/copyingServices.jpg'
 import BusinessCardsImage from '../images/businessCards.jpg'
 import MailboxImage from '../images/mailboxes.jpg'
+import Chip from '@mui/material/Chip';
+import ImageListItemBar from '@mui/material/ImageListItemBar'
 
 
 
@@ -52,13 +54,26 @@ const Home = () => {
   </Typography>
   <Grid container sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly'}}>
 
-  <IconButton sx={{margin: '5px'}} aria-label="Notary-Services" size="large">
-  <img style={{height: '120px', width: '120px', borderRadius: '50px'}}src={NotaryImage}></img>
+  <IconButton style={{position: 'relative'}} sx={{margin: '5px'}} aria-label="Notary-Services" size="large">
+    <div  style={{display: 'flex', position: 'relative', justifyContent: 'center'}} >
+  <Chip style={{zIndex: 90, position: 'aboslute'}} label='Notary Services' variant="outlined" />
+  <img style={{ position: 'aboslute', height: '120px', width: '120px', borderRadius: '50px'}}src={NotaryImage}></img>
+  </div>
 </IconButton>
 
-<IconButton sx={{margin: '5px'}}  aria-label="Printing-Services" size="large">
-  <img style={{height: '120px', width: '120px', borderRadius: '50px'}}src={PrintingImage}></img>
+<IconButton sx={{margin: '5px', display: 'flex'}}  aria-label="Printing-Services" size="large">
+  <img style={{height: '120px', width: '120px', borderRadius: '50px'}}src={PrintingImage} />
+  <ImageListItemBar
+            sx={{
+              background:
+                'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
+                'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+            }}
+            title={<Chip style={{color: 'white'}} label='Printing' variant="outlined" />}
+            style={{borderRadius: '100px', justifySelf: 'center', alignSelf: 'center' }}
+          />
 </IconButton>
+
 
 <IconButton sx={{margin: '5px'}}  aria-label="Business-Cards" size="large">
   <img style={{height: '120px', width: '120px', borderRadius: '50px'}}src={BusinessCardsImage}></img>
