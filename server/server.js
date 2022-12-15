@@ -1,3 +1,4 @@
+const axios = require("axios").default;
 const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
 const path = require("path");
@@ -29,6 +30,19 @@ app.get("/", (req, res) => {
 const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
   server.applyMiddleware({ app });
+
+  app.get(`/shippo`, async (req, res) => {
+    const response = await axios.get(
+      `https://api.goshippo.com/tracks/${req.query.carrier}/${req.query.trackingNum}/`,
+      {
+        headers: {
+          Authorization:
+            "ShippoToken shippo_live_2aeb30d49cea5e24877025920d21a632d5f91e05",
+        },
+      }
+    );
+    res.json({ chapter: response.data });
+  });
 
   db.once("open", () => {
     app.listen(PORT, () => {
