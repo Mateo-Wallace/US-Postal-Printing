@@ -73,6 +73,3 @@ mutation deletePackage($packageId: ID!) {
     _id
   }
 }`;
-
-
-

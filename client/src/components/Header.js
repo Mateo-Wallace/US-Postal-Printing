@@ -14,6 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import Hamburger from 'hamburger-react';
 import { Link } from 'react-router-dom';
+import logo from '../images/logo192.png';
 
 const pages = ['Products', 'Pricing', 'Login/Signup'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -50,15 +51,17 @@ function Nav() {
   
 
   return (
-    <AppBar position="static">
+    <AppBar position="fixed">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+        <Link to='/' style={{ color: 'white', textDecoration: 'none' }}>
+        <img height = '80px' width = '80px' src={logo} />
+        </Link>
+        <Link to='/' style={{ color: 'white', textDecoration: 'none' }}>
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href="/"
+            component="p"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -72,6 +75,7 @@ function Nav() {
           >
             US Postal & Printing
           </Typography>
+          </Link>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
@@ -110,10 +114,15 @@ function Nav() {
             <Link to='/make-an-order' style={{ textDecoration: 'none' }}>
             <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Make an<br></br> Order </Button>
             </Link>
+            <Link to='/tracking' style={{ textDecoration: 'none' }}>
+            <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Tracking </Button>
+            </Link>
             <Link to='/dashboard/:userId' style={{ textDecoration: 'none' }}>
             <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Dashboard</Button>
             </Link>
+            <Link to='/contact-us' style={{ textDecoration: 'none' }}>
             <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Contact Us</Button>
+            </Link>
             {/* <Link to='/signup' style={{ textDecoration: 'none' }}>
             <Button variant="contained" sx={{ my: 2, color: 'white', display: 'block' }}>Signup</Button>
             </Link> */}

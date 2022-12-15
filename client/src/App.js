@@ -17,12 +17,15 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Home from './pages/Home';
 import ProductsServices from './pages/Products&Services';
-import { MakeAnOrder } from './pages/MakeAnOrder';
+import Tracking from './pages/Tracking';
+import MakeAnOrder from './pages/MakeAnOrder';
+import ContactUs from './pages/ContactUs';
 
 /// IMPORT COMPONENTS ///
 import ProtectRoute from './components/ProtectRoute';
 import './App.css';
 import Nav from './components/Header';
+import StickyFooter from './components/Footer';
 
 
 const httpLink = createHttpLink({
@@ -51,8 +54,8 @@ const theme = createTheme({
   palette: {
     primary: {
       light: '#757ce8',
-      main: '#3f50b5',
-      dark: '#002884',
+      main: '#149be6',
+      dark: '#0d579b',
       contrastText: '#fff',
     },
     secondary: {
@@ -70,19 +73,25 @@ function App() {
       <Router>
       <ThemeProvider theme={theme} >
       <Nav />
-        <Routes>
+      <div style={{marginTop: '140px'}}>
+        <Routes >
           <Route path='/' element={<Home />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />
           <Route path='/products&services' element={<ProductsServices />} />
           <Route path='/make-an-order' element={<MakeAnOrder />} />
+          <Route path='/tracking' element={<Tracking />} />
+          <Route path='/contact-us' element={<ContactUs />} />
           <Route
             path='dashboard/:userId'
             element={Auth.loggedIn() ? <Dashboard /> : <ProtectRoute />}
           />
         </Routes>
+        </div>
+        <StickyFooter />
         </ThemeProvider>
       </Router>
+      
     </ApolloProvider>
   );
 }
