@@ -159,6 +159,22 @@ const Tracking = () => {
             </Box>
           </Box>
         </Container>
+
+        <Container>
+          <h2>
+            {trackedPackage.length
+              ? `Viewing ${trackedPackage.length} results:`
+              : ""}
+          </h2>
+          <Box>
+            {trackedPackage.map((p) => {
+              return (
+                <div>Hello tracking: {p.trackingNumber}</div>
+
+              );
+            })}
+          </Box>
+        </Container>
       </ThemeProvider>
     </main>
   );
