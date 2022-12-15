@@ -20,7 +20,6 @@ export default function StickyFooter() {
     <footer
     style={{
       position: 'sticky',
-      marginTop: '20px'
     }}
     >
       <AppBar

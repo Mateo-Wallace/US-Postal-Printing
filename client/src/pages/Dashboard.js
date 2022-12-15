@@ -146,7 +146,7 @@ function DashboardContent() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ display: 'flex', marginTop: '-20px'}}>
+      <Box sx={{ display: 'flex' }}>
         <CssBaseline />
         {/* <AppBar position="absolute" open={open}>
           <Toolbar
