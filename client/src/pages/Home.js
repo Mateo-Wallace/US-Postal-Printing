@@ -113,7 +113,7 @@ const Home = () => {
                   <Tooltip title="Notary Services" arrow>
                     <Chip
                       clickable={true}
-                      style={{ color: "white" }}
+                      style={{color: 'white'}}
                       label="Notary"
                       variant="outlined"
                     />
@@ -145,22 +145,28 @@ const Home = () => {
               <ImageListItemBar
                 sx={{
                   background:
-                    "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, " +
-                    "rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)",
-                  height: "120px",
-                  width: "120px",
+                  "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, " +
+                  "rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)",
+                height: "120px",
+                width: "120px",
+                "&:hover": {
+                  background:
+                    "linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, " +
+                    "rgba(0,0,0,0.25) 65%, rgba(0,0,0,0) 100%)",
+                },
                 }}
                 title={
+                  <Tooltip title="Printing Services" arrow>
                   <Chip
-                    style={{ color: "white" }}
+                    clickable={true}
+                    style={{color: 'white'}}
                     label="Printing"
                     variant="outlined"
                   />
+                  </Tooltip>
                 }
                 style={{
-                  borderRadius: "40px",
-                  justifySelf: "center",
-                  alignSelf: "center",
+                  borderRadius: "40px"
                 }}
               />
             </Button>
@@ -189,18 +195,24 @@ const Home = () => {
                     "rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)",
                   height: "120px",
                   width: "120px",
+                  "&:hover": {
+                    background:
+                      "linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, " +
+                      "rgba(0,0,0,0.25) 65%, rgba(0,0,0,0) 100%)",
+                  },
                 }}
                 title={
+                  <Tooltip title="Business Cards" arrow>
                   <Chip
+                    clickable={true}
                     style={{ color: "white" }}
                     label="Cards"
                     variant="outlined"
                   />
+                  </Tooltip>
                 }
                 style={{
                   borderRadius: "40px",
-                  justifySelf: "center",
-                  alignSelf: "center",
                 }}
               />
             </Button>
@@ -225,22 +237,28 @@ const Home = () => {
               <ImageListItemBar
                 sx={{
                   background:
-                    "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, " +
-                    "rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)",
-                  height: "120px",
-                  width: "120px",
+                  "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, " +
+                  "rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)",
+                height: "120px",
+                width: "120px",
+                "&:hover": {
+                  background:
+                    "linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, " +
+                    "rgba(0,0,0,0.25) 65%, rgba(0,0,0,0) 100%)",
+                },
                 }}
                 title={
+                  <Tooltip title="Copying Services" arrow>
                   <Chip
+                    clickable={true}
                     style={{ color: "white" }}
                     label="Copying"
                     variant="outlined"
                   />
+                  </Tooltip>
                 }
                 style={{
                   borderRadius: "40px",
-                  justifySelf: "center",
-                  alignSelf: "center",
                 }}
               />
             </Button>
@@ -265,22 +283,28 @@ const Home = () => {
               <ImageListItemBar
                 sx={{
                   background:
-                    "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, " +
-                    "rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)",
-                  height: "120px",
-                  width: "120px",
+                  "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, " +
+                  "rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)",
+                height: "120px",
+                width: "120px",
+                "&:hover": {
+                  background:
+                    "linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, " +
+                    "rgba(0,0,0,0.25) 65%, rgba(0,0,0,0) 100%)",
+                },
                 }}
                 title={
+                  <Tooltip title="Mailbox Rental" arrow>
                   <Chip
+                    clickable={true}
                     style={{ color: "white" }}
                     label="Mailbox"
                     variant="outlined"
                   />
+                  </Tooltip>
                 }
                 style={{
-                  borderRadius: "40px",
-                  justifySelf: "center",
-                  alignSelf: "center",
+                  borderRadius: "40px"
                 }}
               />
             </Button>
