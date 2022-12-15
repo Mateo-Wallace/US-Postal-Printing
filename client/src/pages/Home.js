@@ -84,6 +84,7 @@ const Home = () => {
                 padding: "10px",
                 margin: "10px",
                 borderRadius: "40px",
+                boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)'
               }}
             >
               <img
@@ -105,9 +106,9 @@ const Home = () => {
                   width: "120px",
                   "&:hover": {
                     background:
-                      "linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, " +
+                      "linear-gradient(to bottom, rgba(0,0,0,0.60) 0%, " +
                       "rgba(0,0,0,0.25) 65%, rgba(0,0,0,0) 100%)",
-                  },
+                  }
                 }}
                 title={
                   <Tooltip title="Notary Services" arrow>
@@ -132,6 +133,7 @@ const Home = () => {
                 padding: "10px",
                 margin: "10px",
                 borderRadius: "40px",
+                boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)'
               }}
             >
               <img
@@ -151,7 +153,7 @@ const Home = () => {
                 width: "120px",
                 "&:hover": {
                   background:
-                    "linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, " +
+                    "linear-gradient(to bottom, rgba(0,0,0,0.60) 0%, " +
                     "rgba(0,0,0,0.25) 65%, rgba(0,0,0,0) 100%)",
                 },
                 }}
@@ -178,6 +180,7 @@ const Home = () => {
                 padding: "10px",
                 margin: "10px",
                 borderRadius: "40px",
+                boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)'
               }}
             >
               <img
@@ -197,7 +200,7 @@ const Home = () => {
                   width: "120px",
                   "&:hover": {
                     background:
-                      "linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, " +
+                      "linear-gradient(to bottom, rgba(0,0,0,0.60) 0%, " +
                       "rgba(0,0,0,0.25) 65%, rgba(0,0,0,0) 100%)",
                   },
                 }}
@@ -224,6 +227,7 @@ const Home = () => {
                 padding: "10px",
                 margin: "10px",
                 borderRadius: "40px",
+                boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)'
               }}
             >
               <img
@@ -243,7 +247,7 @@ const Home = () => {
                 width: "120px",
                 "&:hover": {
                   background:
-                    "linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, " +
+                    "linear-gradient(to bottom, rgba(0,0,0,0.60) 0%, " +
                     "rgba(0,0,0,0.25) 65%, rgba(0,0,0,0) 100%)",
                 },
                 }}
@@ -270,6 +274,7 @@ const Home = () => {
                 padding: "10px",
                 margin: "10px",
                 borderRadius: "40px",
+                boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)'
               }}
             >
               <img
@@ -289,7 +294,7 @@ const Home = () => {
                 width: "120px",
                 "&:hover": {
                   background:
-                    "linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, " +
+                    "linear-gradient(to bottom, rgba(0,0,0,0.60) 0%, " +
                     "rgba(0,0,0,0.25) 65%, rgba(0,0,0,0) 100%)",
                 },
                 }}
@@ -336,12 +341,16 @@ const Home = () => {
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3564.081841247327!2d-80.1523419!3d26.7098323!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9290c5efab345%3A0x214ddf6757f47116!2sUS%20Postal%20%26%20Printing!5e0!3m2!1sen!2sus!4v1671043314933!5m2!1sen!2sus"
             width="500"
             height="300"
-            style={{ border: 0, margin: "8px", borderRadius: "25px" }}
+            style={{ border: 0, margin: "8px", borderRadius: "25px", 
+            boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)' 
+          }}
             allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
-          <Card sx={{ fontSize: "16px", margin: 1, borderRadius: "25px" }}>
+          <Card sx={{ fontSize: "16px", margin: 1, borderRadius: "25px", 
+            boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)'
+        }}>
             <Grid sx={{ margin: 1 }} item>
               <Box borderBottom={1}>STORE HOURS</Box>
               <Grid container>
