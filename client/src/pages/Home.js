@@ -18,7 +18,7 @@ import { style } from "@mui/system";
 
 const Home = () => {
   return (
-    <div style={{ display: "flex" }}>
+    <div style={{ display: "flex", marginTop: '120px' }}>
       <Box
         sx={{
           margin: 1,
@@ -32,7 +32,59 @@ const Home = () => {
             opacity: [0.9, 0.8, 0.7],
           },
         }}
-      />
+      >
+         <Typography
+            sx={{ margin: 2, textAlign: "center", color: "white" }}
+            variant="h4"
+          >
+            Pickup Times
+          </Typography>
+          <Typography
+            sx={{ margin: 2, color: "white" }}
+            variant="h6"
+          >
+            Carrier Options:
+          </Typography>
+          <Grid sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "space-evenly",
+            }}>
+
+          <Grid sx={{ margin: 1, marginLeft: '25px' }} item>
+          <Chip
+            sx={{ fontSize: '18px', letterSpacing: '1.5px', color: "white" }}
+            color="success" 
+            label="USPS"
+          />
+          </Grid>
+
+          <Grid sx={{ margin: 1 }} item>
+          <Chip
+            sx={{ fontSize: '18px', letterSpacing: '1.5px', color: "white" }}
+            color="success" 
+            label="DHL"
+          />
+          </Grid>
+
+          <Grid sx={{ margin: 1, marginLeft: '25px'}} item>
+          <Chip
+            sx={{ fontSize: '18px', letterSpacing: '1.5px', color: "white" }}
+            color="success" 
+            label="FEDEX"
+          />
+          </Grid>
+
+            <Grid sx={{ margin: 1, marginLeft: '-3px' }} item>
+          <Chip
+            sx={{ fontSize: '18px', letterSpacing: '1.5px', color: "white" }}
+            color="success" 
+            label="UPS"
+          />
+          </Grid>
+
+          </Grid>
+      </Box>
       <Container
         sx={{
           margin: 0,
@@ -49,14 +101,11 @@ const Home = () => {
             width: 550,
             height: 400,
             backgroundColor: "primary.dark",
-            // '&:hover': {
-            //   backgroundColor: 'primary.main',
-            //   opacity: [0.9, 0.8, 0.7],
-            // },
+            borderRadius: "40px",
           }}
         >
           <Typography
-            sx={{ margin: 1, textAlign: "center", color: "white" }}
+            sx={{ margin: 2, textAlign: "center", color: "white" }}
             variant="h4"
             gutterBottom
           >
@@ -331,7 +380,7 @@ const Home = () => {
           }}
         >
           <Typography
-            sx={{ margin: 1, textAlign: "center", color: "white" }}
+            sx={{ margin: 2, textAlign: "center", color: "white" }}
             variant="h4"
             gutterBottom
           >
@@ -351,7 +400,7 @@ const Home = () => {
           <Card sx={{ fontSize: "16px", margin: 1, borderRadius: "25px", 
             boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)'
         }}>
-            <Grid sx={{ margin: 1 }} item>
+            <Grid sx={{ margin: 1.3 }} item>
               <Box borderBottom={1}>STORE HOURS</Box>
               <Grid container>
                 <Grid item px={1}>
@@ -407,7 +456,7 @@ const Home = () => {
           }}
         >
           <Typography
-            sx={{ margin: 1, textAlign: "center", color: "white" }}
+            sx={{ margin: 2, textAlign: "center", color: "white" }}
             variant="h4"
             gutterBottom
           >
