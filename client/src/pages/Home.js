@@ -111,16 +111,14 @@ const Home = () => {
               />
             </Button>
 
-            <IconButton
-              sx={{ margin: "5px", display: "flex" }}
-              aria-label="Printing-Services"
-              size="large"
+            <Button
+              style={{ height: "120px", width: "120px",  padding: "10px", margin: "10px", borderRadius: "40px" }}
             >
               <img
                 style={{
                   height: "120px",
                   width: "120px",
-                  borderRadius: "50px",
+                  borderRadius: "40px",
                 }}
                 src={PrintingImage}
               />
@@ -129,6 +127,8 @@ const Home = () => {
                   background:
                     "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, " +
                     "rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)",
+                    height: "120px",
+                    width: "120px",
                 }}
                 title={
                   <Chip
@@ -138,23 +138,21 @@ const Home = () => {
                   />
                 }
                 style={{
-                  borderRadius: "100px",
+                  borderRadius: "40px",
                   justifySelf: "center",
                   alignSelf: "center",
                 }}
               />
-            </IconButton>
+            </Button>
 
-            <IconButton
-              sx={{ margin: "5px" }}
-              aria-label="Business-Cards"
-              size="large"
+            <Button
+              style={{ height: "120px", width: "120px",  padding: "10px", margin: "10px", borderRadius: "40px" }}
             >
               <img
                 style={{
                   height: "120px",
                   width: "120px",
-                  borderRadius: "50px",
+                  borderRadius: "40px",
                 }}
                 src={BusinessCardsImage}
               />
@@ -163,6 +161,8 @@ const Home = () => {
                   background:
                     "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, " +
                     "rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)",
+                    height: "120px",
+                    width: "120px",
                 }}
                 title={
                   <Chip
@@ -172,23 +172,21 @@ const Home = () => {
                   />
                 }
                 style={{
-                  borderRadius: "100px",
+                  borderRadius: "40px",
                   justifySelf: "center",
                   alignSelf: "center",
                 }}
               />
-            </IconButton>
+            </Button>
 
-            <IconButton
-              sx={{ margin: "5px" }}
-              aria-label="Copying-Services"
-              size="large"
+            <Button
+              style={{ height: "120px", width: "120px",  padding: "10px", margin: "10px", borderRadius: "40px" }}
             >
               <img
                 style={{
                   height: "120px",
                   width: "120px",
-                  borderRadius: "50px",
+                  borderRadius: "40px",
                 }}
                 src={CopyingImage}
               />
@@ -197,6 +195,8 @@ const Home = () => {
                   background:
                     "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, " +
                     "rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)",
+                    height: "120px",
+                    width: "120px"
                 }}
                 title={
                   <Chip
@@ -206,24 +206,22 @@ const Home = () => {
                   />
                 }
                 style={{
-                  borderRadius: "100px",
+                  borderRadius: "40px",
                   justifySelf: "center",
                   alignSelf: "center",
                 }}
               />
               
-            </IconButton>
+            </Button>
 
-            <IconButton
-              sx={{ margin: "5px" }}
-              aria-label="Mailbox-Rental"
-              size="large"
+            <Button
+              style={{ height: "120px", width: "120px",  padding: "10px", margin: "10px", borderRadius: "40px" }}
             >
               <img
                 style={{
                   height: "120px",
                   width: "120px",
-                  borderRadius: "50px",
+                  borderRadius: "40px",
                 }}
                 src={MailboxImage}
               />
@@ -232,6 +230,8 @@ const Home = () => {
                   background:
                     "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, " +
                     "rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)",
+                    height: "120px",
+                    width: "120px"
                 }}
                 title={
                   <Chip
@@ -241,12 +241,12 @@ const Home = () => {
                   />
                 }
                 style={{
-                  borderRadius: "100px",
+                  borderRadius: "40px",
                   justifySelf: "center",
                   alignSelf: "center",
                 }}
               />
-            </IconButton>
+            </Button>
           </Grid>
         </Box>
         <Box
