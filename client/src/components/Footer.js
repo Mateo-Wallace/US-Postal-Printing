@@ -49,15 +49,15 @@ export default function StickyFooter() {
             <Grid container spacing={5} color='white'>
               <Grid item>
                 <Box borderBottom={1}>ADDRESS</Box>
-                <Box>Postal & Printing</Box>
-                <Box>11150 Okeechobee Blvd Ste P</Box>
-                <Box>Royal Palm Beach, FL 33411</Box>
+                <Box>US Postal & Printing</Box>
+                <Box>6901 Okeechobee Blvd Ste D-5</Box>
+                <Box>West Palm Beach, FL 33411</Box>
               </Grid>
               <Grid item>
                 <Box borderBottom={1}>CONTACT</Box>
-                <Box>PH: 561.508.3336</Box>
-                <Box>FX: 561.355.0459</Box>
-                <Box>EM: info@postalandprinting.com</Box>
+                <Box>PH: 561.686.9660</Box>
+                <Box>FX: 561.684.3257</Box>
+                <Box>EM: uspostalprinting@gmail.com</Box>
               </Grid>
               <Grid item>
                 <Box borderBottom={1}>STORE HOURS</Box>
@@ -90,7 +90,7 @@ export default function StickyFooter() {
                   <Grid item px={1}>
                     <Box>SAT</Box>
                     <Box>10:00 AM</Box>
-                    <Box>2:00 PM</Box>
+                    <Box>3:00 PM</Box>
                   </Grid>
                   <Grid item px={1}>
                     <Box>SUN</Box>
@@ -106,7 +106,7 @@ export default function StickyFooter() {
           sx={{
             py: 3,
             px: 2,
-            backgroundColor: 'primary.dark',
+            backgroundColor: 'primary',
           }}
         >
           <Container maxWidth="sm">
