@@ -32,6 +32,7 @@ const Tracking = () => {
     trackingNum: "",
     carrier: "",
   });
+  const [trackedPackage, setTrackedPackage] = useState([]);
   const [addPackage, { error, data }] = useMutation(ADD_PACKAGE);
 
   /// HANDLE CHANGE ///
@@ -60,12 +61,21 @@ const Tracking = () => {
 
       console.log(response);
 
-      if (!response.ok) {
-        throw new Error("something went wrong!");
-      }
+      // if (!response.ok) {
+      //   throw new Error("something went wrong!");
+      // }
+      const packageData = [
+        {
+          trackingNumber: response.tracking_number,
+          carrier: response.carrier,
+        },
+      ];
 
-      const { items } = await response.json();
-      console.log(items);
+      setTrackedPackage(packageData);
+      setFormState({
+        trackingNum: "",
+        carrier: "",
+      });
     } catch (err) {
       console.error(err);
     }
