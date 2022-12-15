@@ -73,7 +73,7 @@ function App() {
       <Router>
       <ThemeProvider theme={theme} >
       <Nav />
-      <div style={{marginTop: '140px'}}>
+      <div style={{position: 'sticky', marginTop: '120px'}}>
         <Routes >
           <Route path='/' element={<Home />} />
           <Route path='/signup' element={<Signup />} />
@@ -84,7 +84,7 @@ function App() {
           <Route path='/contact-us' element={<ContactUs />} />
           <Route
             path='dashboard/:userId'
-            element={Auth.loggedIn() ? <Dashboard /> : <ProtectRoute />}
+            element={Auth.loggedIn() ? <Dashboard style={{ zIndex: -1, position: 'sticky' }} /> : <ProtectRoute />}
           />
         </Routes>
         </div>
