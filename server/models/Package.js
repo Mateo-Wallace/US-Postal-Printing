@@ -9,6 +9,7 @@ const packageSchema = new Schema(
     },
     carrier: {
       type: String,
+      required: true,
     },
     notes: {
       type: String,

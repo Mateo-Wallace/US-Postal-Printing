@@ -5,7 +5,7 @@ const typeDefs = gql`
     _id: ID!
     username: String!
     email: String!
-    password: String!
+    password: String
     phoneNum: String
     packages: [Package]!
     orders: [Order]!
@@ -58,7 +58,7 @@ const typeDefs = gql`
     ): User
     deleteUser: User
 
-    addPackage(trackingNum: String!, carrier: String, notes: String): Package
+    addPackage(trackingNum: String!, carrier: String!, notes: String): Package
     editPackage(
       packageId: ID!
       trackingNum: String

@@ -5,6 +5,7 @@ query User {
   me {
     _id
     email
+    phoneNum
     orders {
       _id
       createdAt
@@ -18,6 +19,7 @@ query User {
       createdAt
       trackingNum
       userId
+      notes
     }
     username
   }

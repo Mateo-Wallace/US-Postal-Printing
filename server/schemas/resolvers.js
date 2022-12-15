@@ -82,14 +82,25 @@ const resolvers = {
       if (context.user) {
         if (args.password) {
           const saltRounds = 12;
-          newPassword = await bcrypt.hash(args.password, saltRounds);
+          const newPassword = await bcrypt.hash(args.password, saltRounds);
+          return User.findOneAndUpdate(
+            { _id: context.user._id },
+            {
+              $set: {
+                username: args.username,
+                password: newPassword,
+                email: args.email,
+                phoneNum: args.phoneNum,
+              },
+            },
+            { new: true }
+          );
         }
         return User.findOneAndUpdate(
           { _id: context.user._id },
           {
             $set: {
               username: args.username,
-              password: newPassword,
               email: args.email,
               phoneNum: args.phoneNum,
             },
