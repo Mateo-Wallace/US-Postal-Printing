@@ -40,6 +40,7 @@ const Tracking = () => {
     carrier: "",
   });
   const [trackedPackage, setTrackedPackage] = useState([]);
+  const [packageSaved, setPackageSaved] = useState();
   const [addPackage, { error, data }] = useMutation(ADD_PACKAGE);
 
   /// HANDLE CHANGE ///
@@ -55,6 +56,7 @@ const Tracking = () => {
   /// FORM SUBMISSION ///
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setPackageSaved(false);
 
     if (!formState) {
       return false;
@@ -90,21 +92,29 @@ const Tracking = () => {
     } catch (err) {
       console.error(err);
     }
+  };
 
-    // try {
-    //   const { data } = await addPackage({
-    //     variables: { ...formState },
-    //   });
+  const handleSavePackage = async (e) => {
+    e.preventDefault();
 
-    //   console.log(data);
-    // } catch (error) {
-    //   console.log(error);
-    // }
+    const p = trackedPackage[0];
+    const token = Auth.loggedIn() ? Auth.getToken() : null;
 
-    // setFormState({
-    //   email: "",
-    //   password: "",
-    // });
+    if (!token) {
+      return false;
+    }
+    console.log(p.trackingNumber, p.carrier);
+
+    try {
+      const data = await addPackage({
+        variables: { trackingNum: p.trackingNumber, carrier: p.carrier },
+      });
+      console.log(data);
+
+      setPackageSaved(true);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (
@@ -259,14 +269,21 @@ const Tracking = () => {
                     </Table>
                   </TableContainer>
                   {Auth.loggedIn() ? (
-                    <Button
-                      type="submit"
-                      fullWidth
-                      variant="contained"
-                      sx={{ mt: 3, mb: 2 }}
+                    <Box
+                      component="form"
+                      onSubmit={handleSavePackage}
+                      noValidate
+                      sx={{ mt: 1 }}
                     >
-                      Save Package
-                    </Button>
+                      <Button
+                        type="submit"
+                        fullWidth
+                        variant="contained"
+                        sx={{ mt: 3, mb: 2 }}
+                      >
+                        Save Package
+                      </Button>
+                    </Box>
                   ) : (
                     ""
                   )}
@@ -275,6 +292,13 @@ const Tracking = () => {
             })}
           </Box>
         </Container>
+        {packageSaved ? (
+          <Typography align="center" component="h1" variant="h5">
+            Package Saved!
+          </Typography>
+        ) : (
+          ""
+        )}
       </ThemeProvider>
     </main>
   );
