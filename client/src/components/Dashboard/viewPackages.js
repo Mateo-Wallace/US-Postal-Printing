@@ -30,7 +30,8 @@ import TextareaAutosize from '@mui/base/TextareaAutosize';
 import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
-import { ADD_PACKAGE } from '../../utils/mutations'
+import { ADD_PACKAGE, DELETE_PACKAGE } from '../../utils/mutations'
+import { Link } from 'react-router-dom';
 
 
 function generate(element) {
@@ -73,40 +74,43 @@ function ViewPackages() {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
+
     const [addPackage, { error }] = useMutation(ADD_PACKAGE);
+
+    const [deletePackage, { deleteError }] = useMutation(DELETE_PACKAGE);
 
     const [formState, setFormState] = React.useState({
         trackingNum: "",
         carrier: "",
         notes: "",
-      });
+    });
 
-      const handleChangeCarrier = (e) => {
+    const handleChangeCarrier = (e) => {
         const { name, value } = e.target;
-    
-        setFormState({
-          ...formState,
-          [name]: value,
-        });
-      };
 
-      const handleAddTrackingNum = (e) => {
+        setFormState({
+            ...formState,
+            [name]: value,
+        });
+    };
+
+    const handleAddTrackingNum = (e) => {
         const TrackingNumber = e.target.value
 
         setFormState({
             ...formState,
             trackingNum: TrackingNumber
         })
-      }
+    }
 
-      const handleAddNote = (e) => {
+    const handleAddNote = (e) => {
         const note = e.target.value
 
         setFormState({
             ...formState,
             notes: note
         })
-      }
+    }
 
 
 
@@ -128,26 +132,55 @@ function ViewPackages() {
         alert('pressed')
     }
 
+
+
     const handleAddPackage = async () => {
 
-        console.log(formState)
-            try {
-              const { data } = await addPackage({
+        try {
+            const { data } = await addPackage({
                 variables: { ...formState },
-              });
-        
-              console.log(data);
-            } catch (error) {
-              console.log(error);
+                refetchQueries: [
+                    {
+                        query: CURRENT_USER,
+                    }
+                ]
             }
-        
-            setFormState({
-              email: "",
-              password: "",
-            });
+            );
+
+            console.log(data);
+        } catch (error) {
+            console.log(error);
+        }
+
+        setFormState({
+            email: "",
+            password: "",
+        });
+
+        handleClose();
     }
 
-console.log(userData)
+    const handleDeletePackage = async (value) => {
+
+        try {
+            const { data } = await deletePackage({
+                variables: {
+                    packageId: value,
+                },
+                refetchQueries: [
+                    {
+                        query: CURRENT_USER,
+                    }
+                ]
+            }
+            );
+
+        } catch (error) {
+            console.log(error);
+        }
+
+    }
+
 
     return (
         <div>
@@ -155,9 +188,9 @@ console.log(userData)
                 My Packages
             </Typography>
             {userData.packages.map((userPackage) =>
-                <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} key={userPackage._id}>
-                    <AccordionSummary
-                        expandIcon={<EditIcon />}
+                <Accordion key={userPackage._id}>
+                    <AccordionSummary expanded={expanded === 'panel1'}
+                        expandIcon={<EditIcon onChange={handleChange('panel1')} />}
                         aria-controls="panel1bh-content"
                         id="panel1bh-header"
                     >
@@ -171,8 +204,11 @@ console.log(userData)
                             </IconButton>
                         </Typography>
                     </AccordionSummary>
-                    <AccordionDetails>
+                    <AccordionDetails sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                         <Typography>{userPackage.notes}</Typography>
+                        <Button value={userPackage._id} sx={{ width: '20%', mt: 3 }} variant="contained" color="error" onClick={e => handleDeletePackage(e.target.value)}>
+                            Delete Package
+                        </Button>
                     </AccordionDetails>
                 </Accordion>
             )}

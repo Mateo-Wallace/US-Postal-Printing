@@ -67,5 +67,12 @@ mutation editPackage($packageId: ID!, $trackingNum: String, $carrier: String, $n
   }
 }`;
 
+export const DELETE_PACKAGE = gql`
+mutation deletePackage($packageId: ID!) {
+  deletePackage(packageId: $packageId) {
+    _id
+  }
+}`;
+
 
 
