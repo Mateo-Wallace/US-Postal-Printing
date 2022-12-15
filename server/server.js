@@ -3,7 +3,7 @@ const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
 const path = require("path");
 const { authMiddleware } = require("./utils/auth");
-require('dotenv').config();
+require("dotenv").config();
 
 const { typeDefs, resolvers } = require("./schemas");
 const db = require("./config/connection");
@@ -37,8 +37,7 @@ const startApolloServer = async (typeDefs, resolvers) => {
       `https://api.goshippo.com/tracks/${req.query.carrier}/${req.query.trackingNum}/`,
       {
         headers: {
-          Authorization:
-            process.env.SHIPPO_AUTH,
+          Authorization: process.env.SHIPPO_AUTH,
         },
       }
     );
