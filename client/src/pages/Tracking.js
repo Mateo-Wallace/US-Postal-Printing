@@ -22,6 +22,13 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
 // end material UI imports
 
 const theme = createTheme();
@@ -68,6 +75,10 @@ const Tracking = () => {
         {
           trackingNumber: response.tracking_number,
           carrier: response.carrier,
+          eta: response.eta,
+          original_eta: response.original_eta,
+          address_to: response.address_to,
+          tracking_status: response.tracking_status,
         },
       ];
 
@@ -163,14 +174,89 @@ const Tracking = () => {
         <Container>
           <h2>
             {trackedPackage.length
-              ? `Viewing ${trackedPackage.length} results:`
+              ? `Viewing results for ${trackedPackage[0].carrier + ' ' + trackedPackage[0].trackingNumber}:`
               : ""}
           </h2>
           <Box>
             {trackedPackage.map((p) => {
               return (
-                <div>Hello tracking: {p.trackingNumber}</div>
-
+                <Container key={p.trackingNumber}>
+                  <TableContainer
+                    component={Paper}
+                    sx={{ marginBottom: "10px" }}
+                  >
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell>Last Update</TableCell>
+                          <TableCell align="right">Status</TableCell>
+                          <TableCell align="right">City</TableCell>
+                          <TableCell align="right">State</TableCell>
+                          <TableCell align="right">Zip</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        <TableRow
+                          sx={{
+                            "&:last-child td, &:last-child th": { border: 0 },
+                          }}
+                        >
+                          <TableCell component="th" scope="row">
+                            {p.tracking_status.status_date}
+                          </TableCell>
+                          <TableCell align="right">
+                            {p.tracking_status.status_details}
+                          </TableCell>
+                          <TableCell align="right">
+                            {p.tracking_status.location.city}
+                          </TableCell>
+                          <TableCell align="right">
+                            {p.tracking_status.location.state}
+                          </TableCell>
+                          <TableCell align="right">
+                            {p.tracking_status.location.zip}
+                          </TableCell>
+                        </TableRow>
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
+                  <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell>Expected Delivery</TableCell>
+                          <TableCell align="right">Original ETA</TableCell>
+                          <TableCell align="right">City</TableCell>
+                          <TableCell align="right">State</TableCell>
+                          <TableCell align="right">Zip</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        <TableRow
+                          sx={{
+                            "&:last-child td, &:last-child th": { border: 0 },
+                          }}
+                        >
+                          <TableCell component="th" scope="row">
+                            {p.eta}
+                          </TableCell>
+                          <TableCell align="right">
+                            {p.original_eta}
+                          </TableCell>
+                          <TableCell align="right">
+                            {p.address_to.city}
+                          </TableCell>
+                          <TableCell align="right">
+                            {p.address_to.state}
+                          </TableCell>
+                          <TableCell align="right">
+                            {p.address_to.zip}
+                          </TableCell>
+                        </TableRow>
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
+                </Container>
               );
             })}
           </Box>
