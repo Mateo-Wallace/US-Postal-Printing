@@ -9,6 +9,7 @@ import Box from "@mui/material/Box";
 import Skeleton from "@mui/material/Skeleton";
 import Typography from "@mui/material/Typography";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
+import Hamburger from "hamburger-react";
 import './Header.css';
 
 const drawerBleeding = 56;
@@ -48,7 +49,7 @@ function SwipeableEdgeDrawer(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Root>
+    <Root className="menu">
       <CssBaseline />
       <Global
         styles={{
@@ -58,7 +59,7 @@ function SwipeableEdgeDrawer(props) {
           },
         }}
       />
-      <Box className="menu" sx={{ textAlign: "center", pt: 1 }}>
+      <Box sx={{ textAlign: "center", pt: 1 }}>
         <Button onClick={toggleDrawer(true)}>Open</Button>
       </Box>
       <SwipeableDrawer
@@ -73,7 +74,7 @@ function SwipeableEdgeDrawer(props) {
           keepMounted: true,
         }}
       >
-        <StyledBox
+        <StyledBox className="menu"
           sx={{
             position: "absolute",
             top: -drawerBleeding,
