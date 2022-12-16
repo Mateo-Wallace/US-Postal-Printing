@@ -1,3 +1,11 @@
+## TODO
+
+- [ ] Delete TODO section
+- [ ] Edit link to powerpoint in description
+- [ ] Add link to deployed site in installation
+- [ ] Add links to all contributors social media
+- [ ] Add screenshot examples of deployed application
+
 <p id="readme-top"></p>
 
 [![License Shield](https://img.shields.io/github/license/Mateo-Wallace/US-Postal-Printing.svg?style=for-the-badge)](./LICENSE) [![Contributors](https://img.shields.io/github/contributors/Mateo-Wallace/US-Postal-Printing.svg?style=for-the-badge)](https://github.com/Mateo-Wallace/US-Postal-Printing/graphs/contributors) [![Issues](https://img.shields.io/github/issues/Mateo-Wallace/US-Postal-Printing.svg?style=for-the-badge)](https://github.com/Mateo-Wallace/US-Postal-Printing/issues) [![KanBan Shield](https://img.shields.io/badge/Kanban_Board-555555?style=for-the-badge)](https://github.com/users/Mateo-Wallace/projects/4/views/1)
