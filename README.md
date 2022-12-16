@@ -42,7 +42,6 @@ While building this project we learned to:
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact & Contributors](#contact-and-contributors)
-- [Acknowledgments](#acknowledgments)
 
 ## Installation
 
@@ -122,23 +121,5 @@ For any further questions feel free to contact us via:
 - Sangki Jun - [GitHub](https://github.com/sangki810) - [Email](mailto:#sangki810@gmail.com) - [LinkedIn](https://www.linkedin.com/in/sangki-jun-8a6a5310b/)
 
 - Mateo Wallace - [GitHub](https://github.com/Mateo-Wallace) - [Email](mailto:mateo.t.wallace@gmail.com) - [LinkedIn](https://www.linkedin.com/in/mateo-wallace-57931b254/)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Acknowledgments
-
-Special thanks to these resources. You have proven invaluable to creating this project:
-
-- [Jikan API](https://jikan.moe/)
-
-- [MyAnimeList](https://myanimelist.net/)
-
-**Fair Use**
-
-_Copyright Disclaimer under section 107 of the Copyright Act of 1976 allows fair use of copyrighted material for purposes such as "teaching... or research._
-
-_Fair use allows limited use of copyrighted material without requiring permission from the rights holders. It provides for the legal, non-licensed citation or incorporation of copyrighted material in another author's work under a four-factor balancing test. To find out more information about the Fair Use Act, please click [here](https://www.copyright.gov/title17/92chap1.html#107)._
-
-_For information on each resource used on this project, please click the resource name below._
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
