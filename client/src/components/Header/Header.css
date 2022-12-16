@@ -4,6 +4,16 @@
     }
   }
 
+  @media screen and (max-width: 1200px) {
+    .menu {
+      display: block !important;
+    }
+  }
+
 .logo {
   justify-content: space-between;
+}
+
+.menu {
+  display: none;
 }

@@ -9,6 +9,7 @@ import Box from "@mui/material/Box";
 import Skeleton from "@mui/material/Skeleton";
 import Typography from "@mui/material/Typography";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
+import './Header.css';
 
 const drawerBleeding = 56;
 
@@ -57,7 +58,7 @@ function SwipeableEdgeDrawer(props) {
           },
         }}
       />
-      <Box sx={{ textAlign: "center", pt: 1 }}>
+      <Box className="menu" sx={{ textAlign: "center", pt: 1 }}>
         <Button onClick={toggleDrawer(true)}>Open</Button>
       </Box>
       <SwipeableDrawer
