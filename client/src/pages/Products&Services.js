@@ -85,40 +85,37 @@ const ProductsServices = () => {
             </Typography>
           </CardContent>
         </Card>
-        <Box
+        <Card
           sx={{
-            margin: 1,
-            width: 350,
-            height: 300,
+            maxWidth: 345,
             backgroundColor: "primary.dark",
             borderRadius: "40px",
           }}
         >
-          <Typography
-            sx={{ margin: 1, textAlign: "center", color: "white" }}
-            variant="h4"
-            gutterBottom
-          >
-            Printing Services
-          </Typography>
-        </Box>
-        <Box
-          sx={{
-            margin: 1,
-            width: 350,
-            height: 300,
-            backgroundColor: "primary.dark",
-            borderRadius: "40px",
-          }}
-        >
-          <Typography
-            sx={{ margin: 1, textAlign: "center", color: "white" }}
-            variant="h4"
-            gutterBottom
-          >
-            Business Cards
-          </Typography>
-        </Box>
+          <CardMedia
+            component="img"
+            height="140"
+            image={BusinessCardsImage}
+            alt="green iguana"
+          />
+          <CardContent>
+            <Typography
+              sx={{ color: "white" }}
+              gutterBottom
+              variant="h5"
+              component="div"
+            >
+              Business Cards
+            </Typography>
+            <Typography variant="body2" sx={{ color: "white" }}>
+              A professionally printed, high-quality business card leaves a
+              lasting impression on your small business customers and is one of
+              the best marketing tools you have. Our business card printing
+              services include:
+              <p>Full Color, Double Sided, Assortment of Paper</p>
+            </Typography>
+          </CardContent>
+        </Card>
         <Box
           sx={{
             margin: 1,
