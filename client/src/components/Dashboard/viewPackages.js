@@ -34,6 +34,7 @@ import { ADD_PACKAGE, DELETE_PACKAGE, EDIT_PACKAGE } from '../../utils/mutations
 import { Link } from 'react-router-dom';
 
 
+
 function generate(element) {
     return [0, 1, 2].map((value) =>
         React.cloneElement(element, {
@@ -77,6 +78,7 @@ function ViewPackages() {
     const { loading, data } = useQuery(CURRENT_USER)
 
     const userData = data?.me || [];
+
 
     const [edit, setEditable] = React.useState(false)
     const handleEditOpenAndClose = (event) => {
@@ -122,21 +124,12 @@ function ViewPackages() {
         })
     }
 
-    const handleEditTrackingNum = (event, id) => {
-        //todo update formstate
-        var packages = [...userData.packages]
-        packages = packages.map((x, i) => {
-            if (i === id) {
-                formState.trackingNum = event.target.value
-                return x;
-            }
-            else {
-                return x;
-            }
-        })
+    const handleEditTrackingNum = (event) => {
+
+
         setFormState({
             ...formState,
-            trackingNum: event.target.value,
+            trackingNum: event.target.value
         })
     }
 
@@ -198,7 +191,7 @@ function ViewPackages() {
 
     const handleSaveEdit = async (event) => {
 
-        console.log(formState)
+        console.log({formState})
         try {
             const { data } = await editPackage({
                 variables: {
@@ -244,7 +237,7 @@ function ViewPackages() {
             <Typography sx={{ mt: 4, mb: 5, textAlign: 'Center' }} variant="h3" component="div">
                 My Packages
             </Typography>
-            {userData.packages.map((userPackage, index) =>
+            {userData.packages.map((userPackage) =>
                 <Accordion key={userPackage._id} onClick={event => { handleChange(event, 'panel1'); setEditable(false) }}>
                     <AccordionSummary expanded={expanded === 'panel1'}
                         expandIcon={<EditIcon />}
@@ -256,8 +249,9 @@ function ViewPackages() {
                         </Typography>
                         {edit ?
                             <TextField
+                                id={userPackage._id}
                                 value={formState.trackingNum}
-                                onChange={event => handleEditTrackingNum(event, index)}
+                                onChange={event => {setFormState({...formState, index: formState.trackingNum}); handleEditTrackingNum(event)}}
                                 onClick={event => event.stopPropagation()}
                                 label={userPackage.trackingNum}
                                 size="small"
