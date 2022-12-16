@@ -30,8 +30,9 @@ import TextareaAutosize from '@mui/base/TextareaAutosize';
 import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
-import { ADD_PACKAGE, DELETE_PACKAGE } from '../../utils/mutations'
+import { ADD_PACKAGE, DELETE_PACKAGE, EDIT_PACKAGE } from '../../utils/mutations'
 import { Link } from 'react-router-dom';
+
 
 
 function generate(element) {
@@ -67,22 +68,33 @@ const Demo = styled('div')(({ theme }) => ({
 function ViewPackages() {
     const [dense, setDense] = React.useState(false);
     const [secondary, setSecondary] = React.useState(false);
-
     const [expanded, setExpanded] = React.useState(false);
-
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-
-
     const [addPackage, { error }] = useMutation(ADD_PACKAGE);
-
+    const [editPackage, { editError }] = useMutation(EDIT_PACKAGE);
     const [deletePackage, { deleteError }] = useMutation(DELETE_PACKAGE);
+    const { loading, data } = useQuery(CURRENT_USER)
+
+    const userData = data?.me || [];
+
+
+    const [edit, setEditable] = React.useState(false)
+    const handleEditOpenAndClose = (event) => {
+        event.stopPropagation();
+        if (expanded) {
+            setEditable(false)
+        } else {
+            setEditable(!edit);
+        }
+    };
+
 
     const [formState, setFormState] = React.useState({
         trackingNum: "",
         carrier: "",
-        notes: "",
+        notes: ""
     });
 
     const handleChangeCarrier = (e) => {
@@ -112,15 +124,32 @@ function ViewPackages() {
         })
     }
 
+    const handleEditTrackingNum = (event) => {
+
+
+        setFormState({
+            ...formState,
+            trackingNum: event.target.value
+        })
+    }
+
+    const handleEditNotes = (event) => {
+        const note = event.target.value
+
+        setFormState({
+            ...formState,
+            notes: note
+        })
+    }
+
 
 
     const handleChange = (panel) => (event, isExpanded) => {
         setExpanded(isExpanded ? panel : false);
+        console.log(edit)
     };
 
-    const { loading, data } = useQuery(CURRENT_USER)
 
-    const userData = data?.me || {};
 
     if (loading) {
         return (
@@ -160,6 +189,27 @@ function ViewPackages() {
         handleClose();
     }
 
+    const handleSaveEdit = async (event) => {
+
+        console.log({formState})
+        try {
+            const { data } = await editPackage({
+                variables: {
+                    ...formState,
+                    packageId: event.target.id
+                },
+                refetchQueries: [
+                    {
+                        query: CURRENT_USER,
+                    }
+                ]
+            })
+        }
+        catch (err) {
+            console.log(err);
+        }
+    }
+
     const handleDeletePackage = async (value) => {
 
         try {
@@ -188,16 +238,30 @@ function ViewPackages() {
                 My Packages
             </Typography>
             {userData.packages.map((userPackage) =>
-                <Accordion key={userPackage._id}>
+                <Accordion key={userPackage._id} onClick={event => { handleChange(event, 'panel1'); setEditable(false) }}>
                     <AccordionSummary expanded={expanded === 'panel1'}
-                        expandIcon={<EditIcon onChange={handleChange('panel1')} />}
+                        expandIcon={<EditIcon />}
                         aria-controls="panel1bh-content"
                         id="panel1bh-header"
                     >
                         <Typography sx={{ width: '33%', flexShrink: 0, color: 'text.secondary' }}>
                             Package Tracking ID:
                         </Typography>
-                        <Typography sx={{ width: '33%', flexShrink: 0 }}>{userPackage.trackingNum}</Typography>
+                        {edit ?
+                            <TextField
+                                id={userPackage._id}
+                                value={formState.trackingNum}
+                                onChange={event => {setFormState({...formState, index: formState.trackingNum}); handleEditTrackingNum(event)}}
+                                onClick={event => event.stopPropagation()}
+                                label={userPackage.trackingNum}
+                                size="small"
+                                placeholder='New Tracking Number'
+                                sx={{ mr: 3 }}
+                            >
+                            </TextField>
+                            :
+                            <Typography sx={{ width: '33%', flexShrink: 0 }}>{userPackage.trackingNum}</Typography>}
+
                         <Typography sx={{ width: '33%', flexShrink: 0, color: 'text.secondary' }}>Track this package
                             <IconButton edge="end" aria-label="delete" onClick={handleTrack}>
                                 <MapIcon />
@@ -205,7 +269,27 @@ function ViewPackages() {
                         </Typography>
                     </AccordionSummary>
                     <AccordionDetails sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                        <Typography>{userPackage.notes}</Typography>
+                        {edit ?
+                            <TextField
+                                value={formState.notes}
+                                onChange={event => handleEditNotes(event)}
+                                onClick={event => event.stopPropagation()}
+                                label={userPackage.notes}
+                                size="large"
+                                placeholder='Update Notes'
+                            >
+                            </TextField>
+                            :
+                            <Typography>{userPackage.notes}</Typography>
+                        }
+                        {edit ?
+                            <Button id={userPackage._id} sx={{ width: '5%', mt: 3 }} variant="contained" onClick={event => { handleChange(); handleSaveEdit(event) }}>
+                                Save
+                            </Button> :
+                            ''}
+                        <Button sx={{ width: '20%', mt: 3 }} variant="contained" onClick={event => handleEditOpenAndClose(event)}>
+                            Edit Package
+                        </Button>
                         <Button value={userPackage._id} sx={{ width: '20%', mt: 3 }} variant="contained" color="error" onClick={e => handleDeletePackage(e.target.value)}>
                             Delete Package
                         </Button>
