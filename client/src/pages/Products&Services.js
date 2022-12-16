@@ -6,6 +6,10 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import NotaryImage from "../images/notaryServices.jpeg";
+import PrintingImage from "../images/printingServices.jpg";
+import CopyingImage from "../images/copyingServices.jpg";
+import BusinessCardsImage from "../images/businessCards.jpg";
+import MailboxImage from "../images/mailboxes.jpg";
 
 const ProductsServices = () => {
   return (
@@ -48,6 +52,36 @@ const ProductsServices = () => {
               notarizing checked off your list. Some commonly notarized
               documents include:
               <p>Wills, Trusts, Deeds, Contracts, & Affidavits</p>
+            </Typography>
+          </CardContent>
+        </Card>
+        <Card
+          sx={{
+            maxWidth: 345,
+            backgroundColor: "primary.dark",
+            borderRadius: "40px",
+          }}
+        >
+          <CardMedia
+            component="img"
+            height="140"
+            image={PrintingImage}
+            alt="green iguana"
+          />
+          <CardContent>
+            <Typography
+              sx={{ color: "white" }}
+              gutterBottom
+              variant="h5"
+              component="div"
+            >
+              Printing Services
+            </Typography>
+            <Typography variant="body2" sx={{ color: "white" }}>
+              When you need something printed or copied for your small business,
+              US Postal & Printing is ready to help you make it picture perfect.
+              Come visit your local print shop for:
+              <p>Posters, Signs, Flyers, Pamphlets, Copies</p>
             </Typography>
           </CardContent>
         </Card>
