@@ -75,7 +75,7 @@ const Login = (props) => {
   };
 
   return (
-    <main style={{marginTop: '250px', marginBottom: '250px'}}>
+    <main style={{marginTop: '280px', marginBottom: '280px'}}>
       {data ? (
         <p>
           Successfully logged in! You may now head{" "}
