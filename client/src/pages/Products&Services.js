@@ -7,71 +7,71 @@ import Typography from '@mui/material/Typography';
 const ProductsServices = () => {
   return (
     <div style={{display: 'flex'}}>
+    <Container sx={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly', marginTop: '30px', marginBottom: '30px'}} >
       <Box
       sx={{
         margin: 1,
-        marginLeft: '20px',
-        alignSelf: 'flex-start',
-        width: 300,
-        height: 600,
-        backgroundColor: 'primary.dark',
-        '&:hover': {
-          backgroundColor: 'primary.main',
-          opacity: [0.9, 0.8, 0.7],
-        },
-      }}
-    />
-    <Container sx={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center'}} fixed>
-      <Box
-      sx={{
-        margin: 1,
-        width: 400,
+        width: 350,
         height: 300,
         backgroundColor: 'primary.dark',
-        '&:hover': {
-          backgroundColor: 'primary.main',
-          opacity: [0.9, 0.8, 0.7],
-        },
+        borderRadius: '40px'
       }}
     > 
     <Typography sx={{margin: 1, textAlign: 'center', color: 'white'}} variant="h4" gutterBottom>
-    The Real Products & Services
+    Notary Services
   </Typography>
   </Box>
      <Box
       sx={{
         margin: 1,
-        width: 400,
+        width: 350,
         height: 300,
         backgroundColor: 'primary.dark',
-        '&:hover': {
-          backgroundColor: 'primary.main',
-          opacity: [0.9, 0.8, 0.7],
-        },
+        borderRadius: '40px'
       }}
     >
     <Typography sx={{margin: 1, textAlign: 'center', color: 'white'}} variant="h4" gutterBottom>
-    Location & Hours
+    Printing Services
+  </Typography>
+  </Box>
+  <Box
+      sx={{
+        margin: 1,
+        width: 350,
+        height: 300,
+        backgroundColor: 'primary.dark',
+        borderRadius: '40px'
+      }}
+    >
+    <Typography sx={{margin: 1, textAlign: 'center', color: 'white'}} variant="h4" gutterBottom>
+    Business Cards
+  </Typography>
+  </Box>
+  <Box
+      sx={{
+        margin: 1,
+        width: 400,
+        height: 300,
+        backgroundColor: 'primary.dark',
+        borderRadius: '40px'
+      }}
+    >
+    <Typography sx={{margin: 1, textAlign: 'center', color: 'white'}} variant="h4" gutterBottom>
+    Copying Services
   </Typography>
   </Box>
     <Box
       sx={{
         margin: 1,
         alignSelf: 'flex-end',
-        width: 600,
+        width: 400,
         height: 300,
         backgroundColor: 'primary.dark',
-        '&:hover': {
-          backgroundColor: 'primary.main',
-          opacity: [0.9, 0.8, 0.7],
-        },
+        borderRadius: '40px'
       }}
     >
     <Typography sx={{margin: 1, textAlign: 'center', color: 'white'}} variant="h4" gutterBottom>
-    F.A.Q.
-  </Typography>
-  <Typography sx={{marginTop: '-10px', textAlign: 'center', color: 'white'}} variant="h6" gutterBottom>
-    (Frequently Asked Questions)
+    Mailbox Rentals
   </Typography>
   </Box>
     </Container>
