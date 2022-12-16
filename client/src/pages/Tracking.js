@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 
 import { useMutation } from "@apollo/client";
 import { ADD_PACKAGE } from "../utils/mutations";
@@ -14,11 +13,7 @@ import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
 import FormControl from "@mui/material/FormControl";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Link2 from "@mui/material/Link";
-import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -70,9 +65,10 @@ const Tracking = () => {
 
       console.log(response);
 
-      // if (!response.ok) {
-      //   throw new Error("something went wrong!");
-      // }
+      if (!response.address_to) {
+        alert('Something went wrong!')
+        throw new Error("something went wrong!");
+      }
       const packageData = [
         {
           trackingNumber: response.tracking_number,
