@@ -31,7 +31,7 @@ While building this project we learned to:
 
 [![MongoDB Shield](https://img.shields.io/badge/MongoDB-47A248?&style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/) [![Express Shield](https://img.shields.io/badge/Express-000000?&style=for-the-badge&logo=express&logoColor=white)](http://expressjs.com/) [![REACT Shield](https://img.shields.io/badge/React-222222?&style=for-the-badge&logo=react)](https://reactjs.org/) [![Node.js Shield](https://img.shields.io/badge/Node.js-339933?&style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/en/)
 
-### Tech 
+### Tech
 
 [![Apollo Shield](https://img.shields.io/badge/Apollo-311C87?&style=for-the-badge&logo=apollographql&logoColor=white)](https://www.apollographql.com/) [![GraphQl Shield](https://img.shields.io/badge/GraphQl-E10098?&style=for-the-badge&logo=graphql&logoColor=white)](https://graphql.org/) [![Mongoose Shield](https://img.shields.io/badge/Mongoose-AA2929?&style=for-the-badge&logo=matrix&logoColor=white)](https://mongoosejs.com/) [![Material UI Shield](https://img.shields.io/badge/Material_UI-007FFF?&style=for-the-badge&logo=mui&logoColor=white)](https://mui.com/) [![Axios Shield](https://img.shields.io/badge/Axios-5A29E4?&style=for-the-badge&logo=axios&logoColor=white)](https://axios-http.com/) [![JWT Shield](https://img.shields.io/badge/JSON_Web_Tokens-000000?&style=for-the-badge&logo=jsonwebtokens&logoColor=white)](https://jwt.io/) [![JavaScript Shield](https://img.shields.io/badge/JavaScript-F7DF1E?&style=for-the-badge&logo=javascript&logoColor=272727)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [![CSS Shield](https://img.shields.io/badge/CSS-1572B6?&style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS) [![HTML Shield](https://img.shields.io/badge/HTML5-E34F26?&style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)
 
@@ -46,7 +46,7 @@ While building this project we learned to:
 
 ## Installation
 
-ShoCase™ is a deployed web application. Most users must simply navigate to [shocase.herokuapp.com/](https://shocase.herokuapp.com/)
+US Postal & Printing is a deployed web application. Most users must simply navigate to [shocase.herokuapp.com/](https://shocase.herokuapp.com/)
 
 ![example deployed site](./public/images/shocase.png)
 
@@ -56,23 +56,20 @@ Should you wish to download the project locally you must:
 
    ```
    SSH:
-   git clone git@github.com:Bfunk54/ShoCase.git
+   git clone git@github.com:Mateo-Wallace/US-Postal-Printing.git
 
    HTTPS:
-   git clone https://github.com/Bfunk54/ShoCase.git
+   git clone https://github.com/Mateo-Wallace/US-Postal-Printing.git
    ```
 
 2. Install NPM packages
    ```
    npm i
    ```
-3. Create a `.env` and input
+3. Rename the `.env.example` file in `/server` to `.env` and change the variables
    ```
-   DB_NAME= 'shocase_db'
-   DB_USER= 'YOUR-USER-NAME'
-   DB_PASSWORD= 'YOUR-PASSWORD'
+   SHIPPO_AUTH = "ShippoToken <YOUR API KEY FROM SHIPPO>"
    ```
-4. Run the `schema` housed within the db folder
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
