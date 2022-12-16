@@ -16,16 +16,16 @@
 
 ## Description
 
-ShoCase™ is a full stack web application that serves as a social media platform for sharing anime reccomendations through a playlist format. The user is able to make playlists of 4 animes, comment on other users playlists, and save playlists within their liked page. For more information check out the [PowerPoint](https://docs.google.com/presentation/d/1Us7_Q01uOFhasWDNHokqUsz2VRzwK0pvtdRSPxGRj1I/edit#slide=id.g29f43f0a72_0_24).
+US Postal & Printing is a full stack MERN web app that serves as an information page for the company US Postal & Printing. The user is able to see the services the company provides, track packages, make orders, contact the store, and save order and packages to their dashboard. For more information check out the [PowerPoint](https://docs.google.com/presentation/d/1Us7_Q01uOFhasWDNHokqUsz2VRzwK0pvtdRSPxGRj1I/edit#slide=id.g29f43f0a72_0_24).
 
-The project utilizes an Express backend, RESTFUL api, mySQL database, and a third party API.
+The project utilizes an Express backend, GraphQL Api, mongoDB database, and a third party Api.
 
 While building this project we learned to:
 
-- Make various calls to a database model and serve them to the front end
-- Utilize handlebars to display multiple unique pages for our app
-- Create Models, associate them too each other, and seed those Models with data
-- Organize third party API responses into a request body in order to store that information in our database
+- Style a page with [Material UI](https://mui.com/), a css component library
+- Make a proxy server using [Axios](https://axios-http.com/) in order to circumvent CORS errors
+- Authenticate users via [JSON Web Tokens](https://jwt.io/)
+- Link to another page without reloading the website using [React](https://reactjs.org/)
 
 ### MERN Stack
 
@@ -33,7 +33,7 @@ While building this project we learned to:
 
 ### Tech 
 
-[![Apollo Shield](https://img.shields.io/badge/Apollo-311C87?&style=for-the-badge&logo=apollographql&logoColor=white)](https://www.apollographql.com/) [![GraphQl Shield](https://img.shields.io/badge/GraphQl-E10098?&style=for-the-badge&logo=graphql&logoColor=white)](https://graphql.org/) [![Mongoose Shield](https://img.shields.io/badge/Mongoose-AA2929?&style=for-the-badge&logo=matrix&logoColor=white)](https://mongoosejs.com/) [![Material UI Shield](https://img.shields.io/badge/Material_UI-007FFF?&style=for-the-badge&logo=mui&logoColor=white)](https://mui.com/) [![Axios Shield](https://img.shields.io/badge/Axios-5A29E4?&style=for-the-badge&logo=axios&logoColor=white)](https://axios-http.com/) [![JavaScript Shield](https://img.shields.io/badge/JavaScript-F7DF1E?&style=for-the-badge&logo=javascript&logoColor=272727)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [![CSS Shield](https://img.shields.io/badge/CSS-1572B6?&style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS) [![HTML Shield](https://img.shields.io/badge/HTML5-E34F26?&style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)
+[![Apollo Shield](https://img.shields.io/badge/Apollo-311C87?&style=for-the-badge&logo=apollographql&logoColor=white)](https://www.apollographql.com/) [![GraphQl Shield](https://img.shields.io/badge/GraphQl-E10098?&style=for-the-badge&logo=graphql&logoColor=white)](https://graphql.org/) [![Mongoose Shield](https://img.shields.io/badge/Mongoose-AA2929?&style=for-the-badge&logo=matrix&logoColor=white)](https://mongoosejs.com/) [![Material UI Shield](https://img.shields.io/badge/Material_UI-007FFF?&style=for-the-badge&logo=mui&logoColor=white)](https://mui.com/) [![Axios Shield](https://img.shields.io/badge/Axios-5A29E4?&style=for-the-badge&logo=axios&logoColor=white)](https://axios-http.com/) [![JWT Shield](https://img.shields.io/badge/JSON_Web_Tokens-000000?&style=for-the-badge&logo=jsonwebtokens&logoColor=white)](https://jwt.io/) [![JavaScript Shield](https://img.shields.io/badge/JavaScript-F7DF1E?&style=for-the-badge&logo=javascript&logoColor=272727)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [![CSS Shield](https://img.shields.io/badge/CSS-1572B6?&style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS) [![HTML Shield](https://img.shields.io/badge/HTML5-E34F26?&style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)
 
 ## Table of Contents
 
