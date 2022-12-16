@@ -146,24 +146,36 @@ const ProductsServices = () => {
             </Typography>
           </CardContent>
         </Card>
-        <Box
+        <Card
           sx={{
-            margin: 1,
-            alignSelf: "flex-end",
-            width: 400,
-            height: 300,
+            maxWidth: 345,
             backgroundColor: "primary.dark",
             borderRadius: "40px",
           }}
         >
-          <Typography
-            sx={{ margin: 1, textAlign: "center", color: "white" }}
-            variant="h4"
-            gutterBottom
-          >
-            Mailbox Rentals
-          </Typography>
-        </Box>
+          <CardMedia
+            component="img"
+            height="140"
+            image={MailboxImage}
+            alt="green iguana"
+          />
+          <CardContent>
+            <Typography
+              sx={{ color: "white" }}
+              gutterBottom
+              variant="h5"
+              component="div"
+            >
+              Mailbox Rentals
+            </Typography>
+            <Typography variant="body2" sx={{ color: "white" }}>
+              With our mailbox services, you get a lot more than just a PO box
+              with a key. You get convenience, a secure location for storing
+              your mail and packages, professionalism and other services to help
+              you run your business and life more efficiently.
+            </Typography>
+          </CardContent>
+        </Card>
       </Container>
     </div>
   );
