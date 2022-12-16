@@ -1,5 +1,5 @@
 import React from 'react';
-import AuthService from '../utils/auth';
+import Auth from '../utils/auth';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -105,9 +105,11 @@ function Nav() {
                 {page}
               </Button>
             ))} */}
-            <Link to='/login' style={{ textDecoration: 'none' }}>
+            {Auth.loggedIn() ? (<Link to='/logout' style={{ textDecoration: 'none' }}>
+            <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Logout</Button>
+            </Link>) : (<Link to='/login' style={{ textDecoration: 'none' }}>
             <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Login/Signup</Button>
-            </Link>
+            </Link>)}
             <Link to='/products&services' style={{ textDecoration: 'none' }}>
             <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Products & <br></br> Services </Button>
             </Link>
@@ -117,9 +119,9 @@ function Nav() {
             <Link to='/tracking' style={{ textDecoration: 'none' }}>
             <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Tracking </Button>
             </Link>
-            <Link to='/dashboard/:userId' style={{ textDecoration: 'none' }}>
+            {Auth.loggedIn() ? <Link to='/dashboard/:userId' style={{ textDecoration: 'none' }}>
             <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Dashboard</Button>
-            </Link>
+            </Link> : ''}
             <Link to='/contact-us' style={{ textDecoration: 'none' }}>
             <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Contact Us</Button>
             </Link>
