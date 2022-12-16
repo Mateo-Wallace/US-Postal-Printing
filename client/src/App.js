@@ -26,6 +26,7 @@ import ProtectRoute from './components/ProtectRoute';
 import './App.css';
 import Nav from './components/Header';
 import StickyFooter from './components/Footer';
+import SwipeableEdgeDrawer from './components/Header/SwipeableEdgeDrawer';
 
 
 const httpLink = createHttpLink({
@@ -88,6 +89,7 @@ function App() {
           />
         </Routes>
         </div>
+        <SwipeableEdgeDrawer />
         <StickyFooter />
         </ThemeProvider>
       </Router>

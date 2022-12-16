@@ -15,6 +15,7 @@ import AdbIcon from '@mui/icons-material/Adb';
 import Hamburger from 'hamburger-react';
 import { Link } from 'react-router-dom';
 import logo from '../images/logo192.png';
+import { SwipeableEdgeDrawer } from './Header/SwipeableEdgeDrawer';
 
 const pages = ['Products', 'Pricing', 'Login/Signup'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -103,7 +104,7 @@ function Nav() {
           </Link>
           </Box>
           <Box sx={{justifyContent: 'flex-end', display: { xs: 'flex', md: 'flex', lg: 'none' }, width: '50px', zIndex: 0,}} >
-          <Hamburger />
+          <Hamburger onToggle={Swipab} />
           </Box>
 
           <Box sx={{ justifyContent: 'flex-end', alignItems: 'center', flexGrow: 1, display: { xs: 'none', md: 'none', lg: 'flex'} }}>
