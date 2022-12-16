@@ -16,7 +16,7 @@
 
 ## Description
 
-US Postal & Printing is a full stack MERN web app that serves as an information page for the company US Postal & Printing. The user is able to see the services the company provides, track packages, make orders, contact the store, and save order and packages to their dashboard. For more information check out the [PowerPoint](https://docs.google.com/presentation/d/1Us7_Q01uOFhasWDNHokqUsz2VRzwK0pvtdRSPxGRj1I/edit#slide=id.g29f43f0a72_0_24).
+US Postal & Printing is a full stack MERN web app that serves as an information page for the company US Postal & Printing. The user is able to see the services the company provides, track packages, make orders, contact the store, and save order and packages to their dashboard. For more information check out the [PowerPoint](https://docs.google.com/presentation/d/11zaugrKaa3uVzKBkMWfaP2I_4uUIggcZltKR_tsWFmo/edit?usp=sharing).
 
 The project utilizes an Express backend, GraphQL Api, mongoDB database, and a third party Api.
 
