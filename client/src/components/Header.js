@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 import AuthService from '../utils/auth';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -15,16 +16,24 @@ import AdbIcon from '@mui/icons-material/Adb';
 import Hamburger from 'hamburger-react';
 import { Link } from 'react-router-dom';
 import logo from '../images/logo192.png';
-import { SwipeableEdgeDrawer } from './Header/SwipeableEdgeDrawer';
+import SwipeableEdgeDrawer from './Header/SwipeableEdgeDrawer';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import './Header/Header.css';
 
 const pages = ['Products', 'Pricing', 'Login/Signup'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-function Nav() {
-  const [isOpen, setOpen] = React.useState(false);
+function Nav(props) {
   const [isClose, setClose] = React.useState(true);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const [open, setOpen] = React.useState(false);
+
+  const toggleDrawer = (newOpen) => () => {
+    setOpen(newOpen);
+  };
+
 
   // const closeandSet = () => {
   //   setAnchorElUser(null);
@@ -54,11 +63,14 @@ function Nav() {
   return (
     <AppBar position="fixed">
       <Container maxWidth="xl">
-        <Toolbar style={{ justifyContent: 'space-between'}}disableGutters>
+        <Toolbar className='logo' style={{ }}disableGutters>
           <Box style={{display: 'flex', flexWrap: 'nowrap', alignItems: 'center'}}>
+          <Box sx={{alignItems: 'center', display: {xs: 'none', sm: 'none', md: 'flex' }}}>
+          <Box sx={{display: {xs: 'none', sm: 'none', md: 'flex' }}}>
         <Link to='/' style={{ color: 'white', textDecoration: 'none' }}>
         <img height = '80px' width = '80px' src={logo} />
         </Link>
+        </Box>
         <Link to='/' style={{ color: 'white', textDecoration: 'none' }}>
           <Typography
             variant="h6"
@@ -79,8 +91,9 @@ function Nav() {
             US Postal & Printing
           </Typography>
           </Link>
+          </Box>
 
-          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
+            <Box sx={{ flexWrap: 'nowrap', display: {xs: 'flex', sm: 'flex', md: 'none', alignItems: 'center' }}}>
           <Link to='/' style={{ color: 'white', textDecoration: 'none' }}>
           <Typography
             variant="h5"
@@ -102,10 +115,17 @@ function Nav() {
             US P&P
           </Typography>
           </Link>
+          <Box sx={{display: {sm: 'flex', md: 'none' }}}>
+          <Link to='/' style={{ color: 'white', textDecoration: 'none' }}>
+        <img height = '80px' width = '80px' src={logo} />
+        </Link>
+        </Box>
+        </Box>
+
           </Box>
-          <Box sx={{justifyContent: 'flex-end', display: { xs: 'flex', md: 'flex', lg: 'none' }, width: '50px', zIndex: 0,}} >
-          <Hamburger onToggle={Swipab} />
-          </Box>
+          {/* <Box sx={{justifyContent: 'flex-end', display: { xs: 'flex', md: 'flex', lg: 'none' }, width: '50px', zIndex: 0,}} >
+          <Hamburger onToggle={toggleDrawer(true)} />
+          </Box> */}
 
           <Box sx={{ justifyContent: 'flex-end', alignItems: 'center', flexGrow: 1, display: { xs: 'none', md: 'none', lg: 'flex'} }}>
             <Link to='/login' style={{ textDecoration: 'none' }}>
@@ -163,6 +183,7 @@ function Nav() {
           </Box> */}
         </Toolbar>
       </Container>
+      <SwipeableEdgeDrawer onToggle={toggleDrawer(true)} />
     </AppBar>
   );
 }

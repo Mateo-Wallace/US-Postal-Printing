@@ -107,4 +107,4 @@ SwipeableEdgeDrawer.propTypes = {
   window: PropTypes.func,
 };
 
-export default SwipeableEdgeDrawer;
+export default SwipeableEdgeDrawer ;

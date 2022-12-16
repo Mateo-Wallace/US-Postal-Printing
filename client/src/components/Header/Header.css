@@ -1,0 +1,9 @@
+@media screen and (max-width: 900px) {
+    .logo {
+      justify-content: center !important;
+    }
+  }
+
+.logo {
+  justify-content: space-between;
+}
