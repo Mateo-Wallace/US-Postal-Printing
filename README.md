@@ -21,16 +21,22 @@ ShoCase™ is a full stack web application that serves as a social media platfor
 The project utilizes an Express backend, RESTFUL api, mySQL database, and a third party API.
 
 While building this project we learned to:
+
 - Make various calls to a database model and serve them to the front end
 - Utilize handlebars to display multiple unique pages for our app
 - Create Models, associate them too each other, and seed those Models with data
 - Organize third party API responses into a request body in order to store that information in our database
 
-### Built With
+### MERN Stack
 
-[![Express Shield](https://img.shields.io/badge/Express-000000?&style=for-the-badge&logo=express&logoColor=white)](http://expressjs.com/) [![Sequelize Shield](https://img.shields.io/badge/Sequelize-52B0E7?&style=for-the-badge&logo=sequelize&logoColor=white)](https://sequelize.org/) [![mySQL Shield](https://img.shields.io/badge/mySQL-4479A1?&style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/) [![Heroku Shield](https://img.shields.io/badge/Heroku-430098?&style=for-the-badge&logo=heroku&logoColor=white)](https://www.heroku.com/what) [![Handlebars Shield](https://img.shields.io/badge/Handlebars-E34F26?&style=for-the-badge&logo=handlebars.js&logoColor=white)](https://handlebarsjs.com/) [![Materialize Shield](https://img.shields.io/badge/Materialize_CSS-eb7374?&style=for-the-badge&logo=matomo&logoColor=white)](https://materializecss.com/) [![Node.js Shield](https://img.shields.io/badge/Node.js-339933?&style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/en/) [![JavaScript Shield](https://img.shields.io/badge/JavaScript-F7DF1E?&style=for-the-badge&logo=javascript&logoColor=272727)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [![HTML Shield](https://img.shields.io/badge/HTML5-E34F26?&style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Glossary/HTML5) [![CSS Shield](https://img.shields.io/badge/CSS-1572B6?&style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![MongoDB Shield](https://img.shields.io/badge/MongoDB-47A248?&style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/) [![Express Shield](https://img.shields.io/badge/Express-000000?&style=for-the-badge&logo=express&logoColor=white)](http://expressjs.com/) [![REACT Shield](https://img.shields.io/badge/React-222222?&style=for-the-badge&logo=react)](https://reactjs.org/) [![Node.js Shield](https://img.shields.io/badge/Node.js-339933?&style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/en/)
+
+### Tech 
+
+[![Apollo Shield](https://img.shields.io/badge/Apollo-311C87?&style=for-the-badge&logo=apollographql&logoColor=white)](https://www.apollographql.com/) [![GraphQl Shield](https://img.shields.io/badge/GraphQl-E10098?&style=for-the-badge&logo=graphql&logoColor=white)](https://graphql.org/) [![Mongoose Shield](https://img.shields.io/badge/Mongoose-AA2929?&style=for-the-badge&logo=matrix&logoColor=white)](https://mongoosejs.com/) [![Material UI Shield](https://img.shields.io/badge/Material_UI-007FFF?&style=for-the-badge&logo=mui&logoColor=white)](https://mui.com/) [![Axios Shield](https://img.shields.io/badge/Axios-5A29E4?&style=for-the-badge&logo=axios&logoColor=white)](https://axios-http.com/) [![JavaScript Shield](https://img.shields.io/badge/JavaScript-F7DF1E?&style=for-the-badge&logo=javascript&logoColor=272727)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [![CSS Shield](https://img.shields.io/badge/CSS-1572B6?&style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS) [![HTML Shield](https://img.shields.io/badge/HTML5-E34F26?&style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)
 
 ## Table of Contents
+
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
@@ -47,23 +53,25 @@ ShoCase™ is a deployed web application. Most users must simply navigate to [sh
 Should you wish to download the project locally you must:
 
 1. Open your terminal and clone the repo
-    ```
-    SSH:
-    git clone git@github.com:Bfunk54/ShoCase.git
 
-    HTTPS:
-    git clone https://github.com/Bfunk54/ShoCase.git
-    ```
+   ```
+   SSH:
+   git clone git@github.com:Bfunk54/ShoCase.git
+
+   HTTPS:
+   git clone https://github.com/Bfunk54/ShoCase.git
+   ```
+
 2. Install NPM packages
-    ```
-    npm i
-    ```
+   ```
+   npm i
+   ```
 3. Create a `.env` and input
-    ```
-    DB_NAME= 'shocase_db'
-    DB_USER= 'YOUR-USER-NAME'
-    DB_PASSWORD= 'YOUR-PASSWORD'
-    ```
+   ```
+   DB_NAME= 'shocase_db'
+   DB_USER= 'YOUR-USER-NAME'
+   DB_PASSWORD= 'YOUR-PASSWORD'
+   ```
 4. Run the `schema` housed within the db folder
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
