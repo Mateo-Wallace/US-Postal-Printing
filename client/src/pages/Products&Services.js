@@ -81,7 +81,7 @@ const ProductsServices = () => {
               When you need something printed or copied for your small business,
               US Postal & Printing is ready to help you make it picture perfect.
               Come visit your local print shop for:
-              <p>Posters, Signs, Flyers, Pamphlets, Copies</p>
+              <p>Posters, Signs, Flyers, Pamphlets, Letterhead</p>
             </Typography>
           </CardContent>
         </Card>
@@ -116,23 +116,36 @@ const ProductsServices = () => {
             </Typography>
           </CardContent>
         </Card>
-        <Box
+        <Card
           sx={{
-            margin: 1,
-            width: 400,
-            height: 300,
+            maxWidth: 345,
             backgroundColor: "primary.dark",
             borderRadius: "40px",
           }}
         >
-          <Typography
-            sx={{ margin: 1, textAlign: "center", color: "white" }}
-            variant="h4"
-            gutterBottom
-          >
-            Copying Services
-          </Typography>
-        </Box>
+          <CardMedia
+            component="img"
+            height="140"
+            image={CopyingImage}
+            alt="green iguana"
+          />
+          <CardContent>
+            <Typography
+              sx={{ color: "white" }}
+              gutterBottom
+              variant="h5"
+              component="div"
+            >
+              Copying Services
+            </Typography>
+            <Typography variant="body2" sx={{ color: "white" }}>
+              Copying is a common occurance for your business, and US Postal &
+              Printing is here to fulfill those needs no matter the size. Our
+              business card printing services include:
+              <p>Full Color, Double Sided, Assortment of Paper</p>
+            </Typography>
+          </CardContent>
+        </Card>
         <Box
           sx={{
             margin: 1,
