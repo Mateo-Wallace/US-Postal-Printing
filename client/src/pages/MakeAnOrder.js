@@ -15,7 +15,7 @@ function onComplete(e) {
   console.log("Survey complete! Results: " + JSON.stringify(e.data));
 }
 
-export default function MakeAnOrder() {
+const MakeAnOrder = () => {
   const survey = new Model(surveyJson);
   return (
     <div className="container">
@@ -27,4 +27,6 @@ export default function MakeAnOrder() {
       />
     </div>
   );
-}
+};
+
+export default MakeAnOrder;
