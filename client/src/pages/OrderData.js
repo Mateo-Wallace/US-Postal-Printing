@@ -1,4 +1,4 @@
-export const json = {
+export const surveyJson = {
   completedHtml:
     "<h3>Thank you for your feedback</h3> <h5>Your thoughts and ideas will help us improve our product.</h5>",
   completedHtmlOnCondition: [

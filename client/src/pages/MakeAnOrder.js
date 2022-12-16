@@ -3,7 +3,7 @@ import { Model, StylesManager } from "survey-core";
 import { Survey } from "survey-react-ui";
 import "survey-core/defaultV2.css";
 
-import { json } from "./OrderData";
+import { surveyJson } from "./OrderData";
 
 StylesManager.applyTheme("defaultV2");
 
@@ -11,17 +11,17 @@ function onValueChanged(_, options) {
   console.log("New value: " + options.value);
 }
 
-function onComplete(survey) {
-  console.log("Survey complete! Results: " + JSON.stringify(survey.data));
+function onComplete(e) {
+  console.log("Survey complete! Results: " + JSON.stringify(e.data));
 }
 
 export default function MakeAnOrder() {
-  const model = new Model(json);
+  const survey = new Model(surveyJson);
   return (
     <div className="container">
       <h1>SurveyJS Library / Runner</h1>
       <Survey
-        model={model}
+        model={survey}
         onComplete={onComplete}
         onValueChanged={onValueChanged}
       />
