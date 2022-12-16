@@ -18,12 +18,29 @@ import { style } from "@mui/system";
 
 const Home = () => {
   return (
-    <div style={{ display: "flex", marginTop: '120px', justifyContent: 'center' }}>
+    <div>
+      <div style={{ 
+          width: "100vw",
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap-reverse",
+          justifyContent: "space-evenly", 
+          marginTop: '120px',
+           }} >
+            <Container
+        sx={{
+          margin: 0,
+          width: 500,
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          justifyContent: "center",
+        }}
+        
+      >
       <Box
         sx={{
           margin: 1,
-          marginLeft: "20px",
-          alignSelf: "flex-start",
           width: 300,
           height: 700,
           backgroundColor: "primary.dark",
@@ -259,16 +276,17 @@ const Home = () => {
           </Grid>
 
       </Box>
+      </Container>
       <Container
         sx={{
           margin: 0,
-          width: "auto",
+          width: 1200,
           display: "flex",
           flexDirection: "row",
           flexWrap: "wrap",
           justifyContent: "center",
         }}
-        fixed
+        
       >
         <Box
           sx={{
@@ -644,6 +662,7 @@ const Home = () => {
           </Typography>
         </Box>
       </Container>
+      </div>
     </div>
   );
 };
