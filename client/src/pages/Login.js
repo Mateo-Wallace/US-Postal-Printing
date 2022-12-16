@@ -75,7 +75,7 @@ const Login = (props) => {
   };
 
   return (
-    <main>
+    <main style={{marginTop: '250px', marginBottom: '250px'}}>
       {data ? (
         <p>
           Successfully logged in! You may now head{" "}
@@ -83,7 +83,7 @@ const Login = (props) => {
         </p>
       ) : (
         <ThemeProvider theme={theme}>
-          <Container component="main" maxWidth="xs">
+          <Container component="main" maxWidth="xs" >
             <CssBaseline />
             <Box
               sx={{
