@@ -1,7 +1,9 @@
+const axios = require("axios").default;
 const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
 const path = require("path");
 const { authMiddleware } = require("./utils/auth");
+require("dotenv").config();
 
 const { typeDefs, resolvers } = require("./schemas");
 const db = require("./config/connection");
@@ -29,6 +31,18 @@ app.get("/", (req, res) => {
 const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
   server.applyMiddleware({ app });
+
+  app.get(`/shippo`, async (req, res) => {
+    const response = await axios.get(
+      `https://api.goshippo.com/tracks/${req.query.carrier}/${req.query.trackingNum}/`,
+      {
+        headers: {
+          Authorization: process.env.SHIPPO_AUTH,
+        },
+      }
+    );
+    res.json({ chapter: response.data });
+  });
 
   db.once("open", () => {
     app.listen(PORT, () => {
