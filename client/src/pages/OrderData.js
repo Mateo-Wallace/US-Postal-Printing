@@ -52,6 +52,18 @@ export const json = {
                 },
                 {
                   type: "text",
+                  name: "phone",
+                  title: "Phone Number:",
+                  isRequired: true,
+                },
+                {
+                  type: "text",
+                  name: "address",
+                  title: "Address:",
+                  isRequired: true,
+                },
+                {
+                  type: "text",
                   name: "cost",
                   inputType: "number",
                   title: "Item Cost:",
@@ -127,6 +139,18 @@ export const json = {
                   type: "text",
                   name: "name",
                   title: "Name:",
+                  isRequired: true,
+                },
+                {
+                  type: "text",
+                  name: "phone",
+                  title: "Phone Number:",
+                  isRequired: true,
+                },
+                {
+                  type: "text",
+                  name: "address",
+                  title: "Address:",
                   isRequired: true,
                 },
                 {
@@ -210,6 +234,18 @@ export const json = {
                 },
                 {
                   type: "text",
+                  name: "phone",
+                  title: "Phone Number:",
+                  isRequired: true,
+                },
+                {
+                  type: "text",
+                  name: "address",
+                  title: "Address:",
+                  isRequired: true,
+                },
+                {
+                  type: "text",
                   name: "cost",
                   inputType: "number",
                   title: "Item Cost:",
@@ -289,6 +325,18 @@ export const json = {
                 },
                 {
                   type: "text",
+                  name: "phone",
+                  title: "Phone Number:",
+                  isRequired: true,
+                },
+                {
+                  type: "text",
+                  name: "address",
+                  title: "Address:",
+                  isRequired: true,
+                },
+                {
+                  type: "text",
                   name: "cost",
                   inputType: "number",
                   title: "Item Cost:",
@@ -364,6 +412,18 @@ export const json = {
                   type: "text",
                   name: "name",
                   title: "Name:",
+                  isRequired: true,
+                },
+                {
+                  type: "text",
+                  name: "phone",
+                  title: "Phone Number:",
+                  isRequired: true,
+                },
+                {
+                  type: "text",
+                  name: "address",
+                  title: "Address:",
                   isRequired: true,
                 },
                 {
