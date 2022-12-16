@@ -5,6 +5,8 @@
 - [ ] Add link to deployed site in installation
 - [ ] Add links to all contributors social media
 - [ ] Add screenshot examples of deployed application
+- [ ] Update repo description (not in readme but on repo)
+- [ ] Update link to deployed website (not in readme but on repo)
 
 <p id="readme-top"></p>
 
@@ -106,15 +108,15 @@ Distributed under the MIT License. See [LICENSE](./LICENSE) for more information
 
 For any further questions feel free to contact us via:
 
-- Project Link: [github.com/Bfunk54/ShoCase](https://github.com/Bfunk54/ShoCase)
-
-- Mateo Wallace - [GitHub](https://github.com/Mateo-Wallace) - [Email](mailto:mateo.t.wallace@gmail.com) - [LinkedIn](https://www.linkedin.com/in/mateo-wallace-57931b254/)
+- Project Link: [github.com/Mateo-Wallace/US-Postal-Printing](https://github.com/Mateo-Wallace/US-Postal-Printing)
 
 - Dylan Crowley - [GitHub](https://github.com/dcrowdev) - [Email](mailto:dcrowdev1025@gmail.com) - [LinkedIn](https://www.linkedin.com/in/dylan-crowley-3974b8252/)
 
-- Benjamin Fein - [GitHub](https://github.com/Bfunk54) - [Email](mailto:#) - [LinkedIn](https://www.linkedin.com/in/benjamin-fein-5a73b2242/)
+- Benjamin Fein - [GitHub](https://github.com/Bfunk54) - [Email](mailto:#ben_fein@icloud.com) - [LinkedIn](https://www.linkedin.com/in/benjamin-fein-5a73b2242/)
 
-- Mary Elenius - [GitHub](https://github.com/404pandas) - [Email](mailto:#) - [LinkedIn](https://www.linkedin.com/in/mary-elenius-256212151/)
+- Sangki Jun - [GitHub](https://github.com/sangki810) - [Email](mailto:#sangki810@gmail.com) - [LinkedIn](https://www.linkedin.com/in/sangki-jun-8a6a5310b/)
+
+- Mateo Wallace - [GitHub](https://github.com/Mateo-Wallace) - [Email](mailto:mateo.t.wallace@gmail.com) - [LinkedIn](https://www.linkedin.com/in/mateo-wallace-57931b254/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
