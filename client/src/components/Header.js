@@ -53,7 +53,8 @@ function Nav() {
   return (
     <AppBar position="fixed">
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
+        <Toolbar style={{ justifyContent: 'space-between'}}disableGutters>
+          <Box style={{display: 'flex', flexWrap: 'nowrap', alignItems: 'center'}}>
         <Link to='/' style={{ color: 'white', textDecoration: 'none' }}>
         <img height = '80px' width = '80px' src={logo} />
         </Link>
@@ -64,47 +65,48 @@ function Nav() {
             component="p"
             sx={{
               mr: 2,
-              display: { xs: 'none', md: 'flex' },
+              display: {xs: 'none', sm: 'none', md: 'flex' },
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
               float: 'left',
+              marginLeft: '12px',
             }}
           >
             US Postal & Printing
           </Typography>
           </Link>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+
+          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
+          <Link to='/' style={{ color: 'white', textDecoration: 'none' }}>
           <Typography
             variant="h5"
             noWrap
             component="a"
-            href=""
             sx={{
               mr: 2,
-              display: { xs: 'flex', md: 'none' },
+              display: {sm: 'flex', md: 'none' },
               flexGrow: 1,
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
+              fontSize: '18px',
+              marginLeft: '12px',
             }}
           >
-            LOGO
+            US P&P
           </Typography>
-          <Box sx={{ alignItems: 'center', flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {/* {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))} */}
+          </Link>
+          </Box>
+          <Box sx={{justifyContent: 'flex-end', display: { xs: 'flex', md: 'flex', lg: 'none' }, width: '50px', zIndex: 0,}} >
+          <Hamburger />
+          </Box>
+
+          <Box sx={{ justifyContent: 'flex-end', alignItems: 'center', flexGrow: 1, display: { xs: 'none', md: 'none', lg: 'flex'} }}>
             <Link to='/login' style={{ textDecoration: 'none' }}>
             <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Login/Signup</Button>
             </Link>
