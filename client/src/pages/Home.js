@@ -18,7 +18,7 @@ import { style } from "@mui/system";
 
 const Home = () => {
   return (
-    <div style={{ display: "flex", marginTop: '120px' }}>
+    <div style={{ display: "flex", marginTop: '120px', justifyContent: 'center' }}>
       <Box
         sx={{
           margin: 1,
@@ -27,6 +27,7 @@ const Home = () => {
           width: 300,
           height: 700,
           backgroundColor: "primary.dark",
+          borderRadius: "40px",
         }}
       >
          <Typography
@@ -115,11 +116,7 @@ const Home = () => {
               justifyContent: "space-evenly",
             }}>
 
-          <Grid sx={{ margin: 1, marginLeft: '25px', borderRadius: '20px',         
-           "&:hover": {
-            backgroundColor: "primary.main",
-            opacity: [0.9, 0.8, 0.7],
-          }, }} item>
+          <Grid sx={{ margin: 1, marginLeft: '25px', borderRadius: '20px' }} item>
 
             <Typography
             sx={{ margin: 1, marginLeft: '3px', textAlign: 'center', color: "white", fontSize: '14px' }}
@@ -129,7 +126,11 @@ const Home = () => {
           </Typography>
 
           <Chip
-            sx={{ fontSize: '18px', textAlign: 'center', letterSpacing: '1.5px', color: "white" }}
+            sx={{ fontSize: '18px', textAlign: 'center', letterSpacing: '1.5px', color: "white",
+            "&:hover": {
+              backgroundColor: "darkgreen",
+              opacity: 0.8,
+            }, }}
             color="success" 
             label="5pm"
           />
@@ -145,7 +146,11 @@ const Home = () => {
           </Typography>
 
           <Chip
-            sx={{ fontSize: '18px', textAlign: 'center', letterSpacing: '1.5px', color: "white" }}
+            sx={{ fontSize: '18px', textAlign: 'center', letterSpacing: '1.5px', color: "white", 
+            "&:hover": {
+              backgroundColor: "darkgreen",
+              opacity: 0.8,
+            }, }}
             color="success" 
             label="5pm"
           />
@@ -161,7 +166,11 @@ const Home = () => {
           </Typography>
 
           <Chip
-            sx={{ fontSize: '18px', textAlign: 'center', letterSpacing: '1.5px', color: "white" }}
+            sx={{ fontSize: '18px', textAlign: 'center', letterSpacing: '1.5px', color: "white", 
+            "&:hover": {
+              backgroundColor: "darkgreen",
+              opacity: 0.8,
+            }, }}
             color="success" 
             label="5pm"
           />
@@ -177,7 +186,11 @@ const Home = () => {
           </Typography>
 
           <Chip
-            sx={{ fontSize: '18px', textAlign: 'center', letterSpacing: '1.5px', color: "white" }}
+            sx={{ fontSize: '18px', textAlign: 'center', letterSpacing: '1.5px', color: "white", 
+            "&:hover": {
+              backgroundColor: "darkgreen",
+              opacity: 0.8,
+            }, }}
             color="success" 
             label="5pm"
           />
@@ -193,7 +206,11 @@ const Home = () => {
           </Typography>
 
           <Chip
-            sx={{ fontSize: '18px', textAlign: 'center', letterSpacing: '1.5px', color: "white" }}
+            sx={{ fontSize: '18px', textAlign: 'center', letterSpacing: '1.5px', color: "white", 
+            "&:hover": {
+              backgroundColor: "darkgreen",
+              opacity: 0.8,
+            }, }}
             color="success" 
             label="5pm"
           />
@@ -209,7 +226,11 @@ const Home = () => {
           </Typography>
 
           <Chip
-            sx={{ fontSize: '18px', textAlign: 'center', letterSpacing: '1.5px', color: "white" }}
+            sx={{ fontSize: '18px', textAlign: 'center', letterSpacing: '1.5px', color: "white", 
+            "&:hover": {
+              backgroundColor: "darkgreen",
+              opacity: 0.8,
+            }, }}
             color="success" 
             label="1pm"
           />
@@ -225,7 +246,11 @@ const Home = () => {
 </Typography>
 
 <Chip
-  sx={{ fontSize: '18px', textAlign: 'center', letterSpacing: '1.5px', color: "white" }}
+  sx={{ fontSize: '18px', textAlign: 'center', letterSpacing: '1.5px', color: "white", 
+  "&:hover": {
+    backgroundColor: "darkred",
+    opacity: 0.8,
+  }, }}
   color="error" 
   label="No Pickups"
 />
@@ -237,6 +262,7 @@ const Home = () => {
       <Container
         sx={{
           margin: 0,
+          width: "auto",
           display: "flex",
           flexDirection: "row",
           flexWrap: "wrap",
@@ -522,10 +548,7 @@ const Home = () => {
             width: 550,
             height: 400,
             backgroundColor: "primary.dark",
-            // '&:hover': {
-            //   backgroundColor: 'primary.main',
-            //   opacity: [0.9, 0.8, 0.7],
-            // },
+            borderRadius: "40px",
           }}
         >
           <Typography
@@ -602,6 +625,7 @@ const Home = () => {
               backgroundColor: "primary.main",
               opacity: [0.9, 0.8, 0.7],
             },
+            borderRadius: "40px",
           }}
         >
           <Typography
