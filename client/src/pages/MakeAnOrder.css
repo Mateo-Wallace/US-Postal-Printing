@@ -1,0 +1,15 @@
+#surveyElement input[type="button"] {
+    border-radius: 40px;
+  }
+  .surveys-list button,
+  .surveys-list .sv_button_link:hover,
+  .survey-page-header button,
+  .sv_container button {
+    border-radius: 40px;
+  }
+  .sd-root-modern,
+  .sd-row {
+    border-radius: 40px;
+    border-collapse: separate; 
+  }
+
