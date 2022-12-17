@@ -10,7 +10,10 @@ import Skeleton from "@mui/material/Skeleton";
 import Typography from "@mui/material/Typography";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import Hamburger from "hamburger-react";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 import './Header.css';
+import { MenuList } from "@mui/material";
 
 const drawerBleeding = 56;
 
@@ -39,8 +42,10 @@ const Puller = styled(Box)(({ theme }) => ({
 function SwipeableEdgeDrawer(props) {
   const { window } = props;
   const [open, setOpen] = React.useState(false);
+  const [anchorEl, setAnchorEl] = React.useState(null);
 
   const toggleDrawer = (newOpen) => () => {
+
     setOpen(newOpen);
   };
 
@@ -96,9 +101,26 @@ function SwipeableEdgeDrawer(props) {
             pb: 2,
             height: "100%",
             overflow: "auto",
+            display: "flex",
+            justifyContent: "center",
           }}
         >
-          <Skeleton variant="rectangular" height="100%" />
+             <MenuList
+        id="basic-menu"
+        open={open}
+        onClose={toggleDrawer(false)}
+        MenuListProps={{
+          'aria-labelledby': 'basic-button',
+        }}
+      >
+        <MenuItem onClick={toggleDrawer(false)}>Login/Signup</MenuItem>
+        <MenuItem onClick={toggleDrawer(false)}>Products & Services</MenuItem>
+        <MenuItem onClick={toggleDrawer(false)}>Make An Order</MenuItem>
+        <MenuItem onClick={toggleDrawer(false)}>Tracking</MenuItem>
+        <MenuItem onClick={toggleDrawer(false)}>Dashboard</MenuItem>
+        <MenuItem onClick={toggleDrawer(false)}>Contact Us</MenuItem>
+      </MenuList>
+          {/* <Skeleton variant="rectangular" height="100%" /> */}
         </StyledBox>
       </SwipeableDrawer>
     </Root>
