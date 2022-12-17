@@ -92,7 +92,7 @@ function SwipeableEdgeDrawer(props) {
           }}
         >
           <Puller />
-          <Typography variant="h5" fontWeight={800} sx={{ p: 2, color: "text.secondary", display: "flex", justifyContent: "center" }}>
+          <Typography variant="h5" fontWeight={450} sx={{ p: 2, color: "text.secondary", display: "flex", justifyContent: "center" }}>
             Menu
           </Typography>
         </StyledBox>

@@ -94,6 +94,13 @@ function Nav(props) {
           </Box>
 
             <Box sx={{ flexWrap: 'nowrap', display: {xs: 'flex', sm: 'flex', md: 'none', alignItems: 'center' }}}>
+
+            <Box sx={{display: {sm: 'flex', md: 'none' }}}>
+          <Link to='/' style={{ color: 'white', textDecoration: 'none', marginRight: '20px' }}>
+        <img height = '80px' width = '80px' src={logo} />
+        </Link>
+        </Box>
+
           <Link to='/' style={{ color: 'white', textDecoration: 'none' }}>
           <Typography
             variant="h5"
@@ -112,14 +119,9 @@ function Nav(props) {
               marginLeft: '12px',
             }}
           >
-            US P&P
+            US Postal <br></br> & Printing
           </Typography>
           </Link>
-          <Box sx={{display: {sm: 'flex', md: 'none' }}}>
-          <Link to='/' style={{ color: 'white', textDecoration: 'none' }}>
-        <img height = '80px' width = '80px' src={logo} />
-        </Link>
-        </Box>
         </Box>
 
           </Box>
