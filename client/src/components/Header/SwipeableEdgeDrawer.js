@@ -66,7 +66,7 @@ function SwipeableEdgeDrawer(props) {
       <Global
         styles={{
           ".MuiDrawer-root > .MuiPaper-root": {
-            height: `calc(50% - ${drawerBleeding}px)`,
+            height: `calc(58% - ${drawerBleeding}px)`,
             overflow: "visible",
           },
         }}
@@ -137,6 +137,7 @@ function SwipeableEdgeDrawer(props) {
             overflow: "auto",
             display: "flex",
             justifyContent: "center",
+            alignItems: "center",
           }}
         >
           <MenuList
@@ -144,6 +145,8 @@ function SwipeableEdgeDrawer(props) {
               backgroundColor: "#757575",
               borderRadius: "40px",
               textAlign: "center",
+              display: "flex",
+              flexDirection: "column",
             }}
             id="basic-menu"
             open={open}
@@ -152,15 +155,15 @@ function SwipeableEdgeDrawer(props) {
               "aria-labelledby": "basic-button",
             }}
           >
-            <Link variant="h5" to="/login" style={{ textDecoration: "none" }}>
+            <Link to="/login" style={{ textDecoration: "none" }}>
               <MenuItem
                 style={{
-                  marginBottom: "4px",
+                  marginBottom: "6px",
                   display: "flex",
                   justifyContent: "center",
                   borderTopLeftRadius: "40px",
                   borderTopRightRadius: "40px",
-                  border: "#4CAF50 solid 2px",
+                  border: "#149be6 solid 3px",
                   boxShadow:
                     "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)",
                 }}
@@ -177,7 +180,14 @@ function SwipeableEdgeDrawer(props) {
             </Link>
             <Link to="/products&services" style={{ textDecoration: "none" }}>
               <MenuItem
-                style={{ display: "flex", justifyContent: "center" }}
+                style={{
+                    marginBottom: "6px",
+                    display: "flex",
+                    justifyContent: "center",
+                    border: "#149be6 solid 3px",
+                    boxShadow:
+                      "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)",
+                  }}
                 onClick={toggleDrawer(false)}
               >
                 <Typography
@@ -191,34 +201,87 @@ function SwipeableEdgeDrawer(props) {
             </Link>
             <Link to="/make-an-order" style={{ textDecoration: "none" }}>
               <MenuItem
-                style={{ display: "flex", justifyContent: "center" }}
+                style={{
+                    marginBottom: "6px",
+                    display: "flex",
+                    justifyContent: "center",
+                    border: "#149be6 solid 3px",
+                    boxShadow:
+                      "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)",
+                  }}
                 onClick={toggleDrawer(false)}
               >
+                <Typography
+                  variant="p"
+                  fontWeight={700}
+                  sx={{ p: 1, color: "text.secondary" }}
+                >
                 Make An Order
+                </Typography>
               </MenuItem>
             </Link>
             <Link to="/tracking" style={{ textDecoration: "none" }}>
               <MenuItem
-                style={{ display: "flex", justifyContent: "center" }}
+                style={{
+                    marginBottom: "6px",
+                    display: "flex",
+                    justifyContent: "center",
+                    border: "#149be6 solid 3px",
+                    boxShadow:
+                      "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)",
+                  }}
                 onClick={toggleDrawer(false)}
               >
+                <Typography
+                  variant="p"
+                  fontWeight={700}
+                  sx={{ p: 1, color: "text.secondary" }}
+                >
                 Tracking
+                </Typography>
               </MenuItem>
             </Link>
             <Link to="/dashboard/:userId" style={{ textDecoration: "none" }}>
               <MenuItem
-                style={{ display: "flex", justifyContent: "center" }}
+                style={{
+                    marginBottom: "6px",
+                    display: "flex",
+                    justifyContent: "center",
+                    border: "#149be6 solid 3px",
+                    boxShadow:
+                      "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)",
+                  }}
                 onClick={toggleDrawer(false)}
               >
+                <Typography
+                  variant="p"
+                  fontWeight={700}
+                  sx={{ p: 1, color: "text.secondary" }}
+                >
                 Dashboard
+                </Typography>
               </MenuItem>
             </Link>
             <Link to="/contact-us" style={{ textDecoration: "none" }}>
               <MenuItem
-                style={{ display: "flex", justifyContent: "center" }}
+                style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    borderBottomLeftRadius: "40px",
+                    borderBottomRightRadius: "40px",
+                    border: "#149be6 solid 3px",
+                    boxShadow:
+                      "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)",
+                  }}
                 onClick={toggleDrawer(false)}
               >
+                <Typography
+                  variant="p"
+                  fontWeight={700}
+                  sx={{ p: 1, color: "text.secondary" }}
+                >
                 Contact Us
+                </Typography>
               </MenuItem>
             </Link>
           </MenuList>
