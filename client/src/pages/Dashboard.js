@@ -11,7 +11,6 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import Badge from '@mui/material/Badge';
 import Container from '@mui/material/Container';
-
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import InnerDashboard from '../components/Dashboard/dashboard'
@@ -30,6 +29,7 @@ import { useState } from 'react';
 import { CURRENT_USER } from '../utils/queries';
 import { useQuery } from '@apollo/client';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import './Dashboard.css'
 
 
 
@@ -146,7 +146,7 @@ function DashboardContent() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ display: 'flex', marginTop: '100px' }}>
+      <Box sx={{ display: 'flex', marginTop: '135px' }}>
         <CssBaseline />
         {/* <AppBar position="absolute" open={open}>
           <Toolbar
@@ -182,7 +182,7 @@ function DashboardContent() {
             </IconButton>
           </Toolbar>
         </AppBar> */}
-        <Drawer variant="permanent" open={open}>
+        <Drawer variant="permanent" open={open} style={{zIndex: 1}}>
           <Toolbar
             sx={{
               display: 'flex',
@@ -191,13 +191,13 @@ function DashboardContent() {
               px: [1],
             }}
           >
-            {open ? <h6>Close Menu</h6> : ''}
+            {open ? <h6 style={{marginRight: '5px'}}>Close Menu</h6> : ''}
             <IconButton onClick={toggleDrawer}>
               {open ? <ChevronLeftIcon /> : <ChevronRightIcon />}
             </IconButton>
           </Toolbar>
           <Divider />
-          <List component="nav">
+          <List className='dashboardNav' component="nav">
             <React.Fragment>
               <ListItemButton onClick={showDashboard}>
                 <ListItemIcon>
