@@ -1,0 +1,27 @@
+@media screen and (max-width: 900px) {
+    .logo {
+      justify-content: center !important;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .menu {
+      display: block !important;
+    }
+    .mobile-menu {
+      height: 50px !important;
+    }
+  }
+
+.logo {
+  justify-content: space-between;
+}
+
+.menu {
+  display: none;
+}
+
+#basic-menu {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}

@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from "prop-types";
+import AuthService from '../utils/auth';
 import Auth from '../utils/auth';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -15,15 +17,24 @@ import AdbIcon from '@mui/icons-material/Adb';
 import Hamburger from 'hamburger-react';
 import { Link } from 'react-router-dom';
 import logo from '../images/logo192.png';
+import SwipeableEdgeDrawer from './Header/SwipeableEdgeDrawer';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import './Header/Header.css';
 
 const pages = ['Products', 'Pricing', 'Login/Signup'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-function Nav() {
-  const [isOpen, setOpen] = React.useState(false);
+function Nav(props) {
   const [isClose, setClose] = React.useState(true);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const [open, setOpen] = React.useState(false);
+
+  const toggleDrawer = (newOpen) => () => {
+    setOpen(newOpen);
+  };
+
 
   // const closeandSet = () => {
   //   setAnchorElUser(null);
@@ -51,12 +62,17 @@ function Nav() {
   
 
   return (
-    <AppBar position="fixed">
+    <AppBar sx={{borderBottomLeftRadius: '40px',
+    borderBottomRightRadius: '40px'}} position="fixed">
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
+        <Toolbar className='logo' style={{ }}disableGutters>
+          <Box style={{display: 'flex', flexWrap: 'nowrap', alignItems: 'center'}}>
+          <Box sx={{alignItems: 'center', display: {xs: 'none', sm: 'none', md: 'flex' }}}>
+          <Box sx={{display: {xs: 'none', sm: 'none', md: 'flex' }}}>
         <Link to='/' style={{ color: 'white', textDecoration: 'none' }}>
         <img height = '80px' width = '80px' src={logo} />
         </Link>
+        </Box>
         <Link to='/' style={{ color: 'white', textDecoration: 'none' }}>
           <Typography
             variant="h6"
@@ -64,47 +80,53 @@ function Nav() {
             component="p"
             sx={{
               mr: 2,
-              display: { xs: 'none', md: 'flex' },
+              display: {xs: 'none', sm: 'none', md: 'flex' },
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
               float: 'left',
+              marginLeft: '12px',
             }}
           >
             US Postal & Printing
           </Typography>
           </Link>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          </Box>
+
+            <Box sx={{ flexWrap: 'nowrap', display: {xs: 'flex', sm: 'flex', md: 'none', alignItems: 'center' }}}>
+
+            <Box sx={{display: {sm: 'flex', md: 'none' }}}>
+          <Link to='/' style={{ color: 'white', textDecoration: 'none', marginRight: '20px' }}>
+        <img height = '80px' width = '80px' src={logo} />
+        </Link>
+        </Box>
+
+          <Link to='/' style={{ color: 'white', textDecoration: 'none' }}>
           <Typography
             variant="h5"
             noWrap
             component="a"
-            href=""
             sx={{
               mr: 2,
-              display: { xs: 'flex', md: 'none' },
+              display: {sm: 'flex', md: 'none' },
               flexGrow: 1,
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
+              fontSize: '18px',
+              marginLeft: '12px',
             }}
           >
-            LOGO
+            US Postal <br></br> & Printing
           </Typography>
-          <Box sx={{ alignItems: 'center', flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {/* {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))} */}
+          </Link>
+        </Box>
+          </Box>
+          <Box sx={{ justifyContent: 'flex-end', alignItems: 'center', flexGrow: 1, display: { xs: 'none', md: 'none', lg: 'flex'} }}>
             {Auth.loggedIn() ? (<Link to='/logout' style={{ textDecoration: 'none' }}>
             <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Logout</Button>
             </Link>) : (<Link to='/login' style={{ textDecoration: 'none' }}>
@@ -162,6 +184,7 @@ function Nav() {
           </Box> */}
         </Toolbar>
       </Container>
+      <SwipeableEdgeDrawer onToggle={toggleDrawer(true)} />
     </AppBar>
   );
 }

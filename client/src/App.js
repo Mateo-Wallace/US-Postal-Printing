@@ -74,7 +74,7 @@ function App() {
       <Router>
       <ThemeProvider theme={theme} >
       <Nav />
-      <div style={{ marginTop: '95px'}}>
+      <div>
         <Routes >
           <Route path='/' element={<Home />} />
           <Route path='/signup' element={<Signup />} />
