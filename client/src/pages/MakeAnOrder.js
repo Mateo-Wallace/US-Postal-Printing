@@ -20,7 +20,7 @@ const MakeAnOrder = () => {
     console.log(JSON.stringify(sender.data));
     const orderData = {
       type: sender.data.product,
-      message: `sender.data.message`,
+      message: `message: ${sender.data.message}, name: ${sender.data.name}, phone: ${sender.data.phone}, address: ${sender.data.address}, costPerItem: ${sender.data.cost}`,
       totalPrice: sender.data.total,
       quantity: `${sender.data.quantity}`,
     };
@@ -29,7 +29,7 @@ const MakeAnOrder = () => {
       const data = await addOrder({
         variables: orderData,
       });
-      console.log(data);
+      console.log(data.data.addOrder);
       setOrderSaved(true);
       setTimeout(function () {
         setOrderSaved(false);
