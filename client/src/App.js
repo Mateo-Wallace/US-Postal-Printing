@@ -81,7 +81,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/logout' element={<Logout />} />
           <Route path='/products&services' element={<ProductsServices />} />
-          <Route path='/make-an-order' element={<MakeAnOrder />} />
+          <Route path='/make-an-order' element={Auth.loggedIn() ? <MakeAnOrder /> : <ProtectRoute />}/>
           <Route path='/tracking' element={<Tracking />} />
           <Route path='/contact-us' element={<ContactUs />} />
           <Route

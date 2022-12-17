@@ -1,30 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
+import { useCallback } from "react";
 import { Model, StylesManager } from "survey-core";
 import { Survey } from "survey-react-ui";
 import "survey-core/defaultV2.css";
+import { useMutation } from "@apollo/client";
+import { ADD_ORDER } from "../utils/mutations";
+import Typography from "@mui/material/Typography";
 
-import { json } from "./OrderData";
+import { surveyJson } from "./OrderData";
 
 StylesManager.applyTheme("defaultV2");
 
-function onValueChanged(_, options) {
-  console.log("New value: " + options.value);
-}
+const MakeAnOrder = () => {
+  const survey = new Model(surveyJson);
+  const [addOrder, { error, data }] = useMutation(ADD_ORDER);
+  const [orderSaved, setOrderSaved] = useState();
 
-function onComplete(survey) {
-  console.log("Survey complete! Results: " + JSON.stringify(survey.data));
-}
+  const handleSaveOrder = useCallback(async (sender) => {
+    console.log(JSON.stringify(sender.data));
+    const orderData = {
+      type: sender.data.product,
+      message: `message: ${sender.data.message}, name: ${sender.data.name}, phone: ${sender.data.phone}, address: ${sender.data.address}, costPerItem: ${sender.data.cost}`,
+      totalPrice: sender.data.total,
+      quantity: `${sender.data.quantity}`,
+    };
 
-export default function MakeAnOrder() {
-  const model = new Model(json);
+    try {
+      const data = await addOrder({
+        variables: orderData,
+      });
+      console.log(data.data.addOrder);
+      setOrderSaved(true);
+      setTimeout(function () {
+        setOrderSaved(false);
+      }, 5000);
+    } catch (err) {
+      console.error(err);
+    }
+  }, []);
+
+  survey.onComplete.add(handleSaveOrder);
+
   return (
     <div className="container">
-      <h1>SurveyJS Library / Runner</h1>
-      <Survey
-        model={model}
-        onComplete={onComplete}
-        onValueChanged={onValueChanged}
-      />
+      <h1>Make An Order</h1>
+
+      {orderSaved ? (
+        <Typography align="center" component="h1" variant="h5">
+          Package Saved!
+        </Typography>
+      ) : (
+        <Survey model={survey} />
+      )}
     </div>
   );
-}
+};
+
+export default MakeAnOrder;
