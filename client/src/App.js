@@ -20,6 +20,7 @@ import ProductsServices from './pages/Products&Services';
 import Tracking from './pages/Tracking';
 import MakeAnOrder from './pages/MakeAnOrder';
 import ContactUs from './pages/ContactUs';
+import Logout from './pages/Logout';
 
 /// IMPORT COMPONENTS ///
 import ProtectRoute from './components/ProtectRoute';
@@ -78,6 +79,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/logout' element={<Logout />} />
           <Route path='/products&services' element={<ProductsServices />} />
           <Route path='/make-an-order' element={<MakeAnOrder />} />
           <Route path='/tracking' element={<Tracking />} />

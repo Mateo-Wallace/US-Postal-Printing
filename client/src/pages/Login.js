@@ -75,7 +75,7 @@ const Login = (props) => {
   };
 
   return (
-    <main>
+    <main style={{marginTop: '280px', marginBottom: '280px'}}>
       {data ? (
         <p>
           Successfully logged in! You may now head{" "}
@@ -83,7 +83,7 @@ const Login = (props) => {
         </p>
       ) : (
         <ThemeProvider theme={theme}>
-          <Container component="main" maxWidth="xs">
+          <Container component="main" maxWidth="xs" >
             <CssBaseline />
             <Box
               sx={{
@@ -139,9 +139,9 @@ const Login = (props) => {
                 </Button>
                 <Grid container justifyContent="flex-end">
                   <Grid item>
-                    <Link2 href="/signup" variant="body2">
+                    <Link to="/signup" variant="body2">
                       {"Don't have an account? Sign Up"}
-                    </Link2>
+                    </Link>
                   </Grid>
                 </Grid>
               </Box>
