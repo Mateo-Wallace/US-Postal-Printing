@@ -15,11 +15,12 @@ import MailboxImage from "../images/mailboxes.jpg";
 import Chip from "@mui/material/Chip";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 import { style } from "@mui/system";
+import './Home.css'
 
 const Home = () => {
   return (
     <div>
-      <div style={{ 
+      <div className="home" style={{ 
           width: "100vw",
           display: "flex",
           flexDirection: "row",
@@ -27,6 +28,7 @@ const Home = () => {
           justifyContent: "space-evenly", 
           marginTop: '120px',
            }} >
+
             <Container
         sx={{
           margin: 0,
@@ -291,8 +293,8 @@ const Home = () => {
         <Box
           sx={{
             margin: 1,
-            width: 550,
-            height: 400,
+            width: {xs: 350, sm: 350, md: 550, lg: 550, xl: 550},
+            height: {xs: 600, sm: 600, md: 400, lg: 400, xl: 400},
             backgroundColor: "primary.dark",
             borderRadius: "40px",
           }}
@@ -563,8 +565,8 @@ const Home = () => {
             flexDirection: "column",
             alignItems: "center",
             margin: 1,
-            width: 550,
-            height: 400,
+            width: {xs: 350, sm: 350, md: 550, lg: 550, xl: 550},
+            height: {xs: 600, sm: 600, md: 400, lg: 400, xl: 400},
             backgroundColor: "primary.dark",
             borderRadius: "40px",
           }}
@@ -578,7 +580,7 @@ const Home = () => {
           </Typography>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3564.081841247327!2d-80.1523419!3d26.7098323!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9290c5efab345%3A0x214ddf6757f47116!2sUS%20Postal%20%26%20Printing!5e0!3m2!1sen!2sus!4v1671043314933!5m2!1sen!2sus"
-            width="500"
+            width= '90%'
             height="300"
             style={{ border: 0, margin: "8px", borderRadius: "25px", 
             boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)' 
@@ -587,7 +589,7 @@ const Home = () => {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
-          <Card sx={{ fontSize: "16px", margin: 1, borderRadius: "25px", 
+          <Card sx={{ fontSize: "14px", margin: 1, borderRadius: "25px", 
             boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)'
         }}>
             <Grid sx={{ margin: 1.3 }} item>
@@ -636,8 +638,8 @@ const Home = () => {
           sx={{
             margin: 1,
             alignSelf: "flex-end",
-            width: 600,
-            height: 300,
+            width: {xs: 350, sm: 350, md: 550, lg: 550, xl: 550},
+            height: {xs: 600, sm: 600, md: 400, lg: 400, xl: 400},
             backgroundColor: "primary.dark",
             "&:hover": {
               backgroundColor: "primary.main",
