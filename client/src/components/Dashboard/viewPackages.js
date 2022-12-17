@@ -92,6 +92,7 @@ function ViewPackages() {
 
 
     const [formState, setFormState] = React.useState({
+        id: "",
         trackingNum: "",
         carrier: "",
         notes: ""
@@ -139,6 +140,13 @@ function ViewPackages() {
         setFormState({
             ...formState,
             notes: note
+        })
+    }
+
+    const setFormStateId = (event) => {
+        setFormState({
+            ...formState,
+            id: event.target.id
         })
     }
 
@@ -250,9 +258,9 @@ function ViewPackages() {
                         {edit ?
                             <TextField
                                 id={userPackage._id}
-                                value={formState.trackingNum}
-                                onChange={event => {setFormState({...formState, index: formState.trackingNum}); handleEditTrackingNum(event)}}
-                                onClick={event => event.stopPropagation()}
+                                value={formState.id == userPackage._id ? formState.trackingNum : ""}
+                                onChange={event => {handleEditTrackingNum(event)}}
+                                onClick={event => {event.stopPropagation(); setFormStateId(event)}}
                                 label={userPackage.trackingNum}
                                 size="small"
                                 placeholder='New Tracking Number'
