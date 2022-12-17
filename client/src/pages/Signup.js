@@ -72,7 +72,7 @@ const Signup = () => {
   };
 
   return (
-    <main style={{marginTop: '270px', marginBottom: '270px'}}>
+    <main style={{marginTop: '160px', marginBottom: '60px'}}>
       {data ? (
         <p variant="subtitle1">
           Successfully created an account. You may now head{" "}
