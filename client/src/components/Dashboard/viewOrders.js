@@ -47,8 +47,8 @@ function ViewOrders() {
     return (
         <Box>
                 <Grid container spacing={2}>
-                    <Grid item xs={12} md={6}>
-                        <Typography sx={{ mt: 4, mb: 2 }} variant="h3" component="div">
+                    <Grid item xs={12} md={6} style={{minWidth: '100%'}}>
+                        <Typography sx={{ mt: 4, mb: 5, textAlign: 'center'}} variant="h3" component="div">
                             My Orders
                         </Typography>
                         <Demo>

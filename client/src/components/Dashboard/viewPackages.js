@@ -127,11 +127,11 @@ function ViewPackages() {
 
     const handleEditTrackingNum = (event) => {
 
-
         setFormState({
             ...formState,
             trackingNum: event.target.value
         })
+    
     }
 
     const handleEditNotes = (event) => {
@@ -139,6 +139,7 @@ function ViewPackages() {
 
         setFormState({
             ...formState,
+            trackingNum: event.target.trackingNum,
             notes: note
         })
     }
@@ -279,9 +280,10 @@ function ViewPackages() {
                     <AccordionDetails sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                         {edit ?
                             <TextField
-                                value={formState.notes}
+                                id={userPackage._id}
+                                value={formState.id == userPackage._id ? formState.notes : ""}
                                 onChange={event => handleEditNotes(event)}
-                                onClick={event => event.stopPropagation()}
+                                onClick={event => {event.stopPropagation(); setFormStateId(event)}}
                                 label={userPackage.notes}
                                 size="large"
                                 placeholder='Update Notes'
