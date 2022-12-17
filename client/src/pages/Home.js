@@ -294,7 +294,7 @@ const Home = () => {
           sx={{
             margin: 1,
             width: {xs: 350, sm: 350, md: 550, lg: 550, xl: 550},
-            height: {xs: 600, sm: 600, md: 400, lg: 400, xl: 400},
+            height: {xs: 550, sm: 550, md: 400, lg: 400, xl: 400},
             backgroundColor: "primary.dark",
             borderRadius: "40px",
           }}
@@ -566,7 +566,7 @@ const Home = () => {
             alignItems: "center",
             margin: 1,
             width: {xs: 350, sm: 350, md: 550, lg: 550, xl: 550},
-            height: {xs: 600, sm: 600, md: 400, lg: 400, xl: 400},
+            height: {xs: 550, sm: 550, md: 400, lg: 400, xl: 400},
             backgroundColor: "primary.dark",
             borderRadius: "40px",
           }}
@@ -639,7 +639,7 @@ const Home = () => {
             margin: 1,
             alignSelf: "flex-end",
             width: {xs: 350, sm: 350, md: 550, lg: 550, xl: 550},
-            height: {xs: 600, sm: 600, md: 400, lg: 400, xl: 400},
+            height: {xs: 550, sm: 550, md: 400, lg: 400, xl: 400},
             backgroundColor: "primary.dark",
             "&:hover": {
               backgroundColor: "primary.main",

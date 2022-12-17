@@ -1,6 +1,7 @@
 @media screen and (max-width: 900px) {
     .home {
       justify-content: center !important;
+      margin-top: 140px !important;
     }
   }
 
