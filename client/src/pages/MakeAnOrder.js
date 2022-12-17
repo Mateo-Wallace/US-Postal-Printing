@@ -17,13 +17,13 @@ const MakeAnOrder = () => {
   const [orderSaved, setOrderSaved] = useState();
 
   const handleSaveOrder = useCallback(async (sender) => {
+    console.log(JSON.stringify(sender.data));
     const orderData = {
       type: sender.data.product,
-      message: sender.data.message,
+      message: `sender.data.message`,
       totalPrice: sender.data.total,
       quantity: `${sender.data.quantity}`,
     };
-    console.log(orderData);
 
     try {
       const data = await addOrder({

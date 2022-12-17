@@ -18,7 +18,7 @@ export const surveyJson = {
         {
           type: "dropdown",
           name: "product",
-          title: "Dropdown",
+          title: "Product",
           isRequired: true,
           showNoneItem: false,
           colCount: 4,

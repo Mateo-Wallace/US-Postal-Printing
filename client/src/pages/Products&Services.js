@@ -51,7 +51,12 @@ const ProductsServices = () => {
               US Postal & Printing can get the job done. Stop by today and get
               notarizing checked off your list. Some commonly notarized
               documents include:
-              <p>Wills, Trusts, Deeds, Contracts, & Affidavits</p>
+            </Typography>
+            <Typography
+              variant="body2"
+              sx={{ marginTop: "10px", color: "white" }}
+            >
+              Wills, Trusts, Deeds, Contracts, & Affidavits
             </Typography>
           </CardContent>
         </Card>
@@ -81,7 +86,12 @@ const ProductsServices = () => {
               When you need something printed or copied for your small business,
               US Postal & Printing is ready to help you make it picture perfect.
               Come visit your local print shop for:
-              <p>Posters, Signs, Flyers, Pamphlets, Letterhead</p>
+            </Typography>
+            <Typography
+              variant="body2"
+              sx={{ marginTop: "10px", color: "white" }}
+            >
+              Posters, Signs, Flyers, Pamphlets, Letterhead
             </Typography>
           </CardContent>
         </Card>
@@ -112,7 +122,12 @@ const ProductsServices = () => {
               lasting impression on your small business customers and is one of
               the best marketing tools you have. Our business card printing
               services include:
-              <p>Full Color, Double Sided, Assortment of Paper</p>
+            </Typography>
+            <Typography
+              variant="body2"
+              sx={{ marginTop: "10px", color: "white" }}
+            >
+              Full Color, Double Sided, Assortment of Paper
             </Typography>
           </CardContent>
         </Card>
@@ -142,7 +157,12 @@ const ProductsServices = () => {
               Copying is a common occurance for your business, and US Postal &
               Printing is here to fulfill those needs no matter the size. Our
               business card printing services include:
-              <p>Full Color, Double Sided, Assortment of Paper</p>
+            </Typography>
+            <Typography
+              variant="body2"
+              sx={{ marginTop: "10px", color: "white" }}
+            >
+              Full Color, Double Sided, Assortment of Paper
             </Typography>
           </CardContent>
         </Card>
