@@ -13,7 +13,7 @@ import MailboxImage from "../images/mailboxes.jpg";
 
 const ProductsServices = () => {
   return (
-    <div style={{ display: "flex" }}>
+    <div style={{ display: "flex", marginTop: '120px' }}>
       <Container
         sx={{
           display: "flex",
@@ -26,6 +26,7 @@ const ProductsServices = () => {
       >
         <Card
           sx={{
+            margin: "10px",
             maxWidth: 345,
             backgroundColor: "primary.dark",
             borderRadius: "40px",
@@ -57,6 +58,7 @@ const ProductsServices = () => {
         </Card>
         <Card
           sx={{
+            margin: "10px",
             maxWidth: 345,
             backgroundColor: "primary.dark",
             borderRadius: "40px",
@@ -87,6 +89,7 @@ const ProductsServices = () => {
         </Card>
         <Card
           sx={{
+            margin: "10px",
             maxWidth: 345,
             backgroundColor: "primary.dark",
             borderRadius: "40px",
@@ -118,6 +121,7 @@ const ProductsServices = () => {
         </Card>
         <Card
           sx={{
+            margin: "10px",
             maxWidth: 345,
             backgroundColor: "primary.dark",
             borderRadius: "40px",
@@ -148,6 +152,7 @@ const ProductsServices = () => {
         </Card>
         <Card
           sx={{
+            margin: "10px",
             maxWidth: 345,
             backgroundColor: "primary.dark",
             borderRadius: "40px",
