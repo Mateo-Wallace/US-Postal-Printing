@@ -55,6 +55,9 @@ const MakeAnOrder = () => {
           padding: "40px",
           height: "80%",
           width: "80%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
         }}
       >
       <Typography
