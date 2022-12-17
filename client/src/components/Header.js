@@ -61,7 +61,8 @@ function Nav(props) {
   
 
   return (
-    <AppBar position="fixed">
+    <AppBar sx={{borderBottomLeftRadius: '40px',
+    borderBottomRightRadius: '40px'}} position="fixed">
       <Container maxWidth="xl">
         <Toolbar className='logo' style={{ }}disableGutters>
           <Box style={{display: 'flex', flexWrap: 'nowrap', alignItems: 'center'}}>

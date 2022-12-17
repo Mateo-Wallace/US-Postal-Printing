@@ -12,9 +12,10 @@ import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import Hamburger from "hamburger-react";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import './Header.css';
+import "./Header.css";
 import { MenuList } from "@mui/material";
 import { style } from "@mui/system";
+import { Link } from "react-router-dom";
 
 const drawerBleeding = 56;
 
@@ -46,7 +47,6 @@ function SwipeableEdgeDrawer(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const toggleDrawer = (newOpen) => () => {
-
     setOpen(newOpen);
   };
 
@@ -55,7 +55,13 @@ function SwipeableEdgeDrawer(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Root className="menu">
+    <Root
+      style={{
+        borderBottomLeftRadius: "40px",
+        borderBottomRightRadius: "40px",
+      }}
+      className="menu"
+    >
       <CssBaseline />
       <Global
         styles={{
@@ -65,8 +71,25 @@ function SwipeableEdgeDrawer(props) {
           },
         }}
       />
-      <Box className='mobile-menu' sx={{ backgroundColor: "primary.main", display: "flex", justifyContent: 'center', padding: 2, alignItems: 'center' }}>
-        <Hamburger color='lightgrey' size={48} onToggle={toggleDrawer(true)} toggled={open} toggle={setOpen}/>
+      <Box
+        className="mobile-menu"
+        sx={{
+          backgroundColor: "primary.main",
+          display: "flex",
+          justifyContent: "center",
+          padding: 2,
+          alignItems: "center",
+          borderBottomLeftRadius: "40px",
+          borderBottomRightRadius: "40px",
+        }}
+      >
+        <Hamburger
+          color="#e0e0e0"
+          size={48}
+          onToggle={toggleDrawer(true)}
+          toggled={open}
+          toggle={setOpen}
+        />
       </Box>
       <SwipeableDrawer
         container={container}
@@ -80,19 +103,29 @@ function SwipeableEdgeDrawer(props) {
           keepMounted: true,
         }}
       >
-        <StyledBox className="menu"
+        <StyledBox
+          className="menu"
           sx={{
             position: "absolute",
             top: -drawerBleeding,
-            borderTopLeftRadius: 8,
-            borderTopRightRadius: 8,
+            borderTopLeftRadius: "40px",
+            borderTopRightRadius: "40px",
             visibility: "visible",
             right: 0,
             left: 0,
           }}
         >
           <Puller />
-          <Typography variant="h5" fontWeight={450} sx={{ p: 2, color: "text.secondary", display: "flex", justifyContent: "center" }}>
+          <Typography
+            variant="h5"
+            fontWeight={450}
+            sx={{
+              p: 2,
+              color: "#e0e0e0",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
             Menu
           </Typography>
         </StyledBox>
@@ -106,21 +139,89 @@ function SwipeableEdgeDrawer(props) {
             justifyContent: "center",
           }}
         >
-             <MenuList
-        id="basic-menu"
-        open={open}
-        onClose={toggleDrawer(false)}
-        MenuListProps={{
-          'aria-labelledby': 'basic-button',
-        }}
-      >
-        <MenuItem onClick={toggleDrawer(false)}>Login/Signup</MenuItem>
-        <MenuItem onClick={toggleDrawer(false)}>Products & Services</MenuItem>
-        <MenuItem onClick={toggleDrawer(false)}>Make An Order</MenuItem>
-        <MenuItem onClick={toggleDrawer(false)}>Tracking</MenuItem>
-        <MenuItem onClick={toggleDrawer(false)}>Dashboard</MenuItem>
-        <MenuItem onClick={toggleDrawer(false)}>Contact Us</MenuItem>
-      </MenuList>
+          <MenuList
+            sx={{
+              backgroundColor: "#757575",
+              borderRadius: "40px",
+              textAlign: "center",
+            }}
+            id="basic-menu"
+            open={open}
+            onClose={toggleDrawer(false)}
+            MenuListProps={{
+              "aria-labelledby": "basic-button",
+            }}
+          >
+            <Link variant="h5" to="/login" style={{ textDecoration: "none" }}>
+              <MenuItem
+                style={{
+                  marginBottom: "4px",
+                  display: "flex",
+                  justifyContent: "center",
+                  borderTopLeftRadius: "40px",
+                  borderTopRightRadius: "40px",
+                  border: "#4CAF50 solid 2px",
+                  boxShadow:
+                    "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)",
+                }}
+                onClick={toggleDrawer(false)}
+              >
+                <Typography
+                  variant="p"
+                  fontWeight={700}
+                  sx={{ p: 1, color: "text.secondary" }}
+                >
+                  Login/Signup
+                </Typography>
+              </MenuItem>
+            </Link>
+            <Link to="/products&services" style={{ textDecoration: "none" }}>
+              <MenuItem
+                style={{ display: "flex", justifyContent: "center" }}
+                onClick={toggleDrawer(false)}
+              >
+                <Typography
+                  variant="p"
+                  fontWeight={700}
+                  sx={{ p: 1, color: "text.secondary" }}
+                >
+                  Products & Services
+                </Typography>
+              </MenuItem>
+            </Link>
+            <Link to="/make-an-order" style={{ textDecoration: "none" }}>
+              <MenuItem
+                style={{ display: "flex", justifyContent: "center" }}
+                onClick={toggleDrawer(false)}
+              >
+                Make An Order
+              </MenuItem>
+            </Link>
+            <Link to="/tracking" style={{ textDecoration: "none" }}>
+              <MenuItem
+                style={{ display: "flex", justifyContent: "center" }}
+                onClick={toggleDrawer(false)}
+              >
+                Tracking
+              </MenuItem>
+            </Link>
+            <Link to="/dashboard/:userId" style={{ textDecoration: "none" }}>
+              <MenuItem
+                style={{ display: "flex", justifyContent: "center" }}
+                onClick={toggleDrawer(false)}
+              >
+                Dashboard
+              </MenuItem>
+            </Link>
+            <Link to="/contact-us" style={{ textDecoration: "none" }}>
+              <MenuItem
+                style={{ display: "flex", justifyContent: "center" }}
+                onClick={toggleDrawer(false)}
+              >
+                Contact Us
+              </MenuItem>
+            </Link>
+          </MenuList>
           {/* <Skeleton variant="rectangular" height="100%" /> */}
         </StyledBox>
       </SwipeableDrawer>
@@ -132,4 +233,4 @@ SwipeableEdgeDrawer.propTypes = {
   window: PropTypes.func,
 };
 
-export default SwipeableEdgeDrawer ;
+export default SwipeableEdgeDrawer;
