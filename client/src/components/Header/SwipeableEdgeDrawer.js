@@ -59,8 +59,8 @@ function SwipeableEdgeDrawer(props) {
           },
         }}
       />
-      <Box sx={{ textAlign: "center", pt: 1 }}>
-        <Button onClick={toggleDrawer(true)}>Open</Button>
+      <Box sx={{ backgroundColor:'primary', display: "flex", justifyContent: 'center', pt: 1 }}>
+        <Hamburger color='darkgrey' size={48} onToggle={toggleDrawer(true)} toggled={open} toggle={setOpen}/>
       </Box>
       <SwipeableDrawer
         container={container}
