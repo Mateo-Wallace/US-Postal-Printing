@@ -26,7 +26,7 @@ const Home = () => {
           flexDirection: "row",
           flexWrap: "wrap-reverse",
           justifyContent: "space-evenly", 
-          marginTop: '120px',
+          marginTop: '110px',
            }} >
 
             <Container
