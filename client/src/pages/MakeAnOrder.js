@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useCallback } from "react";
 import { Model, StylesManager } from "survey-core";
 import { Survey } from "survey-react-ui";
 import "survey-core/defaultV2.css";
 import { useMutation } from "@apollo/client";
 import { ADD_ORDER } from "../utils/mutations";
+import Typography from "@mui/material/Typography";
 
 import { surveyJson } from "./OrderData";
 
@@ -13,6 +14,7 @@ StylesManager.applyTheme("defaultV2");
 const MakeAnOrder = () => {
   const survey = new Model(surveyJson);
   const [addOrder, { error, data }] = useMutation(ADD_ORDER);
+  const [orderSaved, setOrderSaved] = useState();
 
   const handleSaveOrder = useCallback(async (sender) => {
     const orderData = {
@@ -28,6 +30,10 @@ const MakeAnOrder = () => {
         variables: orderData,
       });
       console.log(data);
+      setOrderSaved(true);
+      setTimeout(function () {
+        setOrderSaved(false);
+      }, 5000);
     } catch (err) {
       console.error(err);
     }
@@ -37,8 +43,15 @@ const MakeAnOrder = () => {
 
   return (
     <div className="container">
-      <h1>SurveyJS Library / Runner</h1>
-      <Survey model={survey} />
+      <h1>Make An Order</h1>
+
+      {orderSaved ? (
+        <Typography align="center" component="h1" variant="h5">
+          Package Saved!
+        </Typography>
+      ) : (
+        <Survey model={survey} />
+      )}
     </div>
   );
 };
