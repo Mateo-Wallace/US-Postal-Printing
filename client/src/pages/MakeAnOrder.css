@@ -28,7 +28,7 @@
     background-color:  rgb(21, 111, 214) !important;
     opacity: 0.9, 0.8, 0.7 !important;
     transition-delay:.1s;
-    color: white;
+    color: white !important;
   }
 
   .sd-root-modern *{

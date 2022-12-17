@@ -1,0 +1,34 @@
+@media screen and (max-width: 1250px) {
+    .tracking {
+      justify-content: center !important;
+      margin-top: 160px !important;
+    }
+  }
+
+  .sd-btn {
+    background-color: #ff6659;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+    border-radius: 40px;
+    border: 0 0 transparent !important;
+    outline: 0 transparent 0 !important;
+  }
+
+  .sd-btn:hover {
+    background-color:  rgb(21, 111, 214) !important;
+    opacity: 0.9, 0.8, 0.7 !important;
+    transition-delay:.1s;
+    color: white;
+  }
+
+  .MuiButtonBase-root {
+    background-color: #ff6659 !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29) !important;
+  }
+
+  .MuiButtonBase-root:hover {
+    background-color:  rgb(21, 111, 214) !important;
+    opacity: 0.9, 0.8, 0.7 !important;
+    transition-delay:.1s;
+    color: white !important;
+  }
