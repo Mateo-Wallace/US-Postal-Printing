@@ -4,7 +4,7 @@ import { Model, StylesManager } from "survey-core";
 import { Survey } from "survey-react-ui";
 import "survey-core/defaultV2.css";
 import { useMutation } from "@apollo/client";
-import { ADD_PACKAGE } from "../utils/mutations";
+import { ADD_ORDER } from "../utils/mutations";
 
 import { surveyJson } from "./OrderData";
 
@@ -12,18 +12,22 @@ StylesManager.applyTheme("defaultV2");
 
 const MakeAnOrder = () => {
   const survey = new Model(surveyJson);
-  const [addPackage, { error, data }] = useMutation(ADD_PACKAGE);
+  const [addOrder, { error, data }] = useMutation(ADD_ORDER);
 
   const handleSaveOrder = useCallback(async (sender) => {
-    const results = JSON.stringify(sender.data);
-    console.log(results);
+    const orderData = {
+      type: sender.data.product,
+      message: sender.data.message,
+      totalPrice: sender.data.total,
+      quantity: `${sender.data.quantity}`,
+    };
+    console.log(orderData);
 
     try {
-      const data = await addPackage({
-        variables: { trackingNum: 'p.trackingNumber', carrier: 'p.carrier' },
+      const data = await addOrder({
+        variables: orderData,
       });
       console.log(data);
-
     } catch (err) {
       console.error(err);
     }

@@ -27,49 +27,95 @@ export const LOGIN_USER = gql`
 `;
 
 export const EDIT_USER = gql`
-mutation editUser($username: String!, $email: String!, $password: String, $phoneNum: String) {
-  editUser (username: $username, email: $email, password: $password, phoneNum: $phoneNum){
-    email
-    username
-    password
-    phoneNum
+  mutation editUser(
+    $username: String!
+    $email: String!
+    $password: String
+    $phoneNum: String
+  ) {
+    editUser(
+      username: $username
+      email: $email
+      password: $password
+      phoneNum: $phoneNum
+    ) {
+      email
+      username
+      password
+      phoneNum
+    }
   }
-}
 `;
 
 export const DELETE_USER = gql`
-mutation deleteUser{
-  deleteUser{
-    _id
-    username
-    email
+  mutation deleteUser {
+    deleteUser {
+      _id
+      username
+      email
+    }
   }
-}
 `;
 
 export const ADD_PACKAGE = gql`
-mutation addPackage($trackingNum: String!, $carrier: String!, $notes: String) {
-  addPackage(trackingNum: $trackingNum, carrier: $carrier, notes: $notes) {
-    _id
-    carrier
-    createdAt
-    trackingNum
-    userId
-    notes
+  mutation addPackage(
+    $trackingNum: String!
+    $carrier: String!
+    $notes: String
+  ) {
+    addPackage(trackingNum: $trackingNum, carrier: $carrier, notes: $notes) {
+      _id
+      carrier
+      createdAt
+      trackingNum
+      userId
+      notes
+    }
   }
-}
 `;
 
 export const EDIT_PACKAGE = gql`
-mutation editPackage($packageId: ID!, $trackingNum: String, $carrier: String, $notes: String) {
-  editPackage(packageId: $packageId, trackingNum: $trackingNum, carrier: $carrier, notes: $notes) {
-    _id
+  mutation editPackage(
+    $packageId: ID!
+    $trackingNum: String
+    $carrier: String
+    $notes: String
+  ) {
+    editPackage(
+      packageId: $packageId
+      trackingNum: $trackingNum
+      carrier: $carrier
+      notes: $notes
+    ) {
+      _id
+    }
   }
-}`;
+`;
 
 export const DELETE_PACKAGE = gql`
-mutation deletePackage($packageId: ID!) {
-  deletePackage(packageId: $packageId) {
-    _id
+  mutation deletePackage($packageId: ID!) {
+    deletePackage(packageId: $packageId) {
+      _id
+    }
   }
-}`;
+`;
+
+export const ADD_ORDER = gql`
+  mutation addOrder(
+    $type: String!
+    $message: String!
+    $totalPrice: Float
+    $quantity: String
+  ) {
+    addOrder(
+      type: $type
+      message: $message
+      totalPrice: $totalPrice
+      quantity: $quantity
+    ) {
+      _id
+      type
+      userId
+    }
+  }
+`;
