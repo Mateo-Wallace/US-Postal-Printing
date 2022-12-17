@@ -14,6 +14,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import './Header.css';
 import { MenuList } from "@mui/material";
+import { style } from "@mui/system";
 
 const drawerBleeding = 56;
 
@@ -64,8 +65,8 @@ function SwipeableEdgeDrawer(props) {
           },
         }}
       />
-      <Box sx={{ backgroundColor:'primary', display: "flex", justifyContent: 'center', pt: 1 }}>
-        <Hamburger color='darkgrey' size={48} onToggle={toggleDrawer(true)} toggled={open} toggle={setOpen}/>
+      <Box className='mobile-menu' sx={{ backgroundColor: "primary.main", display: "flex", justifyContent: 'center', padding: 2, alignItems: 'center' }}>
+        <Hamburger color='lightgrey' size={48} onToggle={toggleDrawer(true)} toggled={open} toggle={setOpen}/>
       </Box>
       <SwipeableDrawer
         container={container}
@@ -91,8 +92,8 @@ function SwipeableEdgeDrawer(props) {
           }}
         >
           <Puller />
-          <Typography sx={{ p: 2, color: "text.secondary" }}>
-            51 results
+          <Typography variant="h5" fontWeight={800} sx={{ p: 2, color: "text.secondary", display: "flex", justifyContent: "center" }}>
+            Menu
           </Typography>
         </StyledBox>
         <StyledBox

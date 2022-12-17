@@ -8,6 +8,9 @@
     .menu {
       display: block !important;
     }
+    .mobile-menu {
+      height: 50px !important;
+    }
   }
 
 .logo {
@@ -17,3 +20,4 @@
 .menu {
   display: none;
 }
+
