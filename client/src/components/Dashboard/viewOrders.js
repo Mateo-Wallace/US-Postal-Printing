@@ -25,6 +25,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { DELETE_ORDER } from '../../utils/mutations';
+import './viewOrders.css'
 
 function generate(element) {
     return [0, 1, 2].map((value) =>
@@ -75,14 +76,26 @@ function ViewOrders() {
     }
 
     return (
-        <Box>
-            <Grid container spacing={2}>
+        <Box
+            sx={{
+              margin: 1,
+              height: "60%",
+              width: "90%",
+              backgroundColor: "#0d579b",
+              borderRadius: "40px",
+              paddingBottom: '20px',
+              display: 'flex',
+              justifyContent: 'center',
+              marginLeft: '40px'
+            }}
+          >
+            <Grid style={{width: '90%'}} container spacing={2}>
                 <Grid item xs={12} md={6} style={{ minWidth: '100%' }}>
-                    <Typography sx={{ mt: 4, mb: 5, textAlign: 'center' }} variant="h3" component="div">
+                    <Typography sx={{ mt: 4, mb: 5, textAlign: 'center', color: "white"  }} variant="h3" component="div">
                         My Orders
                     </Typography>
                     <Demo>
-                        <List dense={dense}>
+                        <List style={{padding: 0}} dense={dense}>
                             {userData.orders.length ? 
                             userData.orders.map((order) =>
                                 <>
@@ -94,12 +107,14 @@ function ViewOrders() {
                                         }
                                     >
                                         <ListItemText
-                                            sx={{textDecoration: 'underline'}}
-                                            primary={order._id}
+                                            sx={{ textDecoration: 'underline' }}
+                                            // primary={order._id}
                                             secondary={secondary ? 'Secondary text' : null}
-                                        />
+                                        >
+                                        <Typography className="order-id">{order._id}</Typography>
+                                        </ListItemText>
                                     </ListItem>
-                                    <TableContainer component={Paper}>
+                                    <TableContainer style={{marginBottom: '10px'}} component={Paper}>
                                         <Table sx={{ minWidth: 650 }} aria-label="simple table">
                                             <TableHead>
                                                 <TableRow>

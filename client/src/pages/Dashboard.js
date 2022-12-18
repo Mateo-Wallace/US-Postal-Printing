@@ -115,7 +115,7 @@ const theme = createTheme({
 
 function DashboardContent() {
 
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const toggleDrawer = () => {
     setOpen(!open);
   };
@@ -236,11 +236,12 @@ function DashboardContent() {
             flexGrow: 1,
             height: '100vh',
             overflow: 'auto',
+            
           }}
         >
           <Toolbar />
 
-          <Container>
+          <Container style={{display: 'flex', justifyContent: 'center', flexDirection: 'column'}}>
             {renderPage()}
           </Container>
 
