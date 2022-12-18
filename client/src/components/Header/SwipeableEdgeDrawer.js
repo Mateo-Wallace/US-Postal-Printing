@@ -152,7 +152,7 @@ function SwipeableEdgeDrawer(props) {
             id="basic-menu"
             open={open}
             onClose={toggleDrawer(false)}
-            MenuListProps={{
+            menulistprops={{
               "aria-labelledby": "basic-button",
             }}
           >

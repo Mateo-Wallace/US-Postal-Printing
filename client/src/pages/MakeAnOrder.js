@@ -8,6 +8,7 @@ import { ADD_ORDER } from "../utils/mutations";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import './MakeAnOrder.css'
+import { CURRENT_USER } from "../utils/queries";
 
 import { surveyJson } from "./OrderData";
 
@@ -22,7 +23,11 @@ const MakeAnOrder = () => {
     console.log(JSON.stringify(sender.data));
     const orderData = {
       type: sender.data.product,
-      message: `message: ${sender.data.message}, name: ${sender.data.name}, phone: ${sender.data.phone}, address: ${sender.data.address}, costPerItem: ${sender.data.cost}`,
+      message: `${sender.data.message}\n\
+      name: ${sender.data.name}\n\
+      phone: ${sender.data.phone}\n\
+      address: ${sender.data.address}\n\
+      costPerItem: ${sender.data.cost}`,
       totalPrice: sender.data.total,
       quantity: `${sender.data.quantity}`,
     };
@@ -30,6 +35,11 @@ const MakeAnOrder = () => {
     try {
       const data = await addOrder({
         variables: orderData,
+        refetchQueries: [
+            {
+                query: CURRENT_USER,
+            }
+        ]
       });
       console.log(data.data.addOrder);
       setOrderSaved(true);

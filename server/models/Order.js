@@ -26,7 +26,7 @@ const orderSchema = new Schema(
     },
     userId: {
       type: Schema.Types.ObjectId,
-      ref: "Package",
+      ref: "Order",
     },
   },
   {
