@@ -1,7 +1,13 @@
-.trackingId {
+.tracking-id {
     font-size: 14px !important;
     white-space: pre-wrap;
     word-wrap: break-word;
     word-break: break-all;
     white-space: normal;
+}
+
+.summary {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
 }
