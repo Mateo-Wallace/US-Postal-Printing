@@ -32,6 +32,7 @@ import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import { ADD_PACKAGE, DELETE_PACKAGE, EDIT_PACKAGE } from '../../utils/mutations'
 import { Link } from 'react-router-dom';
+import './viewPackages.css'
 
 
 
@@ -269,10 +270,10 @@ function ViewPackages() {
                             >
                             </TextField>
                             :
-                            <Typography sx={{ width: '33%', flexShrink: 0 }}>{userPackage.trackingNum}</Typography>}
+                            <Typography className='trackingId' sx={{ width: '33%', flexShrink: 0, marginRight: '3px', marginLeft: '3px' }}>{userPackage.trackingNum}</Typography>}
 
                         <Typography sx={{ width: '33%', flexShrink: 0, color: 'text.secondary' }}>Track this package
-                            <IconButton edge="end" aria-label="delete" onClick={handleTrack}>
+                            <IconButton style={{marginRight: '4px', marginLeft: '4px'}} edge="end" aria-label="delete" onClick={handleTrack}>
                                 <MapIcon />
                             </IconButton>
                         </Typography>
