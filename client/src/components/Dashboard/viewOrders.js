@@ -46,7 +46,6 @@ function ViewOrders() {
     const [deleteOrder, { deleteError }] = useMutation(DELETE_ORDER);
 
     const userData = data?.me || {};
-    console.log(userData.orders)
 
     if (loading) {
         return (
@@ -55,7 +54,7 @@ function ViewOrders() {
     }
 
     const handleDeleteOrder = async (value) => {
-
+        console.log(value)
         try {
             const { data } = await deleteOrder({
                 variables: {
@@ -88,7 +87,7 @@ function ViewOrders() {
                                 <>
                                     <ListItem key={order._id}
                                         secondaryAction={
-                                            <IconButton edge="end" aria-label="delete" value={order._id} onClick={e => handleDeleteOrder(e.target.value)}>
+                                            <IconButton edge="end" aria-label="delete" value={order._id} onClick={e => handleDeleteOrder(e.currentTarget.value)}>
                                                 <DeleteIcon />
                                             </IconButton>
                                         }
