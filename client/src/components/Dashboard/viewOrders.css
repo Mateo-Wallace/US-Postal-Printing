@@ -1,0 +1,20 @@
+.css-1k9ek97 {
+    border-radius: 5px;
+}
+
+.order-id {
+    font-size: 14px !important;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: normal;
+}
+
+/* @media screen and (max-width: 800px) {
+    .css-10hburv-MuiTypography-root {
+        white-space: normal !important;
+        word-wrap: normal !important;
+        word-break: keep-all !important;
+        white-space: normal;
+    }
+} */

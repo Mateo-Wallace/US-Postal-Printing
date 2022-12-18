@@ -11,7 +11,22 @@
       justify-content: center !important;
       border-top: 42px solid #0d579b !important;
     }
+    .MuiDrawer-docked {
+        /* width: 240px !important; */
+    }
   }
+
+@media screen and (max-width: 800px) {
+    .MuiDrawer-docked {
+        /* width: 160px !important; */
+    }
+    /* .dashboardNav {
+        white-space: normal !important;
+        word-wrap: normal !important;
+        word-break: keep-all !important;
+        white-space: normal;
+    } */
+}
 
 .MuiDrawer-docked {
     background-color: #0d579b;
@@ -48,4 +63,8 @@
 .css-1050xol-MuiButtonBase-root-MuiButton-root {
     border-radius: 40px !important;
     margin-top: 10px !important;
+}
+
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper {
+    /* width: 100%; */
 }

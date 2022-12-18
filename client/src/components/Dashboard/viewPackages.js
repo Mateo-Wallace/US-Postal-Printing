@@ -32,6 +32,7 @@ import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import { ADD_PACKAGE, DELETE_PACKAGE, EDIT_PACKAGE } from '../../utils/mutations'
 import { Link } from 'react-router-dom';
+import './viewPackages.css'
 
 
 
@@ -242,13 +243,28 @@ function ViewPackages() {
 
 
     return (
-        <div>
-            <Typography sx={{ mt: 4, mb: 5, textAlign: 'Center' }} variant="h3" component="div">
+        <div style={{display: 'flex', justifyContent: 'center'}}>
+            <Box
+            sx={{
+              margin: 1,
+              marginTop: '-20px',
+              height: "60%",
+              width: "90%",
+              backgroundColor: "#0d579b",
+              borderRadius: "40px",
+              paddingBottom: '20px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+            }}
+          >
+            <Typography sx={{ mt: 4, mb: 5, textAlign: 'Center', color: 'white' }} variant="h3" component="div">
                 My Packages
             </Typography>
             {userData.packages.map((userPackage) =>
-                <Accordion key={userPackage._id} onClick={event => { handleChange(event, 'panel1'); setEditable(false) }}>
-                    <AccordionSummary
+            <Box style={{margin: 10}}>
+                <Accordion style={{margin: 1}} key={userPackage._id} onClick={event => { handleChange(event, 'panel1'); setEditable(false) }}>
+                    <AccordionSummary expanded={expanded === 'panel1'}
                         expandIcon={<EditIcon />}
                         aria-controls="panel1bh-content"
                         id="panel1bh-header"
@@ -269,13 +285,9 @@ function ViewPackages() {
                             >
                             </TextField>
                             :
-                            <Typography sx={{ width: '33%', flexShrink: 0 }}>{userPackage.trackingNum}</Typography>}
+                            <Typography className='tracking-id' sx={{ width: '33%', flexShrink: 0, marginRight: '3px', marginLeft: '40px' }}>{userPackage.trackingNum}</Typography>}
 
-                        <Typography sx={{ width: '33%', flexShrink: 0, color: 'text.secondary' }}>Track this package
-                            <IconButton edge="end" aria-label="delete" onClick={handleTrack}>
-                                <MapIcon />
-                            </IconButton>
-                        </Typography>
+                        
                     </AccordionSummary>
                     <AccordionDetails sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                         {edit ?
@@ -305,6 +317,7 @@ function ViewPackages() {
                         </Button>
                     </AccordionDetails>
                 </Accordion>
+            </Box>
             )}
             <Button sx={{ width: '100%', mt: 10 }} variant="contained" onClick={handleOpen}>
                 <AddIcon />
@@ -366,6 +379,7 @@ function ViewPackages() {
                     </Button>
                 </Box>
             </Modal>
+            </Box>
         </div>
     );
 }
