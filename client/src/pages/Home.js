@@ -15,9 +15,8 @@ import MailboxImage from "../images/mailboxes.jpg";
 import Chip from "@mui/material/Chip";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 import { style } from "@mui/system";
-import './Home.css'
+import "./Home.css";
 import { Link } from "@mui/material";
-
 
 const Home = () => {
   return (
@@ -33,156 +32,24 @@ const Home = () => {
           marginTop: "120px",
         }}
       >
-      <Box
-        sx={{
-          margin: 1,
-          width: 300,
-          height: 700,
-          backgroundColor: "primary.dark",
-          borderRadius: "40px",
-        }}
-      >
-         <Typography
-            sx={{ margin: 2, textAlign: "center", color: "white" }}
-            variant="h4"
-          >
-            Pickup Times
-          </Typography>
-          <Typography
-            sx={{ margin: 2, color: "white" }}
-            variant="h6"
-          >
-            Carrier Options:
-          </Typography>
-          <Grid sx={{
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "space-evenly",
-            }}>
-
-          <Grid sx={{ margin: 1, marginLeft: '25px', borderRadius: '20px',         
-           "&:hover": {
-            backgroundColor: "darkgreen",
-            opacity: 0.8,
-          }, }} item>
-             <a style={{textDecoration: 'none'}} href="https://www.usps.com/?utm_medium=search&utm_source=google&utm_campaign=evergreenps&utm_content=e317_eese&gclid=CjwKCAiAkfucBhBBEiwAFjbkr00UiEE0ucj3tX8pYbdq0PfCm2LzgN8n2cfbhW6eYq7Yd8tma41MLRoC7Y0QAvD_BwE&gclsrc=aw.ds" target='_blank' rel="noreferrer">
-          <Chip
-            sx={{ fontSize: '18px', letterSpacing: '1.5px', color: "white" }}
-            color="success" 
-            label="USPS"
-          />
-          </a>
-          </Grid>
-
-          <Grid sx={{ margin: 1, borderRadius: '20px',  
-          "&:hover": {
-            backgroundColor: "darkgreen",
-            opacity: 0.8,
-          }, }} item>
-            <a style={{textDecoration: 'none'}} href="https://www.dhl.com/us-en/home.html?locale=true" target='_blank' rel="noreferrer">
-          <Chip
-            sx={{ fontSize: '18px', letterSpacing: '1.5px', color: "white" }}
-            color="success" 
-            label="DHL"
-            clickable
-          />
-          </a>
-          </Grid>
-
-
-          <Grid sx={{ margin: 1, marginLeft: '25px', borderRadius: '20px', 
-        "&:hover": {
-          backgroundColor: "darkgreen",
-          opacity: 0.8,
-        },}} item>
-          <a style={{textDecoration: 'none'}} href="https://www.fedex.com/en-us/home.html" target='_blank' rel="noreferrer">
-          <Chip
-            sx={{ fontSize: '18px', letterSpacing: '1.5px', color: "white" }}
-            color="success" 
-            label="FEDEX"
-          />
-          </a>
-          </Grid>
-
-            <Grid sx={{ margin: 1, marginLeft: '-2px', borderRadius: '20px', 
-            "&:hover": {
-            backgroundColor: "darkgreen",
-            opacity: 0.8,
-          }, }} item>
-            <a style={{textDecoration: 'none'}} href="https://www.ups.com/us/en/global.page" target='_blank' rel="noreferrer">
-          <Chip
-            sx={{ fontSize: '18px', letterSpacing: '1.5px', color: "white" }}
-            color="success" 
-            label="UPS"
-          />
-          </a>
-          </Grid>
-          </Grid>
-          <Typography
-            sx={{ margin: 2, color: "white" }}
-            variant="h6"
-          >
-            Dates and Times:
-          </Typography>
-          
-          <Typography
-            sx={{ margin: 2, textAlign: "center", color: "white", fontSize: '16px', marginLeft: '25px', marginTop: '20px' }}
-            variant="h6"
-          >
-            All Carriers
-          </Typography>
-
-          <Grid sx={{
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "space-evenly",
-            }}>
-
-          <Grid sx={{ margin: 1, marginLeft: '25px', borderRadius: '20px' }} item>
-
-            <Typography
-            sx={{ margin: 1, marginLeft: '3px', textAlign: 'center', color: "white", fontSize: '14px' }}
-            variant="h6"
-          >
-            Mondays
-          </Typography>
-
-          <Chip
-            sx={{ fontSize: '18px', textAlign: 'center', letterSpacing: '1.5px', color: "white",
-            "&:hover": {
-              backgroundColor: "darkgreen",
-              opacity: 0.8,
-            }, }}
-            color="success" 
-            label="5pm"
-          />
-          </Grid>
-
-          <Grid sx={{ margin: 1 }} item>
-
-          <Typography
-            sx={{ margin: 1, marginLeft: '1px', textAlign: 'center', color: "white", fontSize: '14px' }}
-            variant="h6"
-          >
-            Tuesdays
-          </Typography>
-
-          <Chip
-            sx={{ fontSize: '18px', textAlign: 'center', letterSpacing: '1.5px', color: "white", 
-            "&:hover": {
-              backgroundColor: "darkgreen",
-              opacity: 0.8,
-            }, }}
-            color="success" 
-            label="5pm"
-          />
-          </Grid>
-
-          <Grid sx={{ margin: 1, marginLeft: '32px'}} item>
-
-          <Typography
-            sx={{ margin: 1, marginLeft: '-5px', textAlign: 'center', color: "white", fontSize: '14px' }}
-            variant="h6"
+        <Container
+          sx={{
+            margin: 0,
+            width: 500,
+            display: "flex",
+            flexDirection: "row",
+            flexWrap: "wrap",
+            justifyContent: "center",
+          }}
+        >
+          <Box
+            sx={{
+              margin: 1,
+              width: 300,
+              height: 700,
+              backgroundColor: "primary.dark",
+              borderRadius: "40px",
+            }}
           >
             <Typography
               sx={{ margin: 2, textAlign: "center", color: "white" }}
@@ -212,15 +79,22 @@ const Home = () => {
                 }}
                 item
               >
-                <Chip
-                  sx={{
-                    fontSize: "18px",
-                    letterSpacing: "1.5px",
-                    color: "white",
-                  }}
-                  color="success"
-                  label="USPS"
-                />
+                <a
+                  style={{ textDecoration: "none" }}
+                  href="https://www.usps.com/?utm_medium=search&utm_source=google&utm_campaign=evergreenps&utm_content=e317_eese&gclid=CjwKCAiAkfucBhBBEiwAFjbkr00UiEE0ucj3tX8pYbdq0PfCm2LzgN8n2cfbhW6eYq7Yd8tma41MLRoC7Y0QAvD_BwE&gclsrc=aw.ds"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Chip
+                    sx={{
+                      fontSize: "18px",
+                      letterSpacing: "1.5px",
+                      color: "white",
+                    }}
+                    color="success"
+                    label="USPS"
+                  />
+                </a>
               </Grid>
 
               <Grid
@@ -234,15 +108,23 @@ const Home = () => {
                 }}
                 item
               >
-                <Chip
-                  sx={{
-                    fontSize: "18px",
-                    letterSpacing: "1.5px",
-                    color: "white",
-                  }}
-                  color="success"
-                  label="DHL"
-                />
+                <a
+                  style={{ textDecoration: "none" }}
+                  href="https://www.dhl.com/us-en/home.html?locale=true"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Chip
+                    sx={{
+                      fontSize: "18px",
+                      letterSpacing: "1.5px",
+                      color: "white",
+                    }}
+                    color="success"
+                    label="DHL"
+                    clickable
+                  />
+                </a>
               </Grid>
 
               <Grid
@@ -257,15 +139,22 @@ const Home = () => {
                 }}
                 item
               >
-                <Chip
-                  sx={{
-                    fontSize: "18px",
-                    letterSpacing: "1.5px",
-                    color: "white",
-                  }}
-                  color="success"
-                  label="FEDEX"
-                />
+                <a
+                  style={{ textDecoration: "none" }}
+                  href="https://www.fedex.com/en-us/home.html"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Chip
+                    sx={{
+                      fontSize: "18px",
+                      letterSpacing: "1.5px",
+                      color: "white",
+                    }}
+                    color="success"
+                    label="FEDEX"
+                  />
+                </a>
               </Grid>
 
               <Grid
@@ -280,15 +169,22 @@ const Home = () => {
                 }}
                 item
               >
-                <Chip
-                  sx={{
-                    fontSize: "18px",
-                    letterSpacing: "1.5px",
-                    color: "white",
-                  }}
-                  color="success"
-                  label="UPS"
-                />
+                <a
+                  style={{ textDecoration: "none" }}
+                  href="https://www.ups.com/us/en/global.page"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Chip
+                    sx={{
+                      fontSize: "18px",
+                      letterSpacing: "1.5px",
+                      color: "white",
+                    }}
+                    color="success"
+                    label="UPS"
+                  />
+                </a>
               </Grid>
             </Grid>
             <Typography sx={{ margin: 2, color: "white" }} variant="h6">
@@ -925,70 +821,6 @@ const Home = () => {
               gutterBottom
             >
               (Frequently Asked Questions)
-            </Typography>
-            <Typography
-              sx={{
-                color: "white",
-                margin: "20px",
-                marginTop: "1px",
-                marginBottom: "1px",
-              }}
-              gutterBottom
-              variant="h6"
-              component="div"
-            >
-              Can You Scan Documents?
-            </Typography>
-            <Typography
-              variant="body2"
-              sx={{ color: "white", margin: "20px", marginTop: "1px" }}
-            >
-              We absolutely can. We can send you your file to an email or
-              download it to a flashdrive. We can scan your documents in as a
-              jpeg, pdf, or png.
-            </Typography>
-            <Typography
-              sx={{
-                color: "white",
-                margin: "20px",
-                marginTop: "1px",
-                marginBottom: "1px",
-              }}
-              gutterBottom
-              variant="h6"
-              component="div"
-            >
-              What Do I Do If My Package Gets Lost?
-            </Typography>
-            <Typography
-              variant="body2"
-              sx={{ color: "white", margin: "20px", marginTop: "1px" }}
-            >
-              Call us as soon as you realize there is a problem. The longer it
-              takes to input a query with the carrier the harder it is to find
-              your package. We will do all the legwork in finding your package
-              so just call!
-            </Typography>
-            <Typography
-              sx={{
-                color: "white",
-                margin: "20px",
-                marginTop: "1px",
-                marginBottom: "1px",
-              }}
-              gutterBottom
-              variant="h6"
-              component="div"
-            >
-              What If I Lose My Tracking Number?
-            </Typography>
-            <Typography
-              variant="body2"
-              sx={{ color: "white", margin: "20px", marginTop: "1px" }}
-            >
-              No need to panic! As long as you generated your label through us
-              that number is saved in our database. Just give us a call and we
-              will track it for you!
             </Typography>
           </Box>
         </Container>
