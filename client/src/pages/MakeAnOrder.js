@@ -7,7 +7,7 @@ import { useMutation } from "@apollo/client";
 import { ADD_ORDER } from "../utils/mutations";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import './MakeAnOrder.css'
+import "./MakeAnOrder.css";
 import { CURRENT_USER } from "../utils/queries";
 
 import { surveyJson } from "./OrderData";
@@ -36,10 +36,10 @@ const MakeAnOrder = () => {
       const data = await addOrder({
         variables: orderData,
         refetchQueries: [
-            {
-                query: CURRENT_USER,
-            }
-        ]
+          {
+            query: CURRENT_USER,
+          },
+        ],
       });
       console.log(data.data.addOrder);
       setOrderSaved(true);
@@ -54,10 +54,16 @@ const MakeAnOrder = () => {
   survey.onComplete.add(handleSaveOrder);
 
   return (
-    <div style={
-      {display: "flex", justifyContent: "center", alignItems: "center", marginTop: "140px"}
-    } className="container">
-    <Box
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: "140px",
+      }}
+      className="container"
+    >
+      <Box
         sx={{
           margin: 1,
           backgroundColor: "primary.dark",
@@ -70,23 +76,21 @@ const MakeAnOrder = () => {
           justifyContent: "center",
         }}
       >
-      <Typography
-            sx={{ margin: 2, textAlign: "center", color: "white" }}
-            variant="h4"
-          >
-            Make An Order
-          </Typography>
-
-      {orderSaved ? (
-        <Typography align="center" component="h1" variant="h5">
-          Package Saved!
+        <Typography
+          sx={{ margin: 2, textAlign: "center", color: "white" }}
+          variant="h4"
+        >
+          Make An Order
         </Typography>
-      ) : (
-        <Survey style={
-          {backgroundColor: "primary.dark"}
-        } model={survey} />
-      )}
-    </Box>
+
+        {orderSaved ? (
+          <Typography align="center" component="h1" variant="h5">
+            Package Saved!
+          </Typography>
+        ) : (
+          <Survey style={{ backgroundColor: "primary.dark" }} model={survey} />
+        )}
+      </Box>
     </div>
   );
 };
