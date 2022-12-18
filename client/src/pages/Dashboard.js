@@ -146,7 +146,7 @@ function DashboardContent() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ display: 'flex', marginTop: '135px' }}>
+      <Box className='wholeDash' sx={{ display: 'flex', marginTop: '95px' }}>
         <CssBaseline />
         {/* <AppBar position="absolute" open={open}>
           <Toolbar
@@ -197,7 +197,7 @@ function DashboardContent() {
             </IconButton>
           </Toolbar>
           <Divider />
-          <List className='dashboardNav' component="nav">
+          <List className='dashboardNav' style={{backgroundColor: 'primary.dark'}} component="nav">
             <React.Fragment>
               <ListItemButton onClick={showDashboard}>
                 <ListItemIcon>

@@ -1,3 +1,10 @@
 .dashboardNav {
     padding: 0 !important;
 }
+
+@media screen and (max-width: 1250px) {
+    .wholeDash {
+      justify-content: center !important;
+      margin-top: 135px !important;
+    }
+  }

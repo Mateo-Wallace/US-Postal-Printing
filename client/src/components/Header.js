@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 import AuthService from '../utils/auth';
 import Auth from '../utils/auth';
 import AppBar from '@mui/material/AppBar';
@@ -63,8 +63,8 @@ function Nav(props) {
 
   return (
     <AppBar sx={{borderBottomLeftRadius: '40px',
-    borderBottomRightRadius: '40px'}} position="fixed">
-      <Container maxWidth="xl">
+    borderBottomRightRadius: '40px'}} position='fixed'>
+      <Container maxWidth='xl'>
         <Toolbar className='logo' style={{ }}disableGutters>
           <Box style={{display: 'flex', flexWrap: 'nowrap', alignItems: 'center'}}>
           <Box sx={{alignItems: 'center', display: {xs: 'none', sm: 'none', md: 'flex' }}}>
@@ -75,9 +75,9 @@ function Nav(props) {
         </Box>
         <Link to='/' style={{ color: 'white', textDecoration: 'none' }}>
           <Typography
-            variant="h6"
+            variant='h6'
             noWrap
-            component="p"
+            component='p'
             sx={{
               mr: 2,
               display: {xs: 'none', sm: 'none', md: 'flex' },
@@ -105,9 +105,9 @@ function Nav(props) {
 
           <Link to='/' style={{ color: 'white', textDecoration: 'none' }}>
           <Typography
-            variant="h5"
+            variant='h5'
             noWrap
-            component="a"
+            component='a'
             sx={{
               mr: 2,
               display: {sm: 'flex', md: 'none' },
@@ -128,27 +128,27 @@ function Nav(props) {
           </Box>
           <Box sx={{ justifyContent: 'flex-end', alignItems: 'center', flexGrow: 1, display: { xs: 'none', md: 'none', lg: 'flex'} }}>
             {Auth.loggedIn() ? (<Link to='/logout' style={{ textDecoration: 'none' }}>
-            <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Logout</Button>
+            <Button variant='contained' sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Logout</Button>
             </Link>) : (<Link to='/login' style={{ textDecoration: 'none' }}>
-            <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Login/Signup</Button>
+            <Button variant='contained' sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Login/Signup</Button>
             </Link>)}
             <Link to='/products&services' style={{ textDecoration: 'none' }}>
-            <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Products & <br></br> Services </Button>
+            <Button variant='contained' sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Products & <br></br> Services </Button>
             </Link>
             <Link to='/make-an-order' style={{ textDecoration: 'none' }}>
-            <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Make an<br></br> Order </Button>
+            <Button variant='contained' sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Make an<br></br> Order </Button>
             </Link>
             <Link to='/tracking' style={{ textDecoration: 'none' }}>
-            <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Tracking </Button>
+            <Button variant='contained' sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Tracking </Button>
             </Link>
             {Auth.loggedIn() ? <Link to='/dashboard/:userId' style={{ textDecoration: 'none' }}>
-            <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Dashboard</Button>
+            <Button variant='contained' sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Dashboard</Button>
             </Link> : ''}
             <Link to='/contact-us' style={{ textDecoration: 'none' }}>
-            <Button variant="contained" sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Contact Us</Button>
+            <Button variant='contained' sx={{ my: 2, backgroundColor: '#ff6659', color: 'white', display: 'block', marginRight: '20px' }}>Contact Us</Button>
             </Link>
             {/* <Link to='/signup' style={{ textDecoration: 'none' }}>
-            <Button variant="contained" sx={{ my: 2, color: 'white', display: 'block' }}>Signup</Button>
+            <Button variant='contained' sx={{ my: 2, color: 'white', display: 'block' }}>Signup</Button>
             </Link> */}
 
             
@@ -156,12 +156,12 @@ function Nav(props) {
           </Box>
 
           {/* <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
+            <Tooltip title='Open settings'>
              
             </Tooltip>
             <Menu
               sx={{ mt: '45px' }}
-              id="menu-appbar"
+              id='menu-appbar'
               anchorEl={anchorElUser}
               anchorOrigin={{
                 vertical: 'top',
@@ -177,7 +177,7 @@ function Nav(props) {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                  <Typography textAlign='center'>{setting}</Typography>
                 </MenuItem>
               ))}
             </Menu>
