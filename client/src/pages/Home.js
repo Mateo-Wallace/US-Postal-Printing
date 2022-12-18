@@ -801,7 +801,7 @@ const Home = () => {
               margin: 1,
               alignSelf: "flex-end",
               width: { xs: 350, sm: 350, md: 550, lg: 550, xl: 550 },
-              height: { xs: 550, sm: 550, md: 400, lg: 400, xl: 400 },
+              height: { xs: 660, sm: 660, md: 480, lg: 480, xl: 480 },
               backgroundColor: "primary.dark",
               borderRadius: "40px",
             }}
@@ -820,12 +820,24 @@ const Home = () => {
             >
               (Frequently Asked Questions)
             </Typography>
+            <Card
+              sx={{
+                paddingTop: "10px",
+                paddingBottom: "1px",
+                fontSize: "14px",
+                margin: 1,
+                borderRadius: "25px",
+                boxShadow:
+                  "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)",
+              }}
+            >
             <Typography
               sx={{
-                color: "white",
+                color: "text.secondary",
                 margin: "20px",
                 marginTop: "1px",
                 marginBottom: "1px",
+                fontWeight: 600,
               }}
               gutterBottom
               variant="h6"
@@ -835,18 +847,31 @@ const Home = () => {
             </Typography>
             <Typography
               variant="body2"
-              sx={{ color: "white", margin: "20px", marginTop: "1px" }}
+              sx={{ color: "text.secondary", margin: "20px", marginTop: "1px" }}
             >
               We absolutely can. We can send you your file to an email or
               download it to a flashdrive. We can scan your documents in as a
               jpeg, pdf, or png.
             </Typography>
+            </Card>
+            <Card
+              sx={{
+                paddingTop: "10px",
+                paddingBottom: "1px",
+                fontSize: "14px",
+                margin: 1,
+                borderRadius: "25px",
+                boxShadow:
+                  "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)",
+              }}
+            >
             <Typography
               sx={{
-                color: "white",
+                color: "text.secondary",
                 margin: "20px",
                 marginTop: "1px",
                 marginBottom: "1px",
+                fontWeight: 600,
               }}
               gutterBottom
               variant="h6"
@@ -856,19 +881,32 @@ const Home = () => {
             </Typography>
             <Typography
               variant="body2"
-              sx={{ color: "white", margin: "20px", marginTop: "1px" }}
+              sx={{ color: "text.secondary", margin: "20px", marginTop: "1px" }}
             >
               Call us as soon as you realize there is a problem. The longer it
               takes to input a query with the carrier the harder it is to find
               your package. We will do all the legwork in finding your package
               so just call!
             </Typography>
+            </Card>
+            <Card
+              sx={{
+                paddingTop: "10px",
+                paddingBottom: "1px",
+                fontSize: "14px",
+                margin: 1,
+                borderRadius: "25px",
+                boxShadow:
+                  "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)",
+              }}
+            >
             <Typography
               sx={{
-                color: "white",
+                color: "text.secondary",
                 margin: "20px",
                 marginTop: "1px",
                 marginBottom: "1px",
+                fontWeight: 600,
               }}
               gutterBottom
               variant="h6"
@@ -878,12 +916,13 @@ const Home = () => {
             </Typography>
             <Typography
               variant="body2"
-              sx={{ color: "white", margin: "20px", marginTop: "1px" }}
+              sx={{ color: "text.secondary", margin: "20px", marginTop: "1px" }}
             >
               No need to panic! As long as you generated your label through us
               that number is saved in our database. Just give us a call and we
               will track it for you!
             </Typography>
+            </Card>
           </Box>
         </Container>
       </div>
