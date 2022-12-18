@@ -99,8 +99,8 @@ function ViewOrders() {
                         <List style={{padding: 0}} dense={dense}>
                             {userData.orders.length ? 
                             userData.orders.map((order) =>
-                                <>
-                                    <ListItem key={order._id}
+                                <Box key={order._id}>
+                                    <ListItem
                                         secondaryAction={
                                             <IconButton edge="end" aria-label="delete" value={order._id} onClick={e => handleDeleteOrder(e.currentTarget.value)}>
                                                 <DeleteIcon />
@@ -140,7 +140,7 @@ function ViewOrders() {
                                             </TableBody>
                                         </Table>
                                     </TableContainer>
-                                </>
+                                </Box>
                             ) : <h2 style={{textAlign: 'center'}}>You do not have any pending orders currently.</h2> }
                         </List>
                     </Demo>
