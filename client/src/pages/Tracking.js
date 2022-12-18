@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import { useMutation } from "@apollo/client";
 import { ADD_PACKAGE } from "../utils/mutations";
+import { CURRENT_USER } from "../utils/queries";
 import Auth from "../utils/auth";
 import { shippoTracking } from "../utils/API";
 
@@ -104,6 +105,11 @@ const Tracking = () => {
     try {
       const data = await addPackage({
         variables: { trackingNum: p.trackingNumber, carrier: p.carrier },
+        refetchQueries: [
+            {
+                query: CURRENT_USER,
+            }
+        ]
       });
       console.log(data);
 

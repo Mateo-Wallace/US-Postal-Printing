@@ -6,6 +6,7 @@ import "survey-core/defaultV2.css";
 import { useMutation } from "@apollo/client";
 import { ADD_ORDER } from "../utils/mutations";
 import Typography from "@mui/material/Typography";
+import { CURRENT_USER } from "../utils/queries";
 
 import { surveyJson } from "./OrderData";
 
@@ -32,6 +33,11 @@ const MakeAnOrder = () => {
     try {
       const data = await addOrder({
         variables: orderData,
+        refetchQueries: [
+            {
+                query: CURRENT_USER,
+            }
+        ]
       });
       console.log(data.data.addOrder);
       setOrderSaved(true);
