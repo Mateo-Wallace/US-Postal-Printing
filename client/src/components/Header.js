@@ -107,7 +107,6 @@ function Nav(props) {
           <Typography
             variant="h5"
             noWrap
-            component="a"
             sx={{
               mr: 2,
               display: {sm: 'flex', md: 'none' },
