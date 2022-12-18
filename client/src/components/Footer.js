@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import { AppBar } from "@mui/material";
+import './Footer/Footer.css'
 
 function Copyright() {
   return (
@@ -17,7 +18,7 @@ function Copyright() {
 
 export default function StickyFooter() {
   return (
-    <footer
+    <footer className="footer"
     style={{
       position: 'sticky',
     }}
@@ -45,7 +46,7 @@ export default function StickyFooter() {
           }}
         >
           <Container maxWidth="lg">
-            <Grid container spacing={5} color='white'>
+            <Grid className="insideFooter" container spacing={5} color='white'>
               <Grid item>
                 <Box borderBottom={1}>ADDRESS</Box>
                 <Box>US Postal & Printing</Box>
@@ -108,7 +109,7 @@ export default function StickyFooter() {
             backgroundColor: 'primary',
           }}
         >
-          <Container maxWidth="sm">
+          <Container className='copyright' maxWidth="sm">
             <Copyright />
           </Container>
         </Box>
