@@ -172,7 +172,7 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
-    // EDIT PACKAGE
+    // EDIT ORDER
     editOrder: async (parent, args, context) => {
       if (context.user) {
         return Order.findOneAndUpdate(
@@ -183,7 +183,7 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
-    // DELETE PACKAGE
+    // DELETE ORDER
     deleteOrder: async (parent, args, context) => {
       if (context.user) {
         const order = await Order.findOneAndDelete({ _id: args.orderId });

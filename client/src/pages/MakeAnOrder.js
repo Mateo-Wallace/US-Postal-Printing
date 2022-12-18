@@ -20,7 +20,11 @@ const MakeAnOrder = () => {
     console.log(JSON.stringify(sender.data));
     const orderData = {
       type: sender.data.product,
-      message: `message: ${sender.data.message}, name: ${sender.data.name}, phone: ${sender.data.phone}, address: ${sender.data.address}, costPerItem: ${sender.data.cost}`,
+      message: `${sender.data.message}\n\
+      name: ${sender.data.name}\n\
+      phone: ${sender.data.phone}\n\
+      address: ${sender.data.address}\n\
+      costPerItem: ${sender.data.cost}`,
       totalPrice: sender.data.total,
       quantity: `${sender.data.quantity}`,
     };
