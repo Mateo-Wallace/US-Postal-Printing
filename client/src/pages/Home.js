@@ -16,6 +16,7 @@ import Chip from "@mui/material/Chip";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 import { style } from "@mui/system";
 import './Home.css'
+import { Link } from "@mui/material";
 
 const Home = () => {
   return (
@@ -72,11 +73,13 @@ const Home = () => {
             backgroundColor: "darkgreen",
             opacity: 0.8,
           }, }} item>
+             <a style={{textDecoration: 'none'}} href="https://www.usps.com/?utm_medium=search&utm_source=google&utm_campaign=evergreenps&utm_content=e317_eese&gclid=CjwKCAiAkfucBhBBEiwAFjbkr00UiEE0ucj3tX8pYbdq0PfCm2LzgN8n2cfbhW6eYq7Yd8tma41MLRoC7Y0QAvD_BwE&gclsrc=aw.ds" target='_blank' rel="noreferrer">
           <Chip
             sx={{ fontSize: '18px', letterSpacing: '1.5px', color: "white" }}
             color="success" 
             label="USPS"
           />
+          </a>
           </Grid>
 
           <Grid sx={{ margin: 1, borderRadius: '20px',  
@@ -84,23 +87,29 @@ const Home = () => {
             backgroundColor: "darkgreen",
             opacity: 0.8,
           }, }} item>
+            <a style={{textDecoration: 'none'}} href="https://www.dhl.com/us-en/home.html?locale=true" target='_blank' rel="noreferrer">
           <Chip
             sx={{ fontSize: '18px', letterSpacing: '1.5px', color: "white" }}
             color="success" 
             label="DHL"
+            clickable
           />
+          </a>
           </Grid>
+
 
           <Grid sx={{ margin: 1, marginLeft: '25px', borderRadius: '20px', 
         "&:hover": {
           backgroundColor: "darkgreen",
           opacity: 0.8,
         },}} item>
+          <a style={{textDecoration: 'none'}} href="https://www.fedex.com/en-us/home.html" target='_blank' rel="noreferrer">
           <Chip
             sx={{ fontSize: '18px', letterSpacing: '1.5px', color: "white" }}
             color="success" 
             label="FEDEX"
           />
+          </a>
           </Grid>
 
             <Grid sx={{ margin: 1, marginLeft: '-2px', borderRadius: '20px', 
@@ -108,11 +117,13 @@ const Home = () => {
             backgroundColor: "darkgreen",
             opacity: 0.8,
           }, }} item>
+            <a style={{textDecoration: 'none'}} href="https://www.ups.com/us/en/global.page" target='_blank' rel="noreferrer">
           <Chip
             sx={{ fontSize: '18px', letterSpacing: '1.5px', color: "white" }}
             color="success" 
             label="UPS"
           />
+          </a>
           </Grid>
           </Grid>
           <Typography
