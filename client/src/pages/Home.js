@@ -801,10 +801,6 @@ const Home = () => {
               width: { xs: 350, sm: 350, md: 550, lg: 550, xl: 550 },
               height: { xs: 550, sm: 550, md: 400, lg: 400, xl: 400 },
               backgroundColor: "primary.dark",
-              "&:hover": {
-                backgroundColor: "primary.main",
-                opacity: [0.9, 0.8, 0.7],
-              },
               borderRadius: "40px",
             }}
           >
@@ -821,6 +817,70 @@ const Home = () => {
               gutterBottom
             >
               (Frequently Asked Questions)
+            </Typography>
+            <Typography
+              sx={{
+                color: "white",
+                margin: "20px",
+                marginTop: "1px",
+                marginBottom: "1px",
+              }}
+              gutterBottom
+              variant="h6"
+              component="div"
+            >
+              Can You Scan Documents?
+            </Typography>
+            <Typography
+              variant="body2"
+              sx={{ color: "white", margin: "20px", marginTop: "1px" }}
+            >
+              We absolutely can. We can send you your file to an email or
+              download it to a flashdrive. We can scan your documents in as a
+              jpeg, pdf, or png.
+            </Typography>
+            <Typography
+              sx={{
+                color: "white",
+                margin: "20px",
+                marginTop: "1px",
+                marginBottom: "1px",
+              }}
+              gutterBottom
+              variant="h6"
+              component="div"
+            >
+              What Do I Do If My Package Gets Lost?
+            </Typography>
+            <Typography
+              variant="body2"
+              sx={{ color: "white", margin: "20px", marginTop: "1px" }}
+            >
+              Call us as soon as you realize there is a problem. The longer it
+              takes to input a query with the carrier the harder it is to find
+              your package. We will do all the legwork in finding your package
+              so just call!
+            </Typography>
+            <Typography
+              sx={{
+                color: "white",
+                margin: "20px",
+                marginTop: "1px",
+                marginBottom: "1px",
+              }}
+              gutterBottom
+              variant="h6"
+              component="div"
+            >
+              What If I Lose My Tracking Number?
+            </Typography>
+            <Typography
+              variant="body2"
+              sx={{ color: "white", margin: "20px", marginTop: "1px" }}
+            >
+              No need to panic! As long as you generated your label through us
+              that number is saved in our database. Just give us a call and we
+              will track it for you!
             </Typography>
           </Box>
         </Container>
