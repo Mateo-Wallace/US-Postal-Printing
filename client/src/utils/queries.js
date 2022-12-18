@@ -12,6 +12,8 @@ query User {
       message
       type
       userId
+      totalPrice
+      quantity
     }
     packages {
       _id
