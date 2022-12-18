@@ -154,7 +154,7 @@ const Tracking = () => {
               padding: "40px",
             }}
           >
-            <Typography component="h1" variant="h5">
+            <Typography component="h1" variant="h5" style={{fontWeight: 500}}>
               Track A Package
             </Typography>
             <Box

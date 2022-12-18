@@ -39,16 +39,29 @@ const ContactUs = () => {
       <Box
             sx={{
               margin: 1,
-              width: 500,
-              height: 500,
+              height: "60%",
+              width: "80%",
               backgroundColor: "primary.dark",
               borderRadius: "40px",
+              paddingBottom: '20px',
             }}
           >
-        <CardContent>
+        <CardContent style={{display: "flex", flexDirection: 'column', alignItems: 'center'}}>
           <Typography gutterBottom variant="h4" sx={{ margin: 2, textAlign: "center", color: "white" }}>
             Contact Us
           </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              backgroundColor: "lightgrey",
+              borderRadius: "40px",
+              padding: "40px",
+              height: "60%",
+              width: "80%",
+            }}
+          >
           <form ref={form} onSubmit={sendEmail}>
             <Grid container spacing={1}>
               <Grid xs={12} item>
@@ -104,6 +117,7 @@ const ContactUs = () => {
               </Grid>
             </Grid>
           </form>
+          </Box>
         </CardContent>
       </Box>
     </div>
