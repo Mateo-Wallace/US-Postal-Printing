@@ -79,6 +79,7 @@ function ViewOrders() {
         <Box
             sx={{
               margin: 1,
+              marginTop: '-20px',
               height: "60%",
               width: "90%",
               backgroundColor: "#0d579b",
@@ -86,7 +87,7 @@ function ViewOrders() {
               paddingBottom: '20px',
               display: 'flex',
               justifyContent: 'center',
-              marginLeft: '40px'
+              marginLeft: '25px'
             }}
           >
             <Grid style={{width: '90%'}} container spacing={2}>

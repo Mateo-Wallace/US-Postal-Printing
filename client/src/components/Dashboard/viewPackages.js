@@ -258,7 +258,7 @@ function ViewPackages() {
               justifyContent: 'center',
             }}
           >
-            <Typography sx={{ mt: 4, mb: 5, textAlign: 'Center' }} variant="h3" component="div">
+            <Typography sx={{ mt: 4, mb: 5, textAlign: 'Center', color: 'white' }} variant="h3" component="div">
                 My Packages
             </Typography>
             {userData.packages.map((userPackage) =>
@@ -285,13 +285,9 @@ function ViewPackages() {
                             >
                             </TextField>
                             :
-                            <Typography className='tracking-id' sx={{ width: '33%', flexShrink: 0, marginRight: '3px', marginLeft: '3px' }}>{userPackage.trackingNum}</Typography>}
+                            <Typography className='tracking-id' sx={{ width: '33%', flexShrink: 0, marginRight: '3px', marginLeft: '40px' }}>{userPackage.trackingNum}</Typography>}
 
-                        <Typography sx={{ width: '33%', flexShrink: 0, color: 'text.secondary' }}>Track this package
-                            <IconButton style={{marginRight: '4px', marginLeft: '4px'}} edge="end" aria-label="delete" onClick={handleTrack}>
-                                <MapIcon />
-                            </IconButton>
-                        </Typography>
+                        
                     </AccordionSummary>
                     <AccordionDetails sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                         {edit ?

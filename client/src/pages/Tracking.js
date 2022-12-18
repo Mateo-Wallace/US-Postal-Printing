@@ -131,7 +131,7 @@ const Tracking = () => {
       <Box
         sx={{
           margin: 1,
-          backgroundColor: "primary.dark",
+          backgroundColor: "#0d579b",
           borderRadius: "40px",
           padding: "40px",
           height: "60%",
@@ -207,7 +207,7 @@ const Tracking = () => {
         <Box
         sx={{
           margin: 1,
-          backgroundColor: "primary.dark",
+          backgroundColor: "#0d579b",
           borderRadius: "40px",
           padding: "40px",
           height: "60%",
