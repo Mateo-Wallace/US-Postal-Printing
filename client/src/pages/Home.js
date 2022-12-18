@@ -31,17 +31,6 @@ const Home = () => {
           justifyContent: "space-evenly", 
           marginTop: '110px',
            }} >
-
-            <Container
-        sx={{
-          margin: 0,
-          width: 500,
-          display: "flex",
-          flexDirection: "row",
-          flexWrap: "wrap",
-          justifyContent: "center",
-        }}
-      >
         <Container
           sx={{
             margin: 0,
