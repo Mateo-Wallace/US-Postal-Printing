@@ -83,7 +83,8 @@ function ViewOrders() {
                     </Typography>
                     <Demo>
                         <List dense={dense}>
-                            {userData.orders.map((order) =>
+                            {userData.orders.length ? 
+                            userData.orders.map((order) =>
                                 <>
                                     <ListItem key={order._id}
                                         secondaryAction={
@@ -124,7 +125,7 @@ function ViewOrders() {
                                         </Table>
                                     </TableContainer>
                                 </>
-                            )}
+                            ) : <h2 style={{textAlign: 'center'}}>You do not have any pending orders currently.</h2> }
                         </List>
                     </Demo>
                 </Grid>
