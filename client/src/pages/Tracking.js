@@ -25,7 +25,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import './Tracking.css'
+import "./Tracking.css";
 // end material UI imports
 
 const theme = createTheme();
@@ -68,7 +68,7 @@ const Tracking = () => {
       console.log(response);
 
       if (!response.address_to) {
-        alert('Something went wrong!')
+        alert("Something went wrong!");
         throw new Error("something went wrong!");
       }
       const packageData = [
@@ -107,10 +107,10 @@ const Tracking = () => {
       const data = await addPackage({
         variables: { trackingNum: p.trackingNumber, carrier: p.carrier },
         refetchQueries: [
-            {
-                query: CURRENT_USER,
-            }
-        ]
+          {
+            query: CURRENT_USER,
+          },
+        ],
       });
       console.log(data);
 
@@ -121,28 +121,32 @@ const Tracking = () => {
   };
 
   return (
-    <main className="tracking" style={{marginTop: '110px', 
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    marginBottom: '30px'}}>
+    <main
+      className="tracking"
+      style={{
+        marginTop: "110px",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        marginBottom: "30px",
+      }}
+    >
       <ThemeProvider theme={theme}>
-      <Box
-        sx={{
-          margin: 1,
-          backgroundColor: "primary.dark",
-          borderRadius: "40px",
-          padding: "40px",
-          height: "60%",
-          width: "80%",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-
+        <Box
+          sx={{
+            margin: 1,
+            backgroundColor: "primary.dark",
+            borderRadius: "40px",
+            padding: "40px",
+            height: "60%",
+            width: "80%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <CssBaseline />
           <Box
             sx={{
@@ -204,142 +208,152 @@ const Tracking = () => {
             </Box>
           </Box>
         </Box>
-        <Box
-        sx={{
-          margin: 1,
-          backgroundColor: "primary.dark",
-          borderRadius: "40px",
-          padding: "40px",
-          height: "60%",
-          width: "80%",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <Container>
-        <Typography
-            sx={{ margin: 2, textAlign: "center", color: "white" }}
-            variant="h4"
+        {trackedPackage.length ? (
+          <Box
+            sx={{
+              margin: 1,
+              backgroundColor: "primary.dark",
+              borderRadius: "40px",
+              padding: "40px",
+              height: "60%",
+              width: "80%",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
           >
-            {trackedPackage.length
-              ? `Viewing results for ${
-                  trackedPackage[0].carrier +
-                  " " +
-                  trackedPackage[0].trackingNumber
-                }:`
-              : ""}
-          </Typography>
-          <Box>
-            {trackedPackage.map((p) => {
-              return (
-                <Container key={p.trackingNumber}>
-                  <TableContainer
-                    component={Paper}
-                    sx={{ marginBottom: "10px" }}
-                  >
-                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                      <TableHead>
-                        <TableRow>
-                          <TableCell>Last Update</TableCell>
-                          <TableCell align="right">Status</TableCell>
-                          <TableCell align="right">City</TableCell>
-                          <TableCell align="right">State</TableCell>
-                          <TableCell align="right">Zip</TableCell>
-                        </TableRow>
-                      </TableHead>
-                      <TableBody>
-                        <TableRow
-                          sx={{
-                            "&:last-child td, &:last-child th": { border: 0 },
-                          }}
-                        >
-                          <TableCell component="th" scope="row">
-                            {p.tracking_status.status_date}
-                          </TableCell>
-                          <TableCell align="right">
-                            {p.tracking_status.status_details}
-                          </TableCell>
-                          <TableCell align="right">
-                            {p.tracking_status.location.city}
-                          </TableCell>
-                          <TableCell align="right">
-                            {p.tracking_status.location.state}
-                          </TableCell>
-                          <TableCell align="right">
-                            {p.tracking_status.location.zip}
-                          </TableCell>
-                        </TableRow>
-                      </TableBody>
-                    </Table>
-                  </TableContainer>
-                  <TableContainer component={Paper}>
-                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                      <TableHead>
-                        <TableRow>
-                          <TableCell>Expected Delivery</TableCell>
-                          <TableCell align="right">Original ETA</TableCell>
-                          <TableCell align="right">City</TableCell>
-                          <TableCell align="right">State</TableCell>
-                          <TableCell align="right">Zip</TableCell>
-                        </TableRow>
-                      </TableHead>
-                      <TableBody>
-                        <TableRow
-                          sx={{
-                            "&:last-child td, &:last-child th": { border: 0 },
-                          }}
-                        >
-                          <TableCell component="th" scope="row">
-                            {p.eta}
-                          </TableCell>
-                          <TableCell align="right">{p.original_eta}</TableCell>
-                          <TableCell align="right">
-                            {p.address_to.city}
-                          </TableCell>
-                          <TableCell align="right">
-                            {p.address_to.state}
-                          </TableCell>
-                          <TableCell align="right">
-                            {p.address_to.zip}
-                          </TableCell>
-                        </TableRow>
-                      </TableBody>
-                    </Table>
-                  </TableContainer>
-                  {Auth.loggedIn() ? (
-                    <Box
-                      component="form"
-                      onSubmit={handleSavePackage}
-                      noValidate
-                      sx={{ mt: 1 }}
-                    >
-                      <Button
-                        type="submit"
-                        fullWidth
-                        variant="contained"
-                        sx={{ mt: 3, mb: 2, borderRadius: "40px" }}
+            <Container>
+              <Typography
+                sx={{ margin: 2, textAlign: "center", color: "white" }}
+                variant="h4"
+              >
+                {trackedPackage.length
+                  ? `Viewing results for ${
+                      trackedPackage[0].carrier +
+                      " " +
+                      trackedPackage[0].trackingNumber
+                    }:`
+                  : ""}
+              </Typography>
+              <Box>
+                {trackedPackage.map((p) => {
+                  return (
+                    <Container key={p.trackingNumber}>
+                      <TableContainer
+                        component={Paper}
+                        sx={{ marginBottom: "10px" }}
                       >
-                        Save Package
-                      </Button>
-                    </Box>
-                  ) : (
-                    ""
-                  )}
-                </Container>
-              );
-            })}
+                        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                          <TableHead>
+                            <TableRow>
+                              <TableCell>Last Update</TableCell>
+                              <TableCell align="right">Status</TableCell>
+                              <TableCell align="right">City</TableCell>
+                              <TableCell align="right">State</TableCell>
+                              <TableCell align="right">Zip</TableCell>
+                            </TableRow>
+                          </TableHead>
+                          <TableBody>
+                            <TableRow
+                              sx={{
+                                "&:last-child td, &:last-child th": {
+                                  border: 0,
+                                },
+                              }}
+                            >
+                              <TableCell component="th" scope="row">
+                                {p.tracking_status.status_date}
+                              </TableCell>
+                              <TableCell align="right">
+                                {p.tracking_status.status_details}
+                              </TableCell>
+                              <TableCell align="right">
+                                {p.tracking_status.location.city}
+                              </TableCell>
+                              <TableCell align="right">
+                                {p.tracking_status.location.state}
+                              </TableCell>
+                              <TableCell align="right">
+                                {p.tracking_status.location.zip}
+                              </TableCell>
+                            </TableRow>
+                          </TableBody>
+                        </Table>
+                      </TableContainer>
+                      <TableContainer component={Paper}>
+                        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                          <TableHead>
+                            <TableRow>
+                              <TableCell>Expected Delivery</TableCell>
+                              <TableCell align="right">Original ETA</TableCell>
+                              <TableCell align="right">City</TableCell>
+                              <TableCell align="right">State</TableCell>
+                              <TableCell align="right">Zip</TableCell>
+                            </TableRow>
+                          </TableHead>
+                          <TableBody>
+                            <TableRow
+                              sx={{
+                                "&:last-child td, &:last-child th": {
+                                  border: 0,
+                                },
+                              }}
+                            >
+                              <TableCell component="th" scope="row">
+                                {p.eta}
+                              </TableCell>
+                              <TableCell align="right">
+                                {p.original_eta}
+                              </TableCell>
+                              <TableCell align="right">
+                                {p.address_to.city}
+                              </TableCell>
+                              <TableCell align="right">
+                                {p.address_to.state}
+                              </TableCell>
+                              <TableCell align="right">
+                                {p.address_to.zip}
+                              </TableCell>
+                            </TableRow>
+                          </TableBody>
+                        </Table>
+                      </TableContainer>
+                      {Auth.loggedIn() ? (
+                        <Box
+                          component="form"
+                          onSubmit={handleSavePackage}
+                          noValidate
+                          sx={{ mt: 1 }}
+                        >
+                          <Button
+                            type="submit"
+                            fullWidth
+                            variant="contained"
+                            sx={{ mt: 3, mb: 2, borderRadius: "40px" }}
+                          >
+                            Save Package
+                          </Button>
+                        </Box>
+                      ) : (
+                        ""
+                      )}
+                    </Container>
+                  );
+                })}
+              </Box>
+            </Container>
+            {packageSaved ? (
+              <Typography align="center" component="h1" variant="h5">
+                Package Saved!
+              </Typography>
+            ) : (
+              ""
+            )}
           </Box>
-        </Container>
-        {packageSaved ? (
-          <Typography align="center" component="h1" variant="h5">
-            Package Saved!
-          </Typography>
         ) : (
           ""
         )}
-        </Box>
       </ThemeProvider>
     </main>
   );
