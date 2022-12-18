@@ -6,6 +6,7 @@ import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import emailjs from "@emailjs/browser";
+import Box from "@mui/material/Box";
 
 const ContactUs = () => {
   const form = useRef();
@@ -34,16 +35,18 @@ const ContactUs = () => {
   };
 
   return (
-    <div style={{ margin: "10, 0" }}>
-      <Card
-        style={{
-          maxWidth: 550,
-          margin: "150px auto",
-          padding: "20px 5px 0px 5px",
-        }}
-      >
+    <div style={{ marginBottom: '10px', marginTop: '150px', display: 'flex', justifyContent: 'center' }}>
+      <Box
+            sx={{
+              margin: 1,
+              width: 500,
+              height: 500,
+              backgroundColor: "primary.dark",
+              borderRadius: "40px",
+            }}
+          >
         <CardContent>
-          <Typography gutterBottom variant="h5">
+          <Typography gutterBottom variant="h4" sx={{ margin: 2, textAlign: "center", color: "white" }}>
             Contact Us
           </Typography>
           <form ref={form} onSubmit={sendEmail}>
@@ -93,15 +96,16 @@ const ContactUs = () => {
                   required
                 />
               </Grid>
-              <Grid xs={12} item>
-                <Button type="submit" variant="contained" value="Send">
+              <Grid style={{display: 'flex', justifyContent: 'center'}} xs={12} item>
+                <Button style={{backgroundColor: '#ff6659',
+    borderRadius: '40px'}}type="submit" variant="contained" value="Send">
                   Submit
                 </Button>
               </Grid>
             </Grid>
           </form>
         </CardContent>
-      </Card>
+      </Box>
     </div>
   );
 };

@@ -31,7 +31,6 @@ export default function StickyFooter() {
           marginTop: "100vh",
           position: 'sticky',
           bottom: 0,
-          minWidth: '100vh',
           margin: 0,
           left: 0
         }}
