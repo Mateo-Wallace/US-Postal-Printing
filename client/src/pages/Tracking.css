@@ -33,6 +33,7 @@
   }
 
   .css-14nt53-MuiButtonBase-root-MuiListItemButton-root {
+    background-color: lightgray !important;
     box-shadow: 0 0.5px 0.5px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.29) !important;
     margin-bottom: 4px !important;
     border-radius: 10px !important;

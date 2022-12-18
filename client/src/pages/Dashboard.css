@@ -2,9 +2,50 @@
     padding: 0 !important;
 }
 
+.wholeDash {
+    
+  }
+
 @media screen and (max-width: 1250px) {
     .wholeDash {
       justify-content: center !important;
-      margin-top: 135px !important;
+      border-top: 42px solid #0d579b !important;
     }
   }
+
+.MuiDrawer-docked {
+    background-color: #0d579b;
+}
+
+.MuiDrawer-paper {
+    background-color: #0d579b !important;
+}
+
+.css-78trlr-MuiButtonBase-root-MuiIconButton-root {
+    background-color: lightgray !important;
+    box-shadow: 0 0.5px 0.5px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.29) !important;
+    margin-bottom: 4px !important;
+    border-radius: 10px !important;
+  }
+
+.css-yiswl0-MuiButtonBase-root-MuiButton-root {
+    background-color: #ff6659 !important;
+    border-radius: 40px !important;
+}
+
+.css-vglo2t-MuiButtonBase-root-MuiButton-root {
+    border-radius: 40px !important;
+}
+
+.css-g10h2i-MuiButtonBase-root-MuiButton-root {
+    border-radius: 40px !important;
+}
+
+.css-zzu6q3-MuiButtonBase-root-MuiButton-root {
+    border-radius: 40px !important;
+}
+
+.css-1050xol-MuiButtonBase-root-MuiButton-root {
+    border-radius: 40px !important;
+    margin-top: 10px !important;
+}
