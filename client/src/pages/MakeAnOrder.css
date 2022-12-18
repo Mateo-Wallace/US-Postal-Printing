@@ -1,0 +1,36 @@
+#surveyElement input[type="button" i] {
+    border-radius: 40px;
+    border: 0 0 transparent !important;
+    outline: 0 transparent 0 !important;
+  }
+  .surveys-list button,
+  .surveys-list .sv_button_link:hover,
+  .survey-page-header button,
+  .sv_container button {
+    border-radius: 40px;
+  }
+  .sd-root-modern,
+  .sd-row {
+    border-radius: 40px;
+    border-collapse: separate; 
+  }
+
+  .sd-btn {
+    background-color: #ff6659;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+    border-radius: 40px;
+    border: 0 0 transparent !important;
+    outline: 0 transparent 0 !important;
+  }
+
+  .sd-btn:hover {
+    background-color:  rgb(21, 111, 214) !important;
+    opacity: 0.9, 0.8, 0.7 !important;
+    transition-delay:.1s;
+    color: white !important;
+  }
+
+  .sd-root-modern *{
+    min-width: 180px !important;
+  }

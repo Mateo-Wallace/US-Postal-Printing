@@ -13,6 +13,8 @@ const ProtectRoute = () => {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
+        marginTop: '100px',
+        marginBottom: '-40px'
       }}>
         <img src={padlock} alt='padlock' style={{ height: '250px', width: '250px', margin: 3 }} />
         <Container sx={{ m: 3 }}>

@@ -10,10 +10,11 @@ import PrintingImage from "../images/printingServices.jpg";
 import CopyingImage from "../images/copyingServices.jpg";
 import BusinessCardsImage from "../images/businessCards.jpg";
 import MailboxImage from "../images/mailboxes.jpg";
+import './Products&Services.css';
 
 const ProductsServices = () => {
   return (
-    <div style={{ display: "flex", marginTop: '120px' }}>
+    <div className="products" style={{ display: "flex", marginTop: '90px' }}>
       <Container
         sx={{
           display: "flex",

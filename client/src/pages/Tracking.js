@@ -25,6 +25,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import './Tracking.css'
 // end material UI imports
 
 const theme = createTheme();
@@ -120,16 +121,37 @@ const Tracking = () => {
   };
 
   return (
-    <main>
+    <main className="tracking" style={{marginTop: '110px', 
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: '30px'}}>
       <ThemeProvider theme={theme}>
-        <Container component="main" maxWidth="xs">
+      <Box
+        sx={{
+          margin: 1,
+          backgroundColor: "primary.dark",
+          borderRadius: "40px",
+          padding: "40px",
+          height: "60%",
+          width: "80%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+
           <CssBaseline />
           <Box
             sx={{
-              marginTop: 8,
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
+              backgroundColor: "lightgrey",
+              borderRadius: "40px",
+              padding: "40px",
             }}
           >
             <Typography component="h1" variant="h5">
@@ -175,16 +197,32 @@ const Tracking = () => {
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ mt: 3, mb: 2 }}
+                sx={{ mt: 3, mb: 2, borderRadius: "40px" }}
               >
                 Submit
               </Button>
             </Box>
           </Box>
-        </Container>
-
+        </Box>
+        <Box
+        sx={{
+          margin: 1,
+          backgroundColor: "primary.dark",
+          borderRadius: "40px",
+          padding: "40px",
+          height: "60%",
+          width: "80%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
         <Container>
-          <h2>
+        <Typography
+            sx={{ margin: 2, textAlign: "center", color: "white" }}
+            variant="h4"
+          >
             {trackedPackage.length
               ? `Viewing results for ${
                   trackedPackage[0].carrier +
@@ -192,7 +230,7 @@ const Tracking = () => {
                   trackedPackage[0].trackingNumber
                 }:`
               : ""}
-          </h2>
+          </Typography>
           <Box>
             {trackedPackage.map((p) => {
               return (
@@ -281,7 +319,7 @@ const Tracking = () => {
                         type="submit"
                         fullWidth
                         variant="contained"
-                        sx={{ mt: 3, mb: 2 }}
+                        sx={{ mt: 3, mb: 2, borderRadius: "40px" }}
                       >
                         Save Package
                       </Button>
@@ -301,6 +339,7 @@ const Tracking = () => {
         ) : (
           ""
         )}
+        </Box>
       </ThemeProvider>
     </main>
   );

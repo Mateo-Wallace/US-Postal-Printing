@@ -15,6 +15,7 @@
 
 .logo {
   justify-content: space-between;
+  border-radius: 40px;
 }
 
 .menu {
