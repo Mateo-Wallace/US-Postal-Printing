@@ -248,7 +248,7 @@ function ViewPackages() {
             </Typography>
             {userData.packages.map((userPackage) =>
                 <Accordion key={userPackage._id} onClick={event => { handleChange(event, 'panel1'); setEditable(false) }}>
-                    <AccordionSummary expanded={expanded === 'panel1'}
+                    <AccordionSummary
                         expandIcon={<EditIcon />}
                         aria-controls="panel1bh-content"
                         id="panel1bh-header"
