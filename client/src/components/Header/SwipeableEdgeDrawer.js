@@ -4,17 +4,13 @@ import { Global } from "@emotion/react";
 import { styled } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { grey } from "@mui/material/colors";
-import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
-import Skeleton from "@mui/material/Skeleton";
 import Typography from "@mui/material/Typography";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import Hamburger from "hamburger-react";
-import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import "./Header.css";
 import { MenuList } from "@mui/material";
-import { style } from "@mui/system";
 import { Link } from "react-router-dom";
 
 const drawerBleeding = 56;
@@ -44,7 +40,6 @@ const Puller = styled(Box)(({ theme }) => ({
 function SwipeableEdgeDrawer(props) {
   const { window } = props;
   const [open, setOpen] = React.useState(false);
-  const [anchorEl, setAnchorEl] = React.useState(null);
 
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
@@ -182,13 +177,13 @@ function SwipeableEdgeDrawer(props) {
             <Link to="/products&services" style={{ textDecoration: "none" }}>
               <MenuItem
                 style={{
-                    marginBottom: "6px",
-                    display: "flex",
-                    justifyContent: "center",
-                    border: "#149be6 solid 3px",
-                    boxShadow:
-                      "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)",
-                  }}
+                  marginBottom: "6px",
+                  display: "flex",
+                  justifyContent: "center",
+                  border: "#149be6 solid 3px",
+                  boxShadow:
+                    "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)",
+                }}
                 onClick={toggleDrawer(false)}
               >
                 <Typography
@@ -203,13 +198,13 @@ function SwipeableEdgeDrawer(props) {
             <Link to="/make-an-order" style={{ textDecoration: "none" }}>
               <MenuItem
                 style={{
-                    marginBottom: "6px",
-                    display: "flex",
-                    justifyContent: "center",
-                    border: "#149be6 solid 3px",
-                    boxShadow:
-                      "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)",
-                  }}
+                  marginBottom: "6px",
+                  display: "flex",
+                  justifyContent: "center",
+                  border: "#149be6 solid 3px",
+                  boxShadow:
+                    "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)",
+                }}
                 onClick={toggleDrawer(false)}
               >
                 <Typography
@@ -217,20 +212,20 @@ function SwipeableEdgeDrawer(props) {
                   fontWeight={700}
                   sx={{ p: 1, color: "text.secondary" }}
                 >
-                Make An Order
+                  Make An Order
                 </Typography>
               </MenuItem>
             </Link>
             <Link to="/tracking" style={{ textDecoration: "none" }}>
               <MenuItem
                 style={{
-                    marginBottom: "6px",
-                    display: "flex",
-                    justifyContent: "center",
-                    border: "#149be6 solid 3px",
-                    boxShadow:
-                      "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)",
-                  }}
+                  marginBottom: "6px",
+                  display: "flex",
+                  justifyContent: "center",
+                  border: "#149be6 solid 3px",
+                  boxShadow:
+                    "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)",
+                }}
                 onClick={toggleDrawer(false)}
               >
                 <Typography
@@ -238,20 +233,20 @@ function SwipeableEdgeDrawer(props) {
                   fontWeight={700}
                   sx={{ p: 1, color: "text.secondary" }}
                 >
-                Tracking
+                  Tracking
                 </Typography>
               </MenuItem>
             </Link>
             <Link to="/dashboard/:userId" style={{ textDecoration: "none" }}>
               <MenuItem
                 style={{
-                    marginBottom: "6px",
-                    display: "flex",
-                    justifyContent: "center",
-                    border: "#149be6 solid 3px",
-                    boxShadow:
-                      "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)",
-                  }}
+                  marginBottom: "6px",
+                  display: "flex",
+                  justifyContent: "center",
+                  border: "#149be6 solid 3px",
+                  boxShadow:
+                    "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)",
+                }}
                 onClick={toggleDrawer(false)}
               >
                 <Typography
@@ -259,21 +254,21 @@ function SwipeableEdgeDrawer(props) {
                   fontWeight={700}
                   sx={{ p: 1, color: "text.secondary" }}
                 >
-                Dashboard
+                  Dashboard
                 </Typography>
               </MenuItem>
             </Link>
             <Link to="/contact-us" style={{ textDecoration: "none" }}>
               <MenuItem
                 style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    borderBottomLeftRadius: "40px",
-                    borderBottomRightRadius: "40px",
-                    border: "#149be6 solid 3px",
-                    boxShadow:
-                      "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)",
-                  }}
+                  display: "flex",
+                  justifyContent: "center",
+                  borderBottomLeftRadius: "40px",
+                  borderBottomRightRadius: "40px",
+                  border: "#149be6 solid 3px",
+                  boxShadow:
+                    "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)",
+                }}
                 onClick={toggleDrawer(false)}
               >
                 <Typography
@@ -281,12 +276,11 @@ function SwipeableEdgeDrawer(props) {
                   fontWeight={700}
                   sx={{ p: 1, color: "text.secondary" }}
                 >
-                Contact Us
+                  Contact Us
                 </Typography>
               </MenuItem>
             </Link>
           </MenuList>
-          {/* <Skeleton variant="rectangular" height="100%" /> */}
         </StyledBox>
       </SwipeableDrawer>
     </Root>

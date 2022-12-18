@@ -133,20 +133,20 @@ const Tracking = () => {
       }}
     >
       <ThemeProvider theme={theme}>
-      <Box
-        sx={{
-          margin: 1,
-          backgroundColor: "#0d579b",
-          borderRadius: "40px",
-          padding: "40px",
-          height: "60%",
-          width: "80%",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
+        <Box
+          sx={{
+            margin: 1,
+            backgroundColor: "#0d579b",
+            borderRadius: "40px",
+            padding: "40px",
+            height: "60%",
+            width: "80%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <CssBaseline />
           <Box
             sx={{
@@ -158,7 +158,7 @@ const Tracking = () => {
               padding: "40px",
             }}
           >
-            <Typography component="h1" variant="h5" style={{fontWeight: 500}}>
+            <Typography component="h1" variant="h5" style={{ fontWeight: 500 }}>
               Track A Package
             </Typography>
             <Box
@@ -209,20 +209,20 @@ const Tracking = () => {
           </Box>
         </Box>
         {trackedPackage.length ? (
-        <Box
-        sx={{
-          margin: 1,
-          backgroundColor: "#0d579b",
-          borderRadius: "40px",
-          padding: "40px",
-          height: "60%",
-          width: "80%",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
+          <Box
+            sx={{
+              margin: 1,
+              backgroundColor: "#0d579b",
+              borderRadius: "40px",
+              padding: "40px",
+              height: "60%",
+              width: "80%",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
             <Container>
               <Typography
                 sx={{ margin: 2, textAlign: "center", color: "white" }}

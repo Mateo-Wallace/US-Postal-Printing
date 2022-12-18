@@ -1,51 +1,53 @@
 @media screen and (max-width: 1250px) {
-    .tracking {
-      justify-content: center !important;
-      margin-top: 160px !important;
-    }
+  .tracking {
+    justify-content: center !important;
+    margin-top: 160px !important;
   }
+}
 
-  .sd-btn {
-    background-color: #ff6659;
-    color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
-    border-radius: 40px;
-    border: 0 0 transparent !important;
-    outline: 0 transparent 0 !important;
-  }
+.sd-btn {
+  background-color: #ff6659;
+  color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+  border-radius: 40px;
+  border: 0 0 transparent !important;
+  outline: 0 transparent 0 !important;
+}
 
-  .sd-btn:hover {
-    background-color:  rgb(21, 111, 214) !important;
-    opacity: 0.9, 0.8, 0.7 !important;
-    transition-delay:.1s;
-    color: white;
-  }
+.sd-btn:hover {
+  background-color: rgb(21, 111, 214) !important;
+  opacity: 0.9, 0.8, 0.7 !important;
+  transition-delay: 0.1s;
+  color: white;
+}
 
-  .MuiButtonBase-root {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29) !important;
-  }
+.MuiButtonBase-root {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29) !important;
+}
 
-  .MuiButtonBase-root:hover {
-    background-color:  rgb(21, 111, 214) !important;
-    opacity: 0.9, 0.8, 0.7 !important;
-    transition-delay:.1s;
-    color: white !important;
-  }
+.MuiButtonBase-root:hover {
+  background-color: rgb(21, 111, 214) !important;
+  opacity: 0.9, 0.8, 0.7 !important;
+  transition-delay: 0.1s;
+  color: white !important;
+}
 
-  .css-14nt53-MuiButtonBase-root-MuiListItemButton-root {
-    background-color: lightgray !important;
-    box-shadow: 0 0.5px 0.5px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.29) !important;
-    margin-bottom: 4px !important;
-    border-radius: 10px !important;
-  }
+.css-14nt53-MuiButtonBase-root-MuiListItemButton-root {
+  background-color: lightgray !important;
+  box-shadow: 0 0.5px 0.5px 0 rgba(0, 0, 0, 0.2),
+    0 1px 5px 0 rgba(0, 0, 0, 0.29) !important;
+  margin-bottom: 4px !important;
+  border-radius: 10px !important;
+}
 
-  .css-6hp17o-MuiList-root-MuiMenu-list {
-    padding: 0 !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+.css-6hp17o-MuiList-root-MuiMenu-list {
+  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-  .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root {
-    box-shadow: 0 0.5px 0.5px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.29) !important;
-  }
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root {
+  box-shadow: 0 0.5px 0.5px 0 rgba(0, 0, 0, 0.2),
+    0 1px 5px 0 rgba(0, 0, 0, 0.29) !important;
+}

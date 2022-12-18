@@ -4,7 +4,6 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Paper";
-import CardContent from "@mui/material/CardContent";
 import Tooltip from "@mui/material/Tooltip";
 import Button from "@mui/material/Button";
 import NotaryImage from "../images/notaryServices.jpeg";
@@ -14,9 +13,7 @@ import BusinessCardsImage from "../images/businessCards.jpg";
 import MailboxImage from "../images/mailboxes.jpg";
 import Chip from "@mui/material/Chip";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
-import { style } from "@mui/system";
 import "./Home.css";
-import { Link } from "@mui/material";
 
 const Home = () => {
   return (
@@ -28,9 +25,10 @@ const Home = () => {
           display: "flex",
           flexDirection: "row",
           flexWrap: "wrap-reverse",
-          justifyContent: "space-evenly", 
-          marginTop: '110px',
-           }} >
+          justifyContent: "space-evenly",
+          marginTop: "110px",
+        }}
+      >
         <Container
           sx={{
             margin: 0,
@@ -785,7 +783,7 @@ const Home = () => {
                   <Grid item px={1}>
                     <Box>SAT</Box>
                     <Box>10:00 AM</Box>
-                    <Box>2:00 PM</Box>
+                    <Box>3:00 PM</Box>
                   </Grid>
                   <Grid item px={1}>
                     <Box>SUN</Box>
@@ -831,28 +829,32 @@ const Home = () => {
                   "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)",
               }}
             >
-            <Typography
-              sx={{
-                color: "text.secondary",
-                margin: "20px",
-                marginTop: "1px",
-                marginBottom: "1px",
-                fontWeight: 600,
-              }}
-              gutterBottom
-              variant="h6"
-              component="div"
-            >
-              Can You Scan Documents?
-            </Typography>
-            <Typography
-              variant="body2"
-              sx={{ color: "text.secondary", margin: "20px", marginTop: "1px" }}
-            >
-              We absolutely can. We can send you your file to an email or
-              download it to a flashdrive. We can scan your documents in as a
-              jpeg, pdf, or png.
-            </Typography>
+              <Typography
+                sx={{
+                  color: "text.secondary",
+                  margin: "20px",
+                  marginTop: "1px",
+                  marginBottom: "1px",
+                  fontWeight: 600,
+                }}
+                gutterBottom
+                variant="h6"
+                component="div"
+              >
+                Can You Scan Documents?
+              </Typography>
+              <Typography
+                variant="body2"
+                sx={{
+                  color: "text.secondary",
+                  margin: "20px",
+                  marginTop: "1px",
+                }}
+              >
+                We absolutely can. We can send you your file to an email or
+                download it to a flashdrive. We can scan your documents in as a
+                jpeg, pdf, or png.
+              </Typography>
             </Card>
             <Card
               sx={{
@@ -865,29 +867,33 @@ const Home = () => {
                   "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)",
               }}
             >
-            <Typography
-              sx={{
-                color: "text.secondary",
-                margin: "20px",
-                marginTop: "1px",
-                marginBottom: "1px",
-                fontWeight: 600,
-              }}
-              gutterBottom
-              variant="h6"
-              component="div"
-            >
-              What Do I Do If My Package Gets Lost?
-            </Typography>
-            <Typography
-              variant="body2"
-              sx={{ color: "text.secondary", margin: "20px", marginTop: "1px" }}
-            >
-              Call us as soon as you realize there is a problem. The longer it
-              takes to input a query with the carrier the harder it is to find
-              your package. We will do all the legwork in finding your package
-              so just call!
-            </Typography>
+              <Typography
+                sx={{
+                  color: "text.secondary",
+                  margin: "20px",
+                  marginTop: "1px",
+                  marginBottom: "1px",
+                  fontWeight: 600,
+                }}
+                gutterBottom
+                variant="h6"
+                component="div"
+              >
+                What Do I Do If My Package Gets Lost?
+              </Typography>
+              <Typography
+                variant="body2"
+                sx={{
+                  color: "text.secondary",
+                  margin: "20px",
+                  marginTop: "1px",
+                }}
+              >
+                Call us as soon as you realize there is a problem. The longer it
+                takes to input a query with the carrier the harder it is to find
+                your package. We will do all the legwork in finding your package
+                so just call!
+              </Typography>
             </Card>
             <Card
               sx={{
@@ -900,28 +906,32 @@ const Home = () => {
                   "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)",
               }}
             >
-            <Typography
-              sx={{
-                color: "text.secondary",
-                margin: "20px",
-                marginTop: "1px",
-                marginBottom: "1px",
-                fontWeight: 600,
-              }}
-              gutterBottom
-              variant="h6"
-              component="div"
-            >
-              What If I Lose My Tracking Number?
-            </Typography>
-            <Typography
-              variant="body2"
-              sx={{ color: "text.secondary", margin: "20px", marginTop: "1px" }}
-            >
-              No need to panic! As long as you generated your label through us
-              that number is saved in our database. Just give us a call and we
-              will track it for you!
-            </Typography>
+              <Typography
+                sx={{
+                  color: "text.secondary",
+                  margin: "20px",
+                  marginTop: "1px",
+                  marginBottom: "1px",
+                  fontWeight: 600,
+                }}
+                gutterBottom
+                variant="h6"
+                component="div"
+              >
+                What If I Lose My Tracking Number?
+              </Typography>
+              <Typography
+                variant="body2"
+                sx={{
+                  color: "text.secondary",
+                  margin: "20px",
+                  marginTop: "1px",
+                }}
+              >
+                No need to panic! As long as you generated your label through us
+                that number is saved in our database. Just give us a call and we
+                will track it for you!
+              </Typography>
             </Card>
           </Box>
         </Container>

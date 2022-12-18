@@ -1,6 +1,5 @@
 import React from "react";
 import Container from "@mui/material/Container";
-import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -10,11 +9,11 @@ import PrintingImage from "../images/printingServices.jpg";
 import CopyingImage from "../images/copyingServices.jpg";
 import BusinessCardsImage from "../images/businessCards.jpg";
 import MailboxImage from "../images/mailboxes.jpg";
-import './Products&Services.css';
+import "./Products&Services.css";
 
 const ProductsServices = () => {
   return (
-    <div className="products" style={{ display: "flex", marginTop: '90px' }}>
+    <div className="products" style={{ display: "flex", marginTop: "90px" }}>
       <Container
         sx={{
           display: "flex",
