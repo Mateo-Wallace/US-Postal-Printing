@@ -208,6 +208,7 @@ const Tracking = () => {
             </Box>
           </Box>
         </Box>
+        {trackedPackage.length ? (
         <Box
         sx={{
           margin: 1,
@@ -222,11 +223,6 @@ const Tracking = () => {
           alignItems: "center",
         }}
       >
-        <Container>
-        <Typography
-            sx={{ margin: 2, textAlign: "center", color: "white" }}
-            variant="h4"
-          >
             <Container>
               <Typography
                 sx={{ margin: 2, textAlign: "center", color: "white" }}
