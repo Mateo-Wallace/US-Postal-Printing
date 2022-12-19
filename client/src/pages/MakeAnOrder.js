@@ -70,7 +70,7 @@ const MakeAnOrder = () => {
           borderRadius: "40px",
           padding: "40px",
           height: "80%",
-          width: "80%",
+          width: "92%",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",

@@ -67,7 +67,7 @@ function ViewOrders() {
         paddingBottom: "20px",
         display: "flex",
         justifyContent: "center",
-        marginLeft: "25px",
+        marginLeft: "21px",
       }}
     >
       <Grid style={{ width: "90%" }} container spacing={2}>
