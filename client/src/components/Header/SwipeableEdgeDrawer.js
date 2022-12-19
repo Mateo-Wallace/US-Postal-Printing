@@ -143,7 +143,7 @@ function SwipeableEdgeDrawer(props) {
               textAlign: "center",
               display: "flex",
               flexDirection: "column",
-              height: "89%",
+              height: "340px",
               marginTop: "10px",
             }}
             id="basic-menu"
