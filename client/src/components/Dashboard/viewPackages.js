@@ -48,14 +48,6 @@ function ViewPackages() {
   const userData = data?.me || [];
 
   const [edit, setEditable] = React.useState(false);
-  const handleEditOpenAndClose = (event) => {
-    event.stopPropagation();
-    if (expanded) {
-      setEditable(false);
-    } else {
-      setEditable(!edit);
-    }
-  };
 
   const [formState, setFormState] = React.useState({
     id: "",
@@ -63,6 +55,22 @@ function ViewPackages() {
     carrier: "",
     notes: "",
   });
+
+  const handleEditOpenAndClose = (event) => {
+    event.stopPropagation();
+    setFormState({
+      ...formState,
+      trackingNum: event.target.dataset.trackingnum,
+      notes: event.target.dataset.notes
+    });
+    console.log(formState);
+
+    if (expanded) {
+      setEditable(false);
+    } else {
+      setEditable(!edit);
+    }
+  };
 
   const handleChangeCarrier = (e) => {
     const { name, value } = e.target;
@@ -303,6 +311,8 @@ function ViewPackages() {
                 <Button
                   sx={{ width: "20%", mt: 3 }}
                   variant="contained"
+                  data-trackingnum={userPackage.trackingNum}
+                  data-notes={userPackage.notes}
                   onClick={(event) => handleEditOpenAndClose(event)}
                 >
                   Edit Package
