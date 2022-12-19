@@ -24,10 +24,6 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/build")));
 }
 
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
-});
-
 const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
   server.applyMiddleware({ app });
@@ -42,6 +38,10 @@ const startApolloServer = async (typeDefs, resolvers) => {
       }
     );
     res.json({ chapter: response.data });
+  });
+
+  app.get("/*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../client/build/index.html"));
   });
 
   db.once("open", () => {
