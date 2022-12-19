@@ -1,13 +1,3 @@
-## TODO
-
-- [ ] Delete TODO section
-- [ ] Edit link to powerpoint in description
-- [ ] Add link to deployed site in installation
-- [ ] Add links to all contributors social media
-- [ ] Add screenshot examples of deployed application
-- [ ] Update repo description (not in readme but on repo)
-- [ ] Update link to deployed website (not in readme but on repo)
-
 <p id="readme-top"></p>
 
 [![License Shield](https://img.shields.io/github/license/Mateo-Wallace/US-Postal-Printing.svg?style=for-the-badge)](./LICENSE) [![Contributors](https://img.shields.io/github/contributors/Mateo-Wallace/US-Postal-Printing.svg?style=for-the-badge)](https://github.com/Mateo-Wallace/US-Postal-Printing/graphs/contributors) [![Issues](https://img.shields.io/github/issues/Mateo-Wallace/US-Postal-Printing.svg?style=for-the-badge)](https://github.com/Mateo-Wallace/US-Postal-Printing/issues) [![KanBan Shield](https://img.shields.io/badge/Kanban_Board-555555?style=for-the-badge)](https://github.com/users/Mateo-Wallace/projects/4/views/1)
@@ -16,7 +6,7 @@
 
 ## Description
 
-US Postal & Printing is a full stack MERN web app that serves as an information page for the company US Postal & Printing. The user is able to see the services the company provides, track packages, make orders, contact the store, and save order and packages to their dashboard. For more information check out the [PowerPoint](https://docs.google.com/presentation/d/11zaugrKaa3uVzKBkMWfaP2I_4uUIggcZltKR_tsWFmo/edit?usp=sharing).
+US Postal & Printing is a full stack MERN web app that serves as an information page for the company US Postal & Printing. The user is able to see the services the company provides, track packages, make orders, contact the store, and save orders and packages to their dashboard. For more information check out the [PowerPoint](https://docs.google.com/presentation/d/11zaugrKaa3uVzKBkMWfaP2I_4uUIggcZltKR_tsWFmo/edit?usp=sharing).
 
 The project utilizes an Express backend, GraphQL Api, mongoDB database, and a third party Api.
 
@@ -45,9 +35,9 @@ While building this project we learned to:
 
 ## Installation
 
-US Postal & Printing is a deployed web application. Most users must simply navigate to [shocase.herokuapp.com/](https://shocase.herokuapp.com/)
+US Postal & Printing is a deployed web application. Most users must simply navigate to [us-postal-printing.herokuapp.com/](https://us-postal-printing.herokuapp.com/)
 
-![example deployed site](./public/images/shocase.png)
+![example deployed site](./client/src/images/deployed.png)
 
 Should you wish to download the project locally you must:
 
@@ -74,19 +64,17 @@ Should you wish to download the project locally you must:
 
 ## Usage
 
-When navigating to the homepage you will be greeted with all playlists other users have made. Before being able to interact you must first either `Login` or `Signup`. In order to do this click on the hamburger icon within the Nav Bar. You will be redirected to the login page.
+When navigating to the website you will be greeted with the home page. This page displays relevant services, carrier pickup times, and business hours. At the top of the screen you will see a NavBar. Clicking on the following links will result in the subsequent action:
 
-![example login page](./public/images/website_login.png)
-
-Once logged in you can finally interact with our page! To list a few functions of our webstie, you can:
-
-- Search for a specific playlist using the `search bar` at the top of the screen
-- Create a new playlist using the `+` button at the top of the screen
-- Like a playlist by clicking the `Like Button` and unlike by clicking the `Unlike Button`
-- Select a playlist by clicking on its title to be brought to a `Comments` page where you can view other comments and create comments of your own
-- View all of your created playlists by opening the navbar and selecting `Profile`
-- View all playlists you have liked by opening the navbar and selecting `Likes`
-- `Update` and `Delete` your playlists once you are on your Profile
+- Logout: Cancel user session
+- Products & Services: In depth information on available services
+- Make An Order: Form with various inputs, information is saved to database
+- Tracking: Type in a tracking number for USPS, UPS, Fedex, or DHL. If you are logged in you may also save this number to your packages in Dashboard
+- DashBoard: Relevant data to the current logged in user
+   - View My Packages: Shows saved packages and allows user to update and delete
+   - View My Orders: Shows saved orders and allows user to update and delete
+   - Edit My Account: Shows user data and allows user to update and delete
+- Contact Us: Form that is emailed to the business owner on submit
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
