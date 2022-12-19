@@ -156,8 +156,7 @@ function SwipeableEdgeDrawer(props) {
             <Link to="/login" style={{ textDecoration: "none" }}>
               <MenuItem
                 style={{
-                  marginBottom: "6px",
-                  height: "98%",
+                  height: "90%",
                   display: "flex",
                   justifyContent: "center",
                   borderTopLeftRadius: "40px",
@@ -180,8 +179,7 @@ function SwipeableEdgeDrawer(props) {
             <Link to="/products&services" style={{ textDecoration: "none" }}>
               <MenuItem
                 style={{
-                  marginBottom: "6px",
-                  height: "98%",
+                  height: "90%",
                   display: "flex",
                   justifyContent: "center",
                   border: "#149be6 solid 3px",
@@ -202,8 +200,7 @@ function SwipeableEdgeDrawer(props) {
             <Link to="/make-an-order" style={{ textDecoration: "none" }}>
               <MenuItem
                 style={{
-                  marginBottom: "6px",
-                  height: "98%",
+                  height: "90%",
                   display: "flex",
                   justifyContent: "center",
                   border: "#149be6 solid 3px",
@@ -224,8 +221,7 @@ function SwipeableEdgeDrawer(props) {
             <Link to="/tracking" style={{ textDecoration: "none" }}>
               <MenuItem
                 style={{
-                  marginBottom: "6px",
-                  height: "98%",
+                  height: "90%",
                   display: "flex",
                   justifyContent: "center",
                   border: "#149be6 solid 3px",
@@ -246,8 +242,7 @@ function SwipeableEdgeDrawer(props) {
             <Link to="/dashboard/:userId" style={{ textDecoration: "none" }}>
               <MenuItem
                 style={{
-                  marginBottom: "6px",
-                  height: "98%",
+                  height: "90%",
                   display: "flex",
                   justifyContent: "center",
                   border: "#149be6 solid 3px",
@@ -269,7 +264,7 @@ function SwipeableEdgeDrawer(props) {
               <MenuItem
                 style={{
                   display: "flex",
-                  height: "98%",
+                  height: "90%",
                   justifyContent: "center",
                   borderBottomLeftRadius: "40px",
                   borderBottomRightRadius: "40px",
