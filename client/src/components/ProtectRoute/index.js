@@ -14,8 +14,8 @@ const ProtectRoute = () => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          marginTop: "100px",
-          marginBottom: "-40px",
+          marginTop: { xs: '160px', sm: '160px', md: '100px', lg: '100px', xl: '100px' },
+          marginBottom: { xs: '-10px', sm: '-10px', md: '-40px', lg: '-40px', xl: '-40px' },
         }}
       >
         <img
