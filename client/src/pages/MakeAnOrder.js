@@ -85,7 +85,7 @@ const MakeAnOrder = () => {
 
         {orderSaved ? (
           <Typography align="center" component="h1" variant="h5">
-            Package Saved!
+            Order Saved!
           </Typography>
         ) : (
           <Survey style={{ backgroundColor: "primary.dark" }} model={survey} />

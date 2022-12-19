@@ -64,14 +64,23 @@ function EditUser() {
   const handleEditSubmit = async (event) => {
     event.preventDefault();
     try {
-      if (
-        !/^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/.test(userState.phoneNum)
-      ) {
-        alert("please enter a valid phone number");
-        return;
+      if (userState.phoneNum) {
+        if (
+          !/^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/.test(userState.phoneNum)
+        ) {
+          alert(
+            "Please enter a valid phone number \nMust be formatted as follows: \n\n(123) 456-7890 or 123-456-7890"
+          );
+          return;
+        }
       }
       const { data } = await editMe({
         variables: { ...userState },
+        refetchQueries: [
+          {
+            query: CURRENT_USER,
+          },
+        ],
       });
       if (data) {
         setMessage(true);
