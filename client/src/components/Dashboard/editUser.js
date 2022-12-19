@@ -101,6 +101,21 @@ function EditUser() {
 
   return (
     <div>
+      <Box
+        sx={{
+          margin: 1,
+          marginTop: "-20px",
+          height: "60%",
+          width: "90%",
+          backgroundColor: "#0d579b",
+          borderRadius: "40px",
+          paddingBottom: "20px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          marginLeft: "21px",
+        }}
+      >
       <h2
         style={
           success
@@ -118,7 +133,7 @@ function EditUser() {
         Successfully updated account information!
       </h2>
       <Typography
-        sx={{ mt: 4, mb: 5, textAlign: "center" }}
+        sx={{ mt: 4, mb: 5, textAlign: "center", color: "white" }}
         variant="h3"
         component="div"
       >
@@ -309,6 +324,7 @@ function EditUser() {
           </Link>
         </Box>
       </Modal>
+      </Box>
     </div>
   );
 }
