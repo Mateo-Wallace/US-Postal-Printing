@@ -3,13 +3,13 @@ footer {
     position: relative !important;
   }
 
-.copyright{
+  .copyright {
     margin-bottom: 50px;
-}
+  }
 }
 
 .insideFooter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

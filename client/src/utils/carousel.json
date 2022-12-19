@@ -1,27 +1,27 @@
 [
-    {
-        "id": 1,
-        "title": "Shipping With All Major Carriers!",
-        "image": "https://images.pexels.com/photos/11192837/pexels-photo-11192837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    },
-    {
-        "id": 2,
-        "title": "Affordable postage & services!",
-        "image": "https://images.pexels.com/photos/709237/pexels-photo-709237.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    },
-    {
-        "id": 3,
-        "title": "Up-to-date shipping info!",
-        "image": "https://images.pexels.com/photos/38271/ipad-map-tablet-internet-38271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    },
-    {
-        "id": 4,
-        "title": "Notary Services!",
-        "image": "https://images.pexels.com/photos/48148/document-agreement-documents-sign-48148.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    },
-    {
-        "id": 5,
-        "title": "Support A Local Business!",
-        "image": "https://images.pexels.com/photos/208698/pexels-photo-208698.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    }
+  {
+    "id": 1,
+    "title": "Shipping With All Major Carriers!",
+    "image": "https://images.pexels.com/photos/11192837/pexels-photo-11192837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  },
+  {
+    "id": 2,
+    "title": "Affordable postage & services!",
+    "image": "https://images.pexels.com/photos/709237/pexels-photo-709237.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  },
+  {
+    "id": 3,
+    "title": "Up-to-date shipping info!",
+    "image": "https://images.pexels.com/photos/38271/ipad-map-tablet-internet-38271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  },
+  {
+    "id": 4,
+    "title": "Notary Services!",
+    "image": "https://images.pexels.com/photos/48148/document-agreement-documents-sign-48148.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  },
+  {
+    "id": 5,
+    "title": "Support A Local Business!",
+    "image": "https://images.pexels.com/photos/208698/pexels-photo-208698.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  }
 ]

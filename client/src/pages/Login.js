@@ -11,9 +11,6 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Link2 from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
@@ -75,7 +72,7 @@ const Login = (props) => {
   };
 
   return (
-    <main style={{marginTop: '160px', marginBottom: '60px'}}>
+    <main style={{ marginTop: "160px", marginBottom: "60px" }}>
       {data ? (
         <p>
           Successfully logged in! You may now head{" "}
@@ -83,7 +80,7 @@ const Login = (props) => {
         </p>
       ) : (
         <ThemeProvider theme={theme}>
-          <Container component="main" maxWidth="xs" >
+          <Container component="main" maxWidth="xs">
             <CssBaseline />
             <Box
               sx={{
