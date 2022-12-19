@@ -143,6 +143,8 @@ function SwipeableEdgeDrawer(props) {
               textAlign: "center",
               display: "flex",
               flexDirection: "column",
+              height: "89%",
+              marginTop: "10px",
             }}
             id="basic-menu"
             open={open}
@@ -155,6 +157,7 @@ function SwipeableEdgeDrawer(props) {
               <MenuItem
                 style={{
                   marginBottom: "6px",
+                  height: "98%",
                   display: "flex",
                   justifyContent: "center",
                   borderTopLeftRadius: "40px",
@@ -178,6 +181,7 @@ function SwipeableEdgeDrawer(props) {
               <MenuItem
                 style={{
                   marginBottom: "6px",
+                  height: "98%",
                   display: "flex",
                   justifyContent: "center",
                   border: "#149be6 solid 3px",
@@ -199,6 +203,7 @@ function SwipeableEdgeDrawer(props) {
               <MenuItem
                 style={{
                   marginBottom: "6px",
+                  height: "98%",
                   display: "flex",
                   justifyContent: "center",
                   border: "#149be6 solid 3px",
@@ -220,6 +225,7 @@ function SwipeableEdgeDrawer(props) {
               <MenuItem
                 style={{
                   marginBottom: "6px",
+                  height: "98%",
                   display: "flex",
                   justifyContent: "center",
                   border: "#149be6 solid 3px",
@@ -241,6 +247,7 @@ function SwipeableEdgeDrawer(props) {
               <MenuItem
                 style={{
                   marginBottom: "6px",
+                  height: "98%",
                   display: "flex",
                   justifyContent: "center",
                   border: "#149be6 solid 3px",
@@ -262,6 +269,7 @@ function SwipeableEdgeDrawer(props) {
               <MenuItem
                 style={{
                   display: "flex",
+                  height: "98%",
                   justifyContent: "center",
                   borderBottomLeftRadius: "40px",
                   borderBottomRightRadius: "40px",
