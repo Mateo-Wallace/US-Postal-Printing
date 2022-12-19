@@ -104,9 +104,9 @@ For any further questions feel free to contact us via:
 
 - Dylan Crowley - [GitHub](https://github.com/dcrowdev) - [Email](mailto:dcrowdev1025@gmail.com) - [LinkedIn](https://www.linkedin.com/in/dylan-crowley-3974b8252/)
 
-- Benjamin Fein - [GitHub](https://github.com/Bfunk54) - [Email](mailto:#ben_fein@icloud.com) - [LinkedIn](https://www.linkedin.com/in/benjamin-fein-5a73b2242/)
+- Benjamin Fein - [GitHub](https://github.com/Bfunk54) - [Email](mailto:ben_fein@icloud.com) - [LinkedIn](https://www.linkedin.com/in/benjamin-fein-5a73b2242/)
 
-- Sangki Jun - [GitHub](https://github.com/sangki810) - [Email](mailto:#sangki810@gmail.com) - [LinkedIn](https://www.linkedin.com/in/sangki-jun-8a6a5310b/)
+- Sangki Jun - [GitHub](https://github.com/sangki810) - [Email](mailto:sangki810@gmail.com) - [LinkedIn](https://www.linkedin.com/in/sangki-jun-8a6a5310b/)
 
 - Mateo Wallace - [GitHub](https://github.com/Mateo-Wallace) - [Email](mailto:mateo.t.wallace@gmail.com) - [LinkedIn](https://www.linkedin.com/in/mateo-wallace-57931b254/)
 
