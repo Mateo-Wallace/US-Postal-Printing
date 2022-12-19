@@ -109,7 +109,7 @@ export default function StickyFooter() {
             backgroundColor: "primary",
           }}
         >
-          <Container className="copyright" maxWidth="sm">
+          <Container style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}} className='copyright' maxWidth="sm">
             <Copyright />
           </Container>
         </Box>
